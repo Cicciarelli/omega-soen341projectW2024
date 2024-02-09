@@ -1,10 +1,10 @@
 README file for the SOEN341 group project - Team Omega
 
-In this file, you will see the following:
+#In this file, you will see the following:
 
-1) Description of the Project 
-2) Team Members and Roles 
-3) Project Approach and Technology
+##1) Description of the Project 
+##2) Team Members and Roles 
+##3) Project Approach and Technology
 
 
 Description of the project
