@@ -81,16 +81,26 @@ deadlines.
  
  3.1 Backend Frameworks
  
- 3.1.1 Framework A
-- Description: Brief overview of Framework A.
-- Rationale:
-  - Justification for choosing Framework A.
-  - Consider factors such as community support,
-scalability, and ease of integration.
-- Qualitative Assessment:
-  - Strengths
-  - Weaknesses
-  - Use Cases
+ 3.1.1 Spring Framework
+ 
+ Spring is a java-based framework thats been around for over 20 years. The primary function of spring is to simplify the setup and configuration process,
+ allowing users to focus more on the actual logic of the code rather than the syntax or setup process.
+
+ Spring can potentially be a good option for us to use because of the community support. Despite Spring being around for a long time, its still one of the 
+ most used frameworks out there. There are plenty of tutorials, guides, and videos online displaying Spring's features and how to use them. Spring seems to 
+ be very easy to integrate to a project.
+ 
+ Also, the fact that Spring is java-based is useful, as Java is a programming language that all of our team members are familiar with. Another useful 
+ feature we can take advantage of with Spring is that it supports HTML, which will help us with the frontend work as well.
+
+ Despite the support online, Spring is apparently difficult to learn and master. While we don't necessarily need to master Spring, if we're not able to
+ take advantage of it's features, then it defeats the purpose of using it in the first place. Furthermore, it seems that it is very difficult to integrate
+ databases with Spring, which is a major part of our project.
+
+ To conclude Spring, its a viable option for us to use in our project. It's based in a language all of our group members are comfortable with, and can 
+ support both fronted and backend. There is a huge community available for tutorials and questions, and it is very easy to integrate into a project. 
+ Unfortunately, there are some downsides as well. Spring seems hard to learn, harder to master, and may cause issues for us when we try to integrate 
+ databases to our project.
  
  3.1.2 Framework B
 - Description: Brief overview of Framework B.
