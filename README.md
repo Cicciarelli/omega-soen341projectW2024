@@ -133,6 +133,22 @@ Use Cases:  Ideal for enterprise and form-heavy applications requiring robust, s
 
 All and all Struts is probably not an optimal framework for this project because of the steep learning curve and since we won’t be properly taking advantage of its strengths due to the short time span of the project.
 
+ 3.1.4 Pyramid
+ 
+Description: Pyramid is a backend framework written in Python. Its primary goal is to make it easier to create web applications. It is designed to be flexible and minimalistic.
+
+Rationale: Pyramid is a good framework to use because it is a very minimalistic and flexible web framework that prioritizes simplicity, scalability and ease of use. It allows developers to build with only the features needed. It is very easy to learn and adapt to it. Pyramid  is currently  used by Mozilla and Yelp.
+
+Qualitative Assessment:
+     - Strength:
+	Highly extensible. It has access to a lot of add-ons and extensions.
+Flexible URL mapping system which makes it easier to create clean and intuitive URLs
+It has many built-in features, such as templating engine and a request object
+More flexible than other frameworks
+
+  - Weaknesses:
+Few pre-built libraries 
+Relatively new and has a smaller developer community
  
  3.2.2 Framework React.js
  
