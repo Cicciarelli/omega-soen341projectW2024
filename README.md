@@ -34,21 +34,33 @@ Computer engineering is a mix of software engineering and of hardware engineerin
 1. Project Overview
  
  1.1 Project Objectives
-- Clearly define the goals and objectives of the project.
-- Goal of this project is to create a functioning (semi-functioning) web application prototype to facilitate the process of renting vehicles.
-- Objectives:
-- Have a functioning web page; includes a full catalogue of cars, a "payment method", a sign in/create account page, a "create reservation" page, and any other tools necessary in a web page nowadays
-- Have a working database so users, Customer Service Reps (CSP) and System Administrators can utilize accounts
+
+  The goal of this project is to create a web application prototype or base for a car rental project. Users of this application can create accounts,
+  browse vehicles, make reservations and modify/delete account or reservation specifics. This needs to be created using GitHub as a repository for our
+  code and documentation.
 
  
  1.2 Scope
-- Outline the scope of the project, including key features and
-functionalities.
-- Scope of the project is a semester-long project that can do a few basic use cases such as:
-- browsing vehicles, starting reservations, V/M/C reservations, Find a branch, rating and review
+
+  This project will be a functioning web page. Users will be able to sign in or create a new account. With an account, users will to make a reservation. If 
+  a user has an existing reservation, they will be able to view, modify and delete that reservation. If a user has an account, they will be able to view,
+  modify and delete their account. They will be able to change passwords and change usernames (if the new username does not already exist).
+
+  The website itself will consist of a home page with a list of available vehicles. Filters will be available to narrow down a users search. On the home
+  page, there will be brief details on the cars. Selecting a car will bring the user to a new page with more details on the car, as well as the option to
+  reserve the car. A database will store users, cars and reservations.
+
+  System administators will be able to view, modify, and delete any existing user. They will be available to view, modify, and delete any existing
+  reservation. They will also be available to view, modify and delete any existing car. System administrators will also be able to add new cars, new users
+  and new reservations.
+
+  Users will be able to review and rate the service, (ratings will also be stored in a database), and select a pickup location for certain cars.
  
  1.3 Target Audience
-- Identify the intended users and their needs.
+ 
+  We are looking to have two target audiences. Firstly, we are looking to target travellers to Montreal who are in need of a car to get around while they
+  are here. Secondly, we are looking to target either travellers or natives who want to rent a luxury car for a shorter period of time. Of course, any 
+  user must be 23 years old or older to rent a car.
  
  2. Project Approach
  
@@ -61,8 +73,9 @@ justify the selection based on project requirements.
 deadlines.
  
  2.3 Collaboration and Communication
-- Define communication channels and collaboration tools for the
-project team.
+
+ Our team will be using Discord for the majority of our communication. We will be meeting in person at least once per week, but for the most part Discord
+ calls and messages will be used.
  
  3. Technology Stack
  
