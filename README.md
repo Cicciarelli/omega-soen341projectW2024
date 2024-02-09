@@ -113,15 +113,19 @@ Flask's takes a more minimalistic approach to web development, which means that 
   - Use Cases
  
  3.1.3 Framework C
-- Description: Brief overview of Framework C.
-- Rationale:
-  - Justification for choosing Framework C.
-  - Consider factors such as community support, learning
-curve, and extensibility.
+- Description: Pyramid is a backend framework written in Python. It’s primary goal is to make it easier to create web applications. It is designed to be flexible and minimalistic. 
+- Rationale: Pyramid is a good framework to use because it is a very minimalistic and flexible web framework that prioritizes simplicity, scalability and ease of use. It allows developers to build with only the features needed. It is very easy to learn and adapt to it. 
 - Qualitative Assessment:
-  - Strengths
-  - Weaknesses
+	Highly extensible. It has access to a lot of add-ons and extensions.
+Flexible URL mapping system which makes it easier to create clean and intuitive URLs
+It has many built0in features, such as templating engine and a request object
+More flexible than other frameworks
+  - Weaknesses:
+Few pre-built libraries 
+Relatively new and has a smaller developer community
   - Use Cases
+Pyramid  is currently  used by Mozilla and Yelp.
+
  
  3.2 Frontend Frameworks
  
