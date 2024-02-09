@@ -108,7 +108,8 @@ Flask is simple to use and flexible making it easy for beginners to use and crea
 maintenance.
 
 Flask's has more of a minimalist design while also containing beginner-friendly API which make it easy to learn and use for  beginners and first-time users. In Flask, you can access libraries of different back-end languages such as python which offers a lot more options for website design, management, and creation. Flask also has a small codebase compared to other frameworks which makes it more dependable than others and great for creating web site prototypes quickly as well as for making quick overhauls.
-  - Weaknesses
+
+Flask's takes a more minimalistic approach to web development, which means that it lacks some features that other web development frames might have. Furthermore, compared to a more fully featured frameworks that uses Python like Django, Flask requires more manual setup such as having to connecte to python libraries for tasks such as database management and user authentication.
   - Use Cases
  
  3.1.3 Framework C
