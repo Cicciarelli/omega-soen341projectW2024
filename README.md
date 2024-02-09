@@ -103,8 +103,7 @@ justify the selection based on project requirements.
  
  3.1.2 Flask
 
-Flask is a lightweight and versatile web development framework for     Python. It is simple and easy to use for beginners which makes it a good option to create prototypes for smaller web sites.
-
+Flask is a lightweight and versatile web development framework for Python. It is simple and easy to use for beginners which makes it a good option to create prototypes for smaller web sites.
 Flask is simple to use and flexible making it easy for beginners to use and create a website from it during their first-time    use. It is also a minimalistic web development frame when it comes to its web design. Flask comes with its own pros and cons that can change how you plan to create your website. A great thing about Flask is that it has a large and active community that and can help with any questions or difficulties that you may encounter while using Flask. There are a lot of tutorials on how to use flask on YouTube as well as websites to teach the different functions that are offered by flask. Flask can also be integrated with Python which is our backend language of choice. This can give us access to python libraries and framework. These libraries and frameworks give us access to some features that can simplify our workload for the creation of our website such as database management.
 maintenance.
 
@@ -183,13 +182,12 @@ frontend technologies.
  
  4.2 Third-Party Services
  
- The only third-party service we will use is an online database service. Right now, the application we are considering is mySQL, which we will use to store
+ The only third-party service we will use is an online database service. Right now, the application we are considering is mySQL or SQLite, which we will use to store
  usernames, passwords, users, cars, reservations and ratings.
  
  5. Security Considerations
- 
-- Provide an overview of security measures and considerations for
-both the backend and frontend.
+
+ We will use a SQL database to securely store the client data such as emails and passwords. We will also implement HTTPS to encrypt the data between the user and the website
  
  6. Conclusion
  
