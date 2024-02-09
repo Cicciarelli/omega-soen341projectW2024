@@ -82,7 +82,7 @@ deadlines.
  3.1 Backend Frameworks
  
  3.1.1 Flask
-- Description: Brief overview of Framework A.
+- Description: : Flask is a lightweight and versatile web development framework for Python. It is simple and easy to use for beginners which makes it a good option to create prototypes for smaller web sites.
 - Rationale:
   - Justification for choosing Framework A.
   - Consider factors such as community support,
