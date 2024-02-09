@@ -150,8 +150,12 @@ More flexible than other frameworks
   - Weaknesses:
 Few pre-built libraries 
 Relatively new and has a smaller developer community
+
+3.2 Frontend Frameworks
+
+3.2.1 Framework X
  
- 3.2.2 Framework React.js
+3.2.2 Framework React.js
  
 React.js is a JavaScript library for building interactive UIs (User Interface), and it was initially developed at Facebook to fix code maintainability issues. It utilized what are called "components" to make applications. These components are pieces of the UI that are fully programmable and which range from a simple button to the entire page.
 
