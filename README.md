@@ -81,6 +81,7 @@ deadlines.
  
  3.1 Backend Frameworks
  
+
  3.1.1 Spring Framework
  
  Spring is a java-based framework thats been around for over 20 years. The primary function of spring is to simplify the setup and configuration process,
@@ -101,9 +102,11 @@ deadlines.
  support both fronted and backend. There is a huge community available for tutorials and questions, and it is very easy to integrate into a project. 
  Unfortunately, there are some downsides as well. Spring seems hard to learn, harder to master, and may cause issues for us when we try to integrate 
  databases to our project.
+>>>>>>> main
  
- 3.1.2 Framework B
-- Description: Brief overview of Framework B.
+ 3.1.2 Flask
+- Description: Flask is a lightweight and versatile web development framework for     Python. It is simple and easy to use for beginners which makes it a good option to create prototypes for smaller web sites.
+
 - Rationale:
   - Justification for choosing Framework B.
   - Consider factors such as performance, security, and
