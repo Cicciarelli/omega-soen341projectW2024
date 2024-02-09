@@ -1,3 +1,19 @@
 A comprehensive log with timestamps, activity details, and time spent by each team member.
 
-02/02/2024 - All team members meet up during the lab and create Github repo together.
+02/02/2024 ~5:45pm - 7:45pm~ **IN CLASS** - Team member introductions, creation of Github Repository, went over Sprint 1 instructions and clarified tasks 
+to do for the first Sprint.
+
+02/04/2024 ~1:00pm - 2:15pm~ **DISCORD CALL** - Discussed team preferences for backend and frontend programming languages, brief research into possible 
+frameworks we can use, reviewed rubric and reviewed repository settings. Each team member tasked with researching one framework and bringing their research to
+next meeting.
+
+02/07/2024 ~6:00pm - 7:00pm~ **DISCORD CALL** - Introduction of new team member, division of tasks for Sprint 1, reviewal and comparison of frameworks.
+
+          - Daniel Cicciarelli researched Spring Boot Framework, will work on User Story 'Browse Vehicles for Rent'.
+          - Maxime Pagé researched React Framework, will work on User Story 'CRUD Operations on Reservations'.
+          - Liam Halpin researched Flask Framework, will work on User Story 'Start a Reservation'.
+          - Matthew Kazemie researched Django Framework, will work on User Story 'View/Modify/Cancel a Reservation'.
+          - Maria Shanoudy-Farhood researched FastAPI Framework, will work on User Story 'CRUD Operations on Vehicles'.
+
+          - All team members will add their respective frameworks onto the template, and rest of the template will be filled out in next team meeting on  
+            Friday.
