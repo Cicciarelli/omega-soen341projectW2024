@@ -11,7 +11,6 @@ README file for the SOEN341 group project - Team Omega
 
 In this project, we are tasked with creating a car rental application that will facilitate the process of renting vehicles for short periods, ranging from a few hours to a few weeks. Through this project, our team members will get to experience firsthand how a software project is managed using Github.
 
-
 **Team Members and Roles**
 
 Software Engineering Undergraduate(s):
@@ -69,19 +68,17 @@ Computer engineering is a mix of software engineering and of hardware engineerin
 justify the selection based on project requirements.
  
  2.2 Project Timeline
-- Create a high-level timeline outlining major milestones and
-deadlines.
+ 
+ Refer to wiki for full details on project timeline.
  
  2.3 Collaboration and Communication
 
- Our team will be using Discord for the majority of our communication and using Github for the code and the seperation of tasks. We will also be meeting in person at least once per week.
- calls and messages will be used.
+ Our team will be using Discord for the majority of our communication and using Github for the code and the seperation of tasks. We will also be meeting in person at least once per week. On Discord, calls and messages will be used.
  
  3. Technology Stack
  
  3.1 Backend Frameworks
  
-
  3.1.1 Spring Framework
  
  Spring is a java-based framework thats been around for over 20 years. The primary function of spring is to simplify the setup and configuration process,
@@ -102,7 +99,6 @@ deadlines.
  support both fronted and backend. There is a huge community available for tutorials and questions, and it is very easy to integrate into a project. 
  Unfortunately, there are some downsides as well. Spring seems hard to learn, harder to master, and may cause issues for us when we try to integrate 
  databases to our project.
->>>>>>> main
  
  3.1.2 Flask
 - Description: Flask is a lightweight and versatile web development framework for     Python. It is simple and easy to use for beginners which makes it a good option to create prototypes for smaller web sites.
@@ -171,8 +167,9 @@ component libraries, and developer experience.
 frontend technologies.
  
  4.2 Third-Party Services
-- Identify any third-party services or APIs that will be
-integrated into the project.
+ 
+ The only third-party service we will use is an online database service. Right now, the application we are considering is mySQL, which we will use to store
+ usernames, passwords, users, cars, reservations and ratings.
  
  5. Security Considerations
  
@@ -183,6 +180,3 @@ both the backend and frontend.
  
 - Summarize the chosen project approach and technology stack,
 highlighting key reasons for the selections.
-
-
-TBC
