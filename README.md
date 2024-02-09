@@ -112,29 +112,27 @@ Flask's has more of a minimalist design while also containing beginner-friendly 
 Flask's takes a more minimalistic approach to web development, which means that it lacks some features that other web development frames might have. Furthermore, compared to a more fully featured frameworks that uses Python like Django, Flask requires more manual setup such as having to connecte to python libraries for tasks such as database management and user authentication.
   - Use Cases
  
- 3.1.3 Framework C
-- Description: Brief overview of Framework C.
-- Rationale:
-  - Justification for choosing Framework C.
-  - Consider factors such as community support, learning
-curve, and extensibility.
-- Qualitative Assessment:
-  - Strengths
-  - Weaknesses
-  - Use Cases
+ 3.1.3 Struts 
  
- 3.2 Frontend Frameworks
- 
- 3.2.1 Framework X
-- Description: Brief overview of Framework X.
-- Rationale:
-  - Justification for choosing Framework X.
-  - Consider factors such as user interface
-capabilities, responsiveness, and cross-browser compatibility.
-- Qualitative Assessment:
-  - Strengths
-  - Weaknesses
-  - Use Cases
+Description:  Struts is an open-source MVC framework for Java EE web applications, offering a clear separation of concerns (Model-View-Controller), extensive view tag libraries, and form validation capabilities.  
+
+Rationale:  The choice of Struts is supported by its strong MVC architecture, aiding in the development of scalable, maintainable applications. Its user interface capabilities, through an extensive tag library, and features like form validation and internationalization, ensure the creation of responsive, cross-browser compatible web applications.  
+
+Qualitative Assessment:  
+
+Strengths: 
+- MVC architecture promotes manageability and scalability. 
+- Extensive tag library enhances user interface development. 
+- Built-in form validation and internationalization support. 
+
+Weaknesses:  
+- Steep learning curve for newcomers. 
+- Sometimes perceived as outdated compared to newer frameworks. 
+
+Use Cases:  Ideal for enterprise and form-heavy applications requiring robust, scalable solutions. Suitable for applications needing a high degree of customization. 
+
+All and all Struts is probably not an optimal framework for this project because of the steep learning curve and since we won’t be properly taking advantage of its strengths due to the short time span of the project.
+
  
  3.2.2 Framework React.js
  
