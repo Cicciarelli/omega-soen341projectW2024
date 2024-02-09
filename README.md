@@ -84,8 +84,7 @@ deadlines.
  3.1.1 Flask
 - Description: : Flask is a lightweight and versatile web development framework for Python. It is simple and easy to use for beginners which makes it a good option to create prototypes for smaller web sites.
 - Rationale:
-  - Justification for choosing Framework A.
-  - Consider factors such as community support,
+  Flask is simple to use and flexible making it easy for beginners to use and create a website from it during their first-time use. It is also a minimalistic web development frame when it comes to its web design. Flask comes with its own pros and cons that can change how you plan to create your website. A great thing about Flask is that it has a large and active community that and can help with any questions or difficulties that you may encounter while using Flask. There are a lot of tutorials on how to use flask on YouTube as well as websites to teach the different functions that are offered by flask. Flask can also be integrated with Python which is our backend language of choice. This can give us access to python libraries and framework. These libraries and frameworks give us access to some features that can simplify our workload for the creation of our website such as database management.
 scalability, and ease of integration.
 - Qualitative Assessment:
   - Strengths
