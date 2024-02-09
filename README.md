@@ -105,7 +105,8 @@ deadlines.
 >>>>>>> main
  
  3.1.2 Flask
-- Description: Brief overview of Framework B.
+- Description: Flask is a lightweight and versatile web development framework for     Python. It is simple and easy to use for beginners which makes it a good option to create prototypes for smaller web sites.
+
 - Rationale:
   - Justification for choosing Framework B.
   - Consider factors such as performance, security, and
