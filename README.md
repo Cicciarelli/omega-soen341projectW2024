@@ -59,7 +59,7 @@ Computer engineering is a mix of software engineering and of hardware engineerin
  1.3 Target Audience
  
   We are looking to have two target audiences. Firstly, we are looking to target travellers to Montreal who are in need of a car to get around while they
-  are here. Secondly, we are looking to target either travellers or natives who want to rent a luxury car for a shorter period of time. Of course, any 
+  are here. Secondly, we are looking to target either travellers or locals who want to rent a luxury car for a shorter period of time. Of course, any 
   user must be 23 years old or older to rent a car.
  
  2. Project Approach
@@ -74,23 +74,35 @@ deadlines.
  
  2.3 Collaboration and Communication
 
- Our team will be using Discord for the majority of our communication. We will be meeting in person at least once per week, but for the most part Discord
+ Our team will be using Discord for the majority of our communication and using Github for the code and the seperation of tasks. We will also be meeting in person at least once per week.
  calls and messages will be used.
  
  3. Technology Stack
  
  3.1 Backend Frameworks
  
- 3.1.1 Flask
-- Description: : Flask is a lightweight and versatile web development framework for Python. It is simple and easy to use for beginners which makes it a good option to create prototypes for smaller web sites.
-- Rationale:
-  
 
-- Qualitative Assessment:
-  
-  
-  
+ 3.1.1 Spring Framework
+ 
+ Spring is a java-based framework thats been around for over 20 years. The primary function of spring is to simplify the setup and configuration process,
+ allowing users to focus more on the actual logic of the code rather than the syntax or setup process.
 
+ Spring can potentially be a good option for us to use because of the community support. Despite Spring being around for a long time, its still one of the 
+ most used frameworks out there. There are plenty of tutorials, guides, and videos online displaying Spring's features and how to use them. Spring seems to 
+ be very easy to integrate to a project.
+ 
+ Also, the fact that Spring is java-based is useful, as Java is a programming language that all of our team members are familiar with. Another useful 
+ feature we can take advantage of with Spring is that it supports HTML, which will help us with the frontend work as well.
+
+ Despite the support online, Spring is apparently difficult to learn and master. While we don't necessarily need to master Spring, if we're not able to
+ take advantage of it's features, then it defeats the purpose of using it in the first place. Furthermore, it seems that it is very difficult to integrate
+ databases with Spring, which is a major part of our project.
+
+ To conclude Spring, its a viable option for us to use in our project. It's based in a language all of our group members are comfortable with, and can 
+ support both fronted and backend. There is a huge community available for tutorials and questions, and it is very easy to integrate into a project. 
+ Unfortunately, there are some downsides as well. Spring seems hard to learn, harder to master, and may cause issues for us when we try to integrate 
+ databases to our project.
+>>>>>>> main
  
  3.1.2 Framework B
 - Description: Brief overview of Framework B.
@@ -127,16 +139,18 @@ capabilities, responsiveness, and cross-browser compatibility.
   - Weaknesses
   - Use Cases
  
- 3.2.2 Framework Y
-- Description: Brief overview of Framework Y.
-- Rationale:
-  - Justification for choosing Framework Y.
-  - Consider factors such as modularity, performance,
-and community support.
-- Qualitative Assessment:
-  - Strengths
-  - Weaknesses
-  - Use Cases
+ 3.2.2 Framework React.js
+ 
+React.js is a JavaScript library for building interactive UIs (User Interface), and it was initially developed at Facebook to fix code maintainability issues. It utilized what are called "components" to make applications. These components are pieces of the UI that are fully programmable and which range from a simple button to the entire page.
+
+First and foremost, many applications that people use in their daily lives are developed with React: notably, we have Facebook, Instragram, Netflix, NY Times, Yahoo! and even Khan Academy.
+Secondly, React.js is considered the best frontend framework by many articles online, as well as reviewers who said they are more likely to re-use React.js than any other frameworks.
+The components aforementioned are easily reusabable and the integrated React hooks makes writing them easy.
+It should also be mentioned that React.js has an incredibly large support community as it is used for the largest social media apps.
+ 
+In other words, React.js comes with very practical tools, such as components and hooks. The large community support is a key part of considering a framework as any problem we encounter might have already been solved.
+However, React.js has a steep learning curve and it could be difficult for those with little to no knowledge of javascript to learn how to use it.
+In terms of use cases, React.js is a perfect match for a single-page web application (take Facebook for example).
  
  3.2.3 Framework Z
 - Description: Brief overview of Framework Z.
