@@ -104,7 +104,7 @@ deadlines.
  databases to our project.
 >>>>>>> main
  
- 3.1.2 Framework B
+ 3.1.2 Flask
 - Description: Brief overview of Framework B.
 - Rationale:
   - Justification for choosing Framework B.
