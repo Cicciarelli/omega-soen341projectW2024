@@ -18,7 +18,8 @@ Software Engineering Undergraduate(s):
 _Daniel Cicciarelli,_
 _Liam Halpin,_
 _Maria Shanoudy-Farhood,_
-_Matthew Kazemie_
+_Matthew Kazemie,_
+_Vlad Tita_
 
 As the name implies, software engineering focuses on the design of software applications and programs. These team members are the backbone of this project as they are most familiar with software applications and have had experience in both front end and back end development.
 
