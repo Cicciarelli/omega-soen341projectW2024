@@ -81,7 +81,7 @@ deadlines.
  
  3.1 Backend Frameworks
  
- 3.1.1 Framework A
+ 3.1.1 Flask
 - Description: Brief overview of Framework A.
 - Rationale:
   - Justification for choosing Framework A.
