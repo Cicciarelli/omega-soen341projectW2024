@@ -84,12 +84,10 @@ deadlines.
  3.1.1 Flask
 - Description: : Flask is a lightweight and versatile web development framework for Python. It is simple and easy to use for beginners which makes it a good option to create prototypes for smaller web sites.
 - Rationale:
-  Flask is simple to use and flexible making it easy for beginners to use and create a website from it during their first-time use. It is also a minimalistic web development frame when it comes to its web design. Flask comes with its own pros and cons that can change how you plan to create your website. A great thing about Flask is that it has a large and active community that and can help with any questions or difficulties that you may encounter while using Flask. There are a lot of tutorials on how to use flask on YouTube as well as websites to teach the different functions that are offered by flask. Flask can also be integrated with Python which is our backend language of choice. This can give us access to python libraries and framework. These libraries and frameworks give us access to some features that can simplify our workload for the creation of our website such as database management.
-scalability, and ease of integration.
-- Qualitative Assessment:
-  Strengths: Flask's has more of a minimalist design while also containing beginner-friendly API which make it easy to learn and use for beginners and first-time users. In Flask, you can access libraries of different back-end languages such as python which offers a lot more options for website design, management, and creation. Flask also has a small codebase compared to other frameworks which makes it more dependable than others and great for creating web site prototypes quickly as well as for making quick overhauls.
+  
 
-  Weaknesses: Flask's takes a more minimalistic approach to web development, which means that it lacks some features that other web development frames might have. Furthermore, compared to a more fully featured frameworks that uses Python like Django, Flask requires more manual setup such as having to connecte to python libraries for tasks such as database management and user authentication.
+- Qualitative Assessment:
+  
   
   
 
