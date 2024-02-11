@@ -123,7 +123,30 @@ Relatively new and has a smaller developer community
 
 3.2 Frontend Frameworks
 
-3.2.1 Framework X
+3.3.1 Django
+
+- Description: Django is a Python web framework following the Model View Controller design pattern.
+  It implements frontend and backend features.
+- Rationale: The already existing features seen in strengths will save us
+  development time compared to if we used a framework without them.
+  Using Python will also save us development time due to its ease of use.
+- Qualitative Assessment:
+  - Strengths:
+    - Django has common features already implemented.
+      These include CRUD operations we plan to use for many of the objects in our project.
+    - Django implements an object relational mapper which lets us do operations on our database using only Python code.
+      This might eliminate the need for writing SQL queries.
+    - Django comes with built in security features. One example is preventing sql injection.
+    - Django is 18 years old and has had time to mature and develop a community.
+    - Django offers templates which can generate web pages.
+  - Weaknesses:
+    - Python could be considered a slow language compared to other common languages like c++ or Java.
+      This could hurt our performance if it becomes the bottleneck.
+    - If any of the already implemented features does not function how we want them to,
+      extending them may be more difficult than creating them from scratch.
+  - Use Cases:
+    - CRUD operations will be necessary for some objects in our project. Django implements this.
+    - The ORM will be used to do operations on our database.
  
 3.2.2 Framework React.js
  
