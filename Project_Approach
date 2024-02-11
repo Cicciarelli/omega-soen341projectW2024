@@ -1,5 +1,3 @@
-
-
 **Project Approach and Technology**
 
 1. Project Overview
@@ -38,7 +36,12 @@
  2.1 Development Methodology
 - Choose a development methodology (e.g., Agile, Waterfall) and
 justify the selection based on project requirements.
- 
+For our development methodology, we will be going for Agile methodolgy. This is a obvious decision, as it is our team's first large scale
+project using Github which means we will most certainly encounters issues and bugs along the way.
+With agile methodology, bugs, issues and changes are taken into consideration when planning and carrying out a project. This is how development
+project take course. It would be unfeasable to assume one course of action and to try to stay on the same track the whole way.
+
+
  2.2 Project Timeline
  
  Refer to wiki for full details on project timeline.
@@ -81,7 +84,6 @@ maintenance.
 Flask's has more of a minimalist design while also containing beginner-friendly API which make it easy to learn and use for  beginners and first-time users. In Flask, you can access libraries of different back-end languages such as python which offers a lot more options for website design, management, and creation. Flask also has a small codebase compared to other frameworks which makes it more dependable than others and great for creating web site prototypes quickly as well as for making quick overhauls.
 
 Flask's takes a more minimalistic approach to web development, which means that it lacks some features that other web development frames might have. Furthermore, compared to a more fully featured frameworks that uses Python like Django, Flask requires more manual setup such as having to connecte to python libraries for tasks such as database management and user authentication.
-  - Use Cases
  
  3.1.3 Struts 
  
@@ -161,22 +163,30 @@ In other words, React.js comes with very practical tools, such as components and
 However, React.js has a steep learning curve and it could be difficult for those with little to no knowledge of javascript to learn how to use it.
 In terms of use cases, React.js is a perfect match for a single-page web application (take Facebook for example).
  
- 3.2.3 Framework Z
-- Description: Brief overview of Framework Z.
+ 3.2.3 Angular
+The frontend framework called Angular is an open-source framework which uses Javascript/Typescript. It is currently maintained by Google.
 - Rationale:
   - Justification for choosing Framework Z.
-  - Consider factors such as ease of integration,
-component libraries, and developer experience.
-- Qualitative Assessment:
-  - Strengths
-  - Weaknesses
-  - Use Cases
+Angular is currently maintained by Google, the most powerful company in the world. It is used by them, by Nike, Forbes, Sony and many more.
+This means that it is no joke. Such a large company maintaining this framework means it is reliable, powerful and has a very large community.
+Also, its primary purpose is to develop single-page applications, which is what we are working on.
+
+  - Strengths:
+	It have customizable components, relatively easy to learn, and suited for modern application development.
+  - Weaknesses:
+	JavaScript might not be the best pick for single-page applications that require modularity and testability.
+	However, Angular has both a Javascript framework and a Typescript framework.
+  - Use Cases:
+	As indicated above, Angular is used primarily for single-page web development to provide a standard structure for developers to work with.
+	It also enables developers to create large applications that are easily maintainable.
  
  4. Integration and Interoperability
  
  4.1 Backend-Frontend Integration
-- Outline the strategy for integrating the chosen backend and
-frontend technologies.
+
+To choose the correct backend and frontend frameworks, we need to understand what our requirements are for this project.
+We are going to be making a web application which requires efficiency and perfomance, as well as a good framework that contains features that we are going to use.
+In this case, we will be using Django for the backend, and React for the frontend. Both of these frameworks provide us developers with the proper tools, as well as an ease of intergration necessary for this project.
  
  4.2 Third-Party Services
  
@@ -188,6 +198,7 @@ frontend technologies.
  We will use a SQL database to securely store the client data such as emails and passwords. We will also implement HTTPS to encrypt the data between the user and the website
  
  6. Conclusion
- 
-- Summarize the chosen project approach and technology stack,
-highlighting key reasons for the selections.
+
+In conclusion, our team has decided to take an agile methodology approach to this project, as we may and most certainly will encounters bugs/impasses that will necessitate us to change our course of action as we go.
+With this in mind, we will integrate Django and React.js for our technology stacks because of their ease of use, their very large community support, their features such as modularity and testability.
+
