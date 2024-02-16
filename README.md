@@ -26,3 +26,5 @@ Computer Engineering Undergraduate(s):
 _Maxime Pagé_
 
 Computer engineering is a mix of software engineering and of hardware engineering. Although less experienced with software design, this team member is knowledgeable in many programming languages that will provide support to the other team members.
+
+test
