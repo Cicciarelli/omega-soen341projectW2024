@@ -1,19 +1,41 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+      .headerContainer{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 10%;
+        left: 0;
+        top: 0;
+        margin: 0;
+        border: 2px solid black;
+        padding: 0;
+        background-color: cornflowerblue;
+        z-index: 1;
+      }
 
-<html>
-  <header class="top-header">
-    <div class="header-upper-half">
-      <div class="name-slogan">
-        <h1 class="shop-name">Omega</h1>
-        <p class="slogan">Reserve a vehicle or else</p>
+      .logInButton{
+        right: 10%;
+        top: 3%;
+        width: 6%;
+        height: 4%;
+        position: fixed;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="headerContainer">
+        <h1>Omega's Car Reservations</h1>
       </div>
-    </div>
-    <div class="header-bottom-half">
-      <nav class="top-nav">
-        <a href="#">Home</a>
-        <a href="#">New Reservation</a>
-        <a href="#">Reservations</a>
-      </nav>
-    </div>
-  </header>
+      <button class="logInButton">Login</button>
+    </header>
+  </body>
 </html>
