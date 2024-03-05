@@ -82,9 +82,26 @@
             </div>
             <br>
             <div class="form-group">
-                <button type="submit">Login</button>
+                <button type="submit">Sign up</button>
             </div>
         </form>
     </div>
+    <script>
+      function validateForm() {
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        // Simple validation for demonstration
+        if (firstName === "" || lastName === "" || email === "" || password === "") {
+          alert("Please fill out all fields");
+          return false;
+        }
+
+        return true;
+      }
+    
+    </script>
   </body>
 </html>
