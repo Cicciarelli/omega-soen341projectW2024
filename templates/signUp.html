@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+<<<<<<< Updated upstream
     <title>Sign Up</title>
     <style>
       .headerContainer{
@@ -47,6 +48,10 @@
       }
 
     </style>
+=======
+    <title>login</title>
+    <link href="Style.css" rel="stylesheet">
+>>>>>>> Stashed changes
   </head>
   <body>
     <header>
@@ -56,11 +61,74 @@
       <button class="logInButton">Login</button>
       <button class="signUpButton">Sign Up</button>
     </header>
+<<<<<<< Updated upstream
     <form action="/submit" method="post">
         <fieldset class="signUpForm">
             <label for="email">Email</label>
             <input type="email" id="email" name="emailClient" required>
         </fieldset>
     </form>
+=======
+    <div class="signUp-container">
+        <h2>Sign Up</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <button type="submit">Sign up</button>
+            </div>
+        </form>
+      </div>
+        <div class="sideMenu">
+          <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="startAReservation.html">Start a Reservation</a></li>
+              <li><a href="existingReservation.html">Existing Reservation</a></li>
+              <li><a href="browseVehicles.html">Browse Vehicles</a></li>
+          </ul>
+        </div>
+        <footer>
+          <div class="footerContainer">
+              <table id="footerTable">
+                  
+              </table>
+          </div>
+       </footer>
+    <script>
+      function validateForm() {
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        // Simple validation for demonstration
+        if (firstName === "" || lastName === "" || email === "" || password === "") {
+          alert("Please fill out all fields");
+          return false;
+        }
+
+        return true;
+      }
+    
+    </script>
+>>>>>>> Stashed changes
   </body>
 </html>

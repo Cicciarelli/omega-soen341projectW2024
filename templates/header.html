@@ -3,42 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <style>
-      .headerContainer{
-        position: fixed;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 10%;
-        left: 0;
-        top: 0;
-        margin: 0;
-        border: 2px solid black;
-        padding: 0;
-        background-color: cornflowerblue;
-        z-index: 1;
-      }
-
-      .logInButton{
-        right: 10%;
-        top: 3%;
-        width: 6%;
-        height: 4%;
-        position: fixed;
-        z-index: 2;
-      }
-
-      .signUpButton{
-        right: 3%;
-        top: 3%;
-        width: 6%;
-        height: 4%;
-        position: fixed;
-        z-index: 2;
-      }
-
-    </style>
+    <link href="Style.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -48,5 +13,20 @@
       <button class="logInButton">Login</button>
       <button class="signUpButton">Sign Up</button>
     </header>
+    <div class="sideMenu">
+      <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="startAReservation.html">Start a Reservation</a></li>
+          <li><a href="existingReservation.html">Existing Reservation</a></li>
+          <li><a href="browseVehicles.html">Browse Vehicles</a></li>
+      </ul>
+    </div>
+    <footer>
+      <div class="footerContainer">
+          <table id="footerTable">
+              
+          </table>
+      </div>
+   </footer>
   </body>
 </html>
