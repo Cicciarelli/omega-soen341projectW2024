@@ -3,19 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <title>login</title>
-    <link href="Style.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static 'Style.css' %}">
+    
   </head>
   <body>
     <header>
       <div class="headerContainer">
         <h1>Omega's Car Reservations</h1>
       </div>
-      <a href="login.html"><button class="logInButton">Login</button></a>
+      <a href="{% url 'login' %}"><button class="logInButton">Login</button></a>
       <a href="signUp.html"><button class="signUpButton">Sign Up</button></a>
     </header>
     <div class="login-container">
         <h2>Login</h2>
         <form action="#" method="post">
+          {% csrf_token %}
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email" placeholder="Enter your email" required>
@@ -33,7 +36,7 @@
     </div>
     <div class="sideMenu">
       <ul>
-          <li><a href="home.html">Home</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
           <li><a href="startAReservation.html">Start a Reservation</a></li>
           <li><a href="existingReservation.html">Existing Reservation</a></li>
           <li><a href="browseVehicles.html">Browse Vehicles</a></li>
