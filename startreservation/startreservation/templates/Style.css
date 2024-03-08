@@ -1,0 +1,107 @@
+.headerContainer{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    border: 2px solid black;
+    padding: 0;
+    background-color: cornflowerblue;
+    z-index: 1;
+  }
+
+  .logInButton{
+    right: 10%;
+    top: 3%;
+    width: 6%;
+    height: 4%;
+    position: fixed;
+    z-index: 2;
+  }
+
+  .signUpButton{
+    right: 3%;
+    top: 3%;
+    width: 6%;
+    height: 4%;
+    position: fixed;
+    z-index: 2;
+  }
+
+  .sideMenu{
+    position: fixed;
+    top: 10%;
+    bottom: 10%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    background-color: #070707e2;
+  }
+
+  .sideMenu ul{
+      list-style-type: none;
+      padding: 0;
+      margin:0;
+  }
+  
+  
+  .sideMenu li{
+      padding: 30px;
+      border: 1px solid black;
+      width: 165px;
+      color: white;
+      font-weight: bold;
+  }
+  
+  
+  .sideMenu li a{
+      text-decoration: none;
+      color: white;
+  }
+
+  .footerContainer{
+      position: fixed;
+      height: 10%;
+      width: 100%;
+      bottom: 0;
+      background-color: grey;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid black;
+  }
+
+
+  #footerContainer{
+  background-color: aquamarine;
+  }
+
+  .login-container{
+      border: 2px solid black;
+      position: absolute;
+      width: 40%;
+      padding: 20px;
+      height: 30%;
+      top: 30%;
+      left: 30%;
+    }
+
+    .signUp-container{
+      border: 2px solid black;
+      position: absolute;
+      width: 40%;
+      padding: 20px;
+      height: 30%;
+      top: 30%;
+      left: 30%;
+    }
+
+    .economyCars{
+      border: 2px solid black;
+      left: 500px;
+    }
