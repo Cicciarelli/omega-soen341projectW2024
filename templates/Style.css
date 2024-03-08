@@ -121,3 +121,48 @@ background-color: aquamarine;
   .economyLink{
     font-size: x-large;
   }
+
+  .luxuryCars{
+    border: 2px solid black;
+    margin-left: 5%;
+    margin-top: 10%;
+    width: 20%;
+    text-align: center;
+  }
+
+  .viewluxuryCars{
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .luxuryChoices{
+    font-size: larger;
+  }
+
+  .luxuryLink{
+    font-size: x-large;
+  }
+
+  .convertibleCars{
+    border: 2px solid black;
+    margin-left: 5%;
+    margin-top: 10%;
+    width: 20%;
+    text-align: center;
+  }
+
+  .viewconvertibleCars{
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .convertibleChoices{
+    font-size: larger;
+  }
+
+  .convertibleLink{
+    font-size: x-large;
+  }
+  .carClassContainer{
+    display: flex;
+  }
