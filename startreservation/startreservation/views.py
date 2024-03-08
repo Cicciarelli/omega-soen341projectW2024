@@ -35,3 +35,6 @@ def signup_view(request):
 
 def startres_view(request):
     return render(request, 'startReservation.html')
+
+def economy_view(request):
+    return render(request, 'economyReservation.html')
