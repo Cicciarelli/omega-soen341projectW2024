@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <!-- {% load static %} -->
-    <link rel="stylesheet" type="text/css" href="Style.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static 'Style.css' %}">
   </head>
   <body>
     <header>
@@ -17,7 +17,7 @@
     <div class="sideMenu">
       <ul>
           <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="startAReservation.html">Start a Reservation</a></li>
+          <li><a href="{% url 'startres' %}">Start a Reservation</a></li>
           <li><a href="existingReservation.html">Existing Reservation</a></li>
           <li><a href="browseVehicles.html">Browse Vehicles</a></li>
       </ul>

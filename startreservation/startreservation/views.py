@@ -38,3 +38,10 @@ def startres_view(request):
 
 def economy_view(request):
     return render(request, 'economyReservation.html')
+
+def luxury_view(request):
+    return render(request, 'luxuryReservation.html')
+
+def convertible_view(request):
+    return render(request, 'convertibleReservation.html')
+
