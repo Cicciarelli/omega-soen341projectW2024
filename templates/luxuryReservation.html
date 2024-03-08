@@ -26,11 +26,12 @@
         <form action="#" method="post">
             <!-- {% csrf_token %} -->
             <label for="car">Select a Car:</label>
-            <select id="economyCarDropdown" name="economyCarDropdown">
-                <option value="chevroletVolt">Chevrolet Volt</option>
-                <option value="toyotaPrius">Toyota Prius</option>
-                <option value="kiaNiro">Kia Niro</option>
-                <option value="hondaCivic">Honda Civic</option>
+            <select id="luxuryCarDropdown" name="luxuryCarDropdown" required>
+                <option value="" selected disabled>Please select a car</option>
+                <option value="audiA4">Audi A4</option>
+                <option value="Porsche911">Porsche 911</option>
+                <option value="ferrariRoma">Ferrari Roma</option>
+                <option value="bentleyBentayga">Bentley Bentayga</option>
             </select>
             <br><br>
             <div class="reservationDates">
