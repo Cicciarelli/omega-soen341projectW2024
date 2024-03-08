@@ -100,3 +100,24 @@ background-color: aquamarine;
     top: 30%;
     left: 30%;
   }
+
+  .economyCars{
+    border: 2px solid black;
+    margin-left: 350px;
+    margin-top: 10%;
+    width: 20%;
+    text-align: center;
+  }
+
+  .viewEconomyCars{
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .economyChoices{
+    font-size: larger;
+  }
+
+  .economyLink{
+    font-size: x-large;
+  }
