@@ -51,3 +51,41 @@ def convertible_view(request):
 def convertible_view(request):
     return render(request, 'OMEGACarList.html')
 
+def convertible_view(request):
+    return render(request, 'ToyotaCorolla.html')
+
+def convertible_view(request):
+    return render(request, 'HondaCivic.html')
+
+def convertible_view(request):
+    return render(request, 'ChevroletVolt.html')
+
+def convertible_view(request):
+    return render(request, 'ToyotaPrius.html')
+
+def convertible_view(request):
+    return render(request, 'KiaNiro.html')
+
+def convertible_view(request):
+    return render(request, 'FordMustang.html')
+
+def convertible_view(request):
+    return render(request, 'AudiA5.html')
+
+def convertible_view(request):
+    return render(request, 'BMWM4.html')
+
+def convertible_view(request):
+    return render(request, 'ChevroletCorvette.html')
+
+def convertible_view(request):
+    return render(request, 'Porsche911.html')
+
+def convertible_view(request):
+    return render(request, 'AudiA4.html')
+
+def convertible_view(request):
+    return render(request, 'FerrariRoma.html')
+
+def convertible_view(request):
+    return render(request, 'BentleyBentayga.html')
