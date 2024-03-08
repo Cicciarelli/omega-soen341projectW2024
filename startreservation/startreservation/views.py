@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
-
+from django.contrib.auth.models import User
 def my_view(request):
     return render(request, 'home.html')
 
@@ -26,6 +26,9 @@ def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
+            user=form.save(commit=False)
+            user.email = form.cleaned_data.get('email')
+            user.password = form.cleaned_data.get('password')
             form.save()
             # Redirect to the home page or any other page after successful sign-up
             return redirect('home')
