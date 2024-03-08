@@ -47,4 +47,7 @@ def luxury_view(request):
 
 def convertible_view(request):
     return render(request, 'convertibleReservation.html')
+    
+def convertible_view(request):
+    return render(request, 'OMEGACarList.html')
 
