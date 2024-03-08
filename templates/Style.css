@@ -166,3 +166,21 @@ background-color: aquamarine;
   .carClassContainer{
     display: flex;
   }
+
+  .reservationForm{
+    border: 2px solid black;
+    margin-left: 35%;
+    margin-top: 10%;
+    width: 30%;
+    height: 40vh;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .reservationDates{
+    display: flex;
+  }
+
+  .endDate{
+    margin-left: 10%;
+  }
