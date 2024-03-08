@@ -28,7 +28,13 @@ urlpatterns = [
     path('startReservation/', views.startres_view, name='startres'),
     path('economyReservation/', views.economy_view, name='economyres'),
     path('luxuryReservation/', views.luxury_view, name='luxuryres'),
+
+    path('admin/', admin.site.urls),
+    
     path('convertibleReservation/', views.convertible_view, name='convertibleres'),
+
+#car lists
+    
     path('OMEGACarList/',views.OMEGACarList,name='carList'),
     path('ToyotaCorolla/',views.toyota_corolla,name='Corolla'),
     path('HondaCivic/',views.honda_civic,name='Civic'),
