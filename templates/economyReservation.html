@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <!-- {% load static %} -->
+    <link rel="stylesheet" type="text/css" href="Style.css">
+  </head>
+  <body>
+    <header>
+      <div class="headerContainer">
+        <h1>Omega's Car Reservations</h1>
+      </div>
+      <a href="{% url 'login' %}"><button class="logInButton">Login</button></a>
+      <a href="{% url 'signup' %}"><button class="signUpButton">Sign Up</button></a>
+    </header>
+    <div class="sideMenu">
+      <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="startAReservation.html">Start a Reservation</a></li>
+          <li><a href="existingReservation.html">Existing Reservation</a></li>
+          <li><a href="browseVehicles.html">Browse Vehicles</a></li>
+      </ul>
+    </div>
+    <div class="reservationForm">
+        <form action="#" method="post">
+            <!-- {% csrf_token %} -->
+            <label for="car">Select a Car:</label>
+            <select id="economyCarDropdown" name="economyCarDropdown" required>
+                <option value="" selected disabled>Please select a car</option>
+                <option value="chevroletVolt">Chevrolet Volt</option>
+                <option value="toyotaPrius">Toyota Prius</option>
+                <option value="kiaNiro">Kia Niro</option>
+                <option value="hondaCivic">Honda Civic</option>
+            </select>
+            <br><br>
+            <div class="reservationDates">
+                <div>
+                    <label for="start_date">Start Date:</label>
+                    <input type="text" id="start_date" name="start_date">
+                </div>
+                <div class="endDate">
+                    <label for="end_date">End Date:</label>
+                    <input type="text" id="end_date" name="end_date">
+                </div>
+            </div>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(function() {
+            $("#start_date").datepicker();
+            $("#end_date").datepicker();
+        });
+    </script>
+    <footer>
+      <div class="footerContainer">
+          <table id="footerTable">
+              
+          </table>
+      </div>
+   </footer>
+  </body>
+</html>
