@@ -29,8 +29,29 @@ urlpatterns = [
     path('economyReservation/', views.economy_view, name='economyres'),
     path('luxuryReservation/', views.luxury_view, name='luxuryres'),
     path('convertibleReservation/', views.convertible_view, name='convertibleres'),
+
     path('admin/', admin.site.urls),
     
+    path('convertibleReservation/', views.convertible_view, name='convertibleres'),
+
+#car lists
+    
+    path('OMEGACarList/',views.OMEGACarList,name='carList'),
+    path('ToyotaCorolla/',views.toyota_corolla,name='Corolla'),
+    path('HondaCivic/',views.honda_civic,name='Civic'),
+    path('ChevroletVolt/',views.chevrolet_volt,name='Volt'),
+    path('ToyotaPrius/',views.toyota_prius,name='Prius'),
+    path('KiaNiro/',views.kia_niro,name='Niro'),
+    path('FordMustang/',views.ford_mustang,name='Mustang'),
+    path('AudiA5/',views.audi_a5,name='A5'),
+    path('BMWM4/',views.bmw_m4,name='M4'),
+    path('ChevroletCorvette/',views.chevrolet_corvette,name='Corvette'),
+    path('Porsche911/',views.porsche_911,name='911'),
+    path('AudiA4/',views.audi_a4,name='A4'),
+    path('FerrariRoma/',views.ferrari_roma,name='Roma'),
+    path('BentleyBentayga/',views.bentley_bentayga,name='Bentayga'),
+
+
 ]
 
 

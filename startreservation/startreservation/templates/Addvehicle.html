@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Add Vehicle</title>
+</head>
+
+<body>
+<form>
+  <h1 style = "text-align:center;">Add a New Vehicle</h1>
+  <!--input the SA to add an image for the vehicle-->
+  <fieldset>
+  <p>
+    <label for="Vehiclename"> Kind of vehicle: </label>
+    <input type="text" id="vehiclename" name="vehiclename">
+  </p>
+
+  <p>
+    <label for="Year"> Year: </label>
+    <input type="text" id="year" name="year">
+  </p>
+
+  <p>
+    <label for="Price"> Price per day: </label>
+    <input type="price" id="price" name="price">
+  </p>
+  
+  <label>What type of transmission does the car have?</label><br>
+  <input type="radio" id="automatic" name="transmission" value="Automatic">
+  <label for="automatic">Automatic</label>
+  <input type="radio" id="manual" name="transmission" value="Manual">
+  <label for="manual">Manual</label>
+  
+  <p>
+    <label for="NumberofPeople"> What is the seating capacity of the car? </label>
+    <input type="numberofpeople" id="numberofpeople" name="numberofpeople">
+  </p>
+
+  <p>
+    <label for="baggage"> What is the maximum baggage capacity of the car? </label>
+    <input type="baggage" id="baggage" name="baggage">
+  </p>
+
+  <p>
+    <label>Upload an image of the car:</label><br>
+    <input type="file" id="myFile" name="filename"><br>
+    <input type="submit">
+  </p>
+
+
+  <label>Car Description:</label>
+  <p>
+    <textarea name = "description"  rows = "10" cols = "50"></textarea>
+  </p>
+  </fieldset>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
