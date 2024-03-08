@@ -48,44 +48,44 @@ def luxury_view(request):
 def convertible_view(request):
     return render(request, 'convertibleReservation.html')
     
-def convertible_view(request):
+def OMEGACarList(request):
     return render(request, 'OMEGACarList.html')
 
-def convertible_view(request):
+def toyota_corolla(request):
     return render(request, 'ToyotaCorolla.html')
 
-def convertible_view(request):
+def honda_civic(request):
     return render(request, 'HondaCivic.html')
 
-def convertible_view(request):
+def chevrolet_volt(request):
     return render(request, 'ChevroletVolt.html')
 
-def convertible_view(request):
+def toyota_prius(request):
     return render(request, 'ToyotaPrius.html')
 
-def convertible_view(request):
+def kia_niro(request):
     return render(request, 'KiaNiro.html')
 
-def convertible_view(request):
+def ford_mustang(request):
     return render(request, 'FordMustang.html')
 
-def convertible_view(request):
+def audi_a5(request):
     return render(request, 'AudiA5.html')
 
-def convertible_view(request):
+def bmw_m4(request):
     return render(request, 'BMWM4.html')
 
-def convertible_view(request):
+def chevrolet_corvette(request):
     return render(request, 'ChevroletCorvette.html')
 
-def convertible_view(request):
+def porsche_911(request):
     return render(request, 'Porsche911.html')
 
-def convertible_view(request):
+def audi_a4(request):
     return render(request, 'AudiA4.html')
 
-def convertible_view(request):
+def ferrari_roma(request):
     return render(request, 'FerrariRoma.html')
 
-def convertible_view(request):
+def bentley_bentayga(request):
     return render(request, 'BentleyBentayga.html')
