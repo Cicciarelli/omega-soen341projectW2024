@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
         <title>Audi A4</title>
-	<!-- {% load static %} -->
-    	<link rel="stylesheet" href="Product.css">
+	{% load static %}
+	 <link rel="stylesheet" type="text/css" href="{%static 'Product.css' %}">
 </head>
 <body>
 	<h1>
 		2024 Audi A4
 	</h1>
-	<a href="OMEGACarList.html"><button class = "backButton" type="button">Back to List</button></a>
+	<a href="{% url 'OMEGACarList' %}"><button class = "backButton" type="button">Back to List</button></a>
         <table>
 		<tr>
 			<td>
-				<img src="img/audi_a4.jpg" width = "630" height = "400">
+				<img src="{%static 'img/audi_a4.jpg' %}" width = "630" height = "400">
 			</td>
 			<td>
 				<table>
