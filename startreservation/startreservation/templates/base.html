@@ -3,15 +3,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}{% endblock %} | Omega</title>
+    <title>{% block header_title %}{% endblock %} | Omega</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{%static 'Style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{%static 'base.css' %}" />
   </head>
   <body>
     <header>
       <div class="headerContainer">
-        <h1>Omega's Car Reservations</h1>
-        <h4>Reserve a car or else</h4>
+        <h1>{% block header_title %}{% endblock %}</h1>
+        <div class = "slogan">
+          <h4>Reserve a car or else</h4>
+        </div>
       </div>
       {% if request.user.is_authenticated %}
       <a href=""><button class="signOutButton">Sign Out</button></a>
@@ -29,7 +31,7 @@
       <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'startres' %}">Start a Reservation</a></li>
-        <li><a href="existingReservation.html">Existing Reservation</a></li>
+        <li><a href="{% url 'reservations' %}">Existing Reservation</a></li>
         <li><a href="{% url 'carList' %}">Browse Vehicles</a></li>
       </ul>
     </div>
