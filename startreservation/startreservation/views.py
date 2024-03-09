@@ -36,6 +36,9 @@ def signup_view(request):
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
 
+def reservations_view(request) -> HttpResponse:
+    return render(request, 'reservations.html')
+
 def startres_view(request):
     return render(request, 'startReservation.html')
 

@@ -30,6 +30,8 @@ urlpatterns = [
     path('luxuryReservation/', views.luxury_view, name='luxuryres'),
     path('convertibleReservation/', views.convertible_view, name='convertibleres'),
 
+    path('reservations/', views.reservations_view, name='reservations'),
+
     path('admin/', admin.site.urls),
     
     path('convertibleReservation/', views.convertible_view, name='convertibleres'),
