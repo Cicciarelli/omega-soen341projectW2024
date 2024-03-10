@@ -4,7 +4,30 @@
 {% block content %}
 <div class="reservations">
   <h2 class="reservations-list-title">Reservations</h2>
-  <div class="list"></div>
+  <div class="list">
+    {% if user.is_authenticated %}
+    <table style="table-layout:fixed; width: 100%;">
+      <tr>
+          <th style="font-size: 80%;">Vehicle</th>
+          <th style="font-size: 80%;">Start Date</th>
+          <th style="font-size: 80%;">End Date</th>
+          <th style="font-size: 80%;">Price</th>
+          <th style="font-size: 80%;">Actions</th>
+      </tr>
+      {% for reservation in user.reservation_set.all %}
+        <tr>
+          <td>{{ reservation.vehicle }}</td>
+          <td>{{ reservation.reservation_start }}</td>
+          <td>{{ reservation.reservation_end }}</td>
+          <td>{{ reservation.reservation_price }}</td>
+        </tr>
+      {% endfor %}
+      </tr>
+    </table>
+    {% else %}
+      <p>No reservations found.</p>
+    {% endif %}
+  </div>
 </div>
 {% endblock content %}
 
