@@ -3,17 +3,17 @@
 <head>
         <title>Chevrolet Corvette</title>
 	<!-- {% load static %} -->
-    	<link rel="stylesheet" href="Product.css">
+    	<link rel="stylesheet" href="{%static 'Product.css' %}">
 </head>
 <body>
 	<h1>
 		2024 Chevrolet Corvette
 	</h1>
-	<a href="OMEGACarList.html"><button class = "backButton" type="button">Back to List</button></a>
+	<a href="{% url 'carList' %}"><button class = "backButton" type="button">Back to List</button></a>
         <table>
 		<tr>
 			<td>
-				<img src="img/chevrolet_corvette.jpg" width = "630" height = "400">
+				<img src="{%static 'img/chevrolet_corvette.jpg' %}" width = "630" height = "400">
 			</td>
 			<td>
 				<table>
