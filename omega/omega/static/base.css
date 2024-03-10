@@ -1,5 +1,6 @@
 body {
   background-color: rgb(234, 241, 243);
+
 }
 
 /*Effects all things in the page but can be overwritten
@@ -31,9 +32,9 @@ a {
   justify-content: space-around;
   margin: 0px;
   position: sticky;
-  width: 100%;
-  left: 0px;
   top: 0px;
+  height: calc(3 * (20px + 1.5vw));
+  width: 100%;
   z-index: 2;
   background-color: rgba(198, 253, 255, 0.9);
   border-bottom: 5px solid cadetblue;
@@ -94,7 +95,9 @@ a {
 }
 
 .sideMenu {
-
+  top: calc(3 * (20px + 1.5vw));
+  height: 100%;
+  position: sticky;
   flex: 1;
   width: 15%;
   background-color: #070707e2;
@@ -121,6 +124,7 @@ a {
 }
 
 .content {
+  overflow-y: auto;
   flex: 5;
   padding: 20px;
 }
