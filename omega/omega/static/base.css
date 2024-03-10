@@ -1,69 +1,102 @@
-.headerContainer{
-  position: fixed;
+body {
+  background-color: rgb(234, 241, 243);
+}
+
+/*Effects all things in the page but can be overwritten
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+mark,
+a {
+  font-family: sans-serif;
+}
+
+.header_title {
+  font-size:calc(20px + 1.5vw);
+}
+
+.headerContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: space-around;
+  margin: 0px;
+  position: sticky;
   width: 100%;
-  height: 10%;
-  left: 0;
-  top: 0;
-  margin: 0;
-  border: 2px solid black;
-  padding: 0;
-  background-color: cornflowerblue;
-  z-index: 1;
-}
-
-
-.slogan{
-  top: 5%;
-  position: fixed;
+  left: 0px;
+  top: 0px;
   z-index: 2;
+  background-color: rgba(198, 253, 255, 0.9);
+  border-bottom: 5px solid cadetblue;
+  font-size:calc(20px + 1.5vw);
 }
 
-.logInButton{
-  right: 10%;
-  top: 3%;
-  width: 6%;
-  height: 4%;
-  position: fixed;
-  z-index: 2;
+.header_left {
+  flex: 4;
+  position: sticky;
+  align-items: center;
+  text-align: center;
+
+  justify-content: space-between;
 }
 
-.signUpButton{
-  right: 3%;
-  top: 3%;
-  width: 6%;
-  height: 4%;
-  position: fixed;
-  z-index: 2;
+.slogan {
+  font-size:calc(10px + 0.5vw);
 }
 
-.signOutButton{
-  right: 10%;
-  top: 3%;
-  width: 6%;
-  height: 4%;
-  position: fixed;
-  z-index: 2;
+.header_right {
+  flex: 1;
+
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+
+  grid-template-areas: 
+      "s1"
+      "s2"
 }
 
-.accountButton{
-  right: 3%;
-  top: 3%;
-  width: 6%;
-  height: 4%;
-  position: fixed;
-  z-index: 2;
+.button_1,
+.button_2 {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
 }
 
-.sideMenu{
-  position: fixed;
-  top: 10%;
-  bottom: 10%;
-  left: 0;
-  padding: 0;
-  margin: 0;
+.header_right_button {
+
+  margin-top: auto;
+  display: block;
+  text-align: right;
+  
+  position: relative;
+  border-radius: 1px;
+  padding: 10px;
+  flex: 1;
+
+}
+
+.menu_content_columns{
+  column-count: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.sideMenu {
+
+  flex: 1;
+  width: 15%;
   background-color: #070707e2;
 }
 
@@ -75,9 +108,8 @@
 
 
 .sideMenu li{
-    padding: 30px;
+    padding: 15%;
     border: 1px solid black;
-    width: 165px;
     color: white;
     font-weight: bold;
 }
@@ -88,8 +120,17 @@
     color: white;
 }
 
+.content {
+  flex: 5;
+  padding: 20px;
+}
+
+#footerContainer{
+background-color: aquamarine;
+}
+
 .footerContainer{
-    position: fixed;
+  position: fixed;
     height: 10%;
     width: 100%;
     bottom: 0;
@@ -100,113 +141,3 @@
     justify-content: center;
     border: 2px solid black;
 }
-
-
-#footerContainer{
-background-color: aquamarine;
-}
-
-.login-container{
-  border: 2px solid black;
-  position: absolute;
-  width: 40%;
-  padding: 20px;
-  height: 30%;
-  top: 30%;
-  left: 30%;
-}
-
-.signUp-container{
-  border: 2px solid black;
-  position: absolute;
-  width: 40%;
-  padding: 20px;
-  height: 30%;
-  top: 30%;
-  left: 30%;
-}
-
-.economyCars{
-  border: 2px solid black;
-  margin-left: 20%;
-  margin-top: 10%;
-  width: 25%;
-  text-align: center;
-}
-
-.viewEconomyCars{
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.economyChoices{
-  font-size: larger;
-}
-
-.economyLink{
-  font-size: x-large;
-}
-
-.luxuryCars{
-  border: 2px solid black;
-  margin-left: 2%;
-  margin-top: 10%;
-  width: 25%;
-  text-align: center;
-}
-
-.viewluxuryCars{
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.luxuryChoices{
-  font-size: larger;
-}
-
-.luxuryLink{
-  font-size: x-large;
-}
-
-.convertibleCars{
-  border: 2px solid black;
-  margin-left: 2%;
-  margin-top: 10%;
-  width: 25%;
-  text-align: center;
-}
-
-.viewconvertibleCars{
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.convertibleChoices{
-  font-size: larger;
-}
-
-.convertibleLink{
-  font-size: x-large;
-}
-.carClassContainer{
-  display: flex;
-}
-
-.reservationForm{
-  border: 2px solid black;
-  margin-left: 35%;
-  margin-top: 10%;
-  width: 30%;
-  height: 40vh;
-  text-align: center;
-  padding: 30px;
-}
-
-.reservationDates{
-  display: flex;
-}
-
-.endDate{
-  margin-left: 10%;
-}
-
