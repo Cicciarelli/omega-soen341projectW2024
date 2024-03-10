@@ -3,6 +3,7 @@
 import os
 import sys
 
+
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'omega.settings')
@@ -19,13 +20,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-#if not User.objects.filter(is_superuser=True).first():
-#    user = User.objects.create(
-#        username = 'admin2',
-#        email = 'admin2@omega.com',
-#        is_superuser = True,
-#    )
-#    user.set_password('admin2')
-#    user.save()
-
