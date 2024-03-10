@@ -8,33 +8,31 @@
     <link rel="stylesheet" type="text/css" href="{%static 'base.css' %}" />
   </head>
   <body>
-    <header>
-      <div class="headerContainer">
-        <div class="header_left">
-          <div class="header_title">
-            <h1>{% block header_title %}{% endblock %}</h1>
-          </div>
-          <div class = "slogan">
-            <h4>Reserve a car or else</h4>
-          </div>
+    <header class="headerContainer">
+      <div class="header_left">
+        <div class="header_title">
+          <h1>{% block header_title %}{% endblock %}</h1>
         </div>
-        <div class="header_right">
-          {% if request.user.is_authenticated %}
-          <div class="button_1">
-            <a href=""><button class="header_right_button">Sign Out</button></a>
-          </div>
-          <div class="button_2">
-            <a href=""><button class="header_right_button">Account</button></a>
-          </div>
-          {% else %}
-          <div class="button_1">
-            <a href="{% url 'login' %}"><button class="header_right_button">Login</button></a>
-          </div>
-          <div class="button_2">
-            <a href="{% url 'signup' %}"><button class="header_right_button">Sign Up</button></a>
-          </div>
-          {% endif %}
+        <div class = "slogan">
+          <h4>Reserve a car or else</h4>
         </div>
+      </div>
+      <div class="header_right">
+        {% if request.user.is_authenticated %}
+        <div class="button_1">
+          <a href=""><button class="header_right_button">Sign Out</button></a>
+        </div>
+        <div class="button_2">
+          <a href=""><button class="header_right_button">Account</button></a>
+        </div>
+        {% else %}
+        <div class="button_1">
+          <a href="{% url 'login' %}"><button class="header_right_button">Login</button></a>
+        </div>
+        <div class="button_2">
+          <a href="{% url 'signup' %}"><button class="header_right_button">Sign Up</button></a>
+        </div>
+        {% endif %}
       </div>
     </header>
     <div class="menu_content_columns">
