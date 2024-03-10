@@ -20,6 +20,10 @@
           <td>{{ reservation.reservation_start }}</td>
           <td>{{ reservation.reservation_end }}</td>
           <td>{{ reservation.reservation_price }}</td>
+          <td>
+            <a href="#"><button class="edit_reservation_button">Edit</button></a>
+            <a href="#"><button class="delete_reservation_button">Delete</button></a>
+          </td>
         </tr>
       {% endfor %}
       </tr>
