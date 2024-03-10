@@ -5,19 +5,30 @@
 	<link rel="stylesheet" href="{%static 'OMEGACarList.css' %}">
 </head>
 <body>
-	<h1>
-		OMEGA CAR RENTALS
-	</h1>
-	<table>
-		<tr>
-			<td style = "text-align: left;">
-				<input type = "text" id = "searchBox" placeholder = "Search">
-				<button type="button" class = "searchButton">Search</button>
-			</td>
-		</tr>
-	</table>
-	
+	<div class="headerContainer">
+        	<h1>Omega's Car Reservations</h1>
+	</div>
+     	<a href="{% url 'login' %}"><button class="logInButton">Login</button></a>
+      	<a href="{% url 'signup' %}"><button class="signUpButton">Sign Up</button></a>
+</header>
+    	<div class="sideMenu">
+      		<ul>
+			<li><a href="{% url 'home' %}">Home</a></li>
+          		<li><a href="{% url 'startres' %}">Start a Reservation</a></li>
+        		<li><a href="existingReservation.html">Existing Reservation</a></li>
+			<li><a href="{% url 'carList' %}">Browse Vehicles</a></li>
+		</ul>
+	</div>
+	<br><br>
 	<div class = "container"> 
+		<table>
+			<tr>
+				<td style = "text-align: left;">
+					<input type = "text" id = "searchBox" placeholder = "Search">
+					<button type="button" class = "searchButton">Search</button>
+				</td>
+			</tr>
+		</table>
 		<table>
 			<tr>
 				<td style = "text-align: left;">
@@ -324,6 +335,13 @@
 				</td>
 			</tr>
 		</table>
+	<br><br>
 	</div> 
+<footer>
+	<div class="footerContainer">
+        	<table id="footerTable"> 
+         	</table>
+	</div>
+</footer>
 </body>
 </html>
