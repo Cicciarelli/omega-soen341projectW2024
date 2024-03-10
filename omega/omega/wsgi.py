@@ -1,5 +1,5 @@
 """
-WSGI config for omega project.
+WSGI config for startreservation project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
