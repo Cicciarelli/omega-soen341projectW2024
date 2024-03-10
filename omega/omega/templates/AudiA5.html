@@ -3,17 +3,17 @@
 <head>
         <title>Audi A5</title>
 	<!-- {% load static %} -->
-    	<link rel="stylesheet" href="Product.css">
+    	<link rel="stylesheet" href="{%static 'Product.css' %}">
 </head>
 <body>
 	<h1>
 		Audi A5
 	</h1>
-	<a href="OMEGACarList.html"><button class = "backButton" type="button">Back to List</button></a>
+	<a href="{% url 'carList' %}"><button class = "backButton" type="button">Back to List</button></a>
         <table>
 		<tr>
 			<td>
-				<img src="img/audi_a5.jpg" width = "630" height = "400">
+				<img src="{%static 'img/audi_a5.jpg' %}" width = "630" height = "400">
 			</td>
 			<td>
 				<table>
