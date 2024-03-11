@@ -1,7 +1,7 @@
 Meeting Minutes - February 25th, 2024 - 2 hours
 
 Matthew, Maria, Liam and Maxime met on Feb25th on Discord at 1pm until 3pm to discuss the plan for sprint 2. 
-We talked about how we were going to distribute the task and how we wanted to create the Django application.
-We talked about how to organize the task and work, how to accomplish the work in the application and where to store our code..
-
-For next meeting, we will discuss integration of our code into the Django application and we will divide tasks for coding.
+For 30 minutes, we assigned every task for sprint 2 to a team members according to their html,css,javascript and python skills. Every task was assigned a risk level and story points according to their importance. Every task was assigned to a user story from sprint 1.
+For 45 minutes, the team create a Django application called Omega and created the necessary files needed to run it such as views.py, models.py as well as the static and templates folder.
+For 45 minutes, the team programmed their individual html pages.
+For next meeting, the team will discuss the design of the base.html template.

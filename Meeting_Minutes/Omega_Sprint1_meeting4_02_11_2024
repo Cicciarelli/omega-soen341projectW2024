@@ -3,5 +3,4 @@ Meeting Minutes - February 11th, 2024 - 3 hours
 Matthew, Maria, Liam and Maxime met on Feb11th on Discord at 1pm until 4pm to discuss finalization of sprint 1. 
 We talked about what to write to finish up the Project Approach file and what frameworks to use.
 We talked about how to organize the issues, we talked about how to write each issue and each user story.
-
-For next meeting, we will discuss integration of framework and we will divide tasks for coding.
+For next meeting, we will discuss integration of the Django Framework and we will divide the tasks for the login/sign up function, the header, the footer, the side menu, the account manipulation, the vehicle and user database as well as vehicle reservations.
