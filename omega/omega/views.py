@@ -4,6 +4,9 @@ from .forms import LoginForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404
+from .models import Reservation
 def my_view(request):
     return render(request, 'home.html')
 
@@ -35,6 +38,13 @@ def signup_view(request):
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
+
+@login_required
+def delete_reservation(request, reservation_id):
+    item = get_object_or_404(Reservation, pk=reservation_id)
+    item.delete()
+
+    return redirect('reservations')
 
 def reservations_view(request) -> HttpResponse:
     return render(request, 'reservations.html')
