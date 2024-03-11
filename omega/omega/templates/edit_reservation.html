@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block page_title %}Edit Reservation{% endblock %}
+{% block header_title %}Edit Reservation{% endblock %}
+{% block content %}
+<div class="edit-reservation">
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+  </form>
+</div>
+{% endblock content %}
