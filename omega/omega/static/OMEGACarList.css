@@ -1,80 +1,164 @@
+body{
+	background-color: White;
+}
 
-	h1{
-		text-align: center;
-		font-size: 50;
-		color: #b22222;
-		font-family: Garamond;
-	}
-	body{
-		background-color: White;
-	}
-	table, .container{
-		margin: .3em;
-		width: 100%;
-		text-align: center;
-		background-color: #b22222;
-		border-radius:10px;
-		font-family: verdana;
-		color : LightGray;
-		font-size: 24;
-	}
-	td{
-		width: 25%;
-	}
-	button{
-		background-color: LightGray;
-		color: #b22222;
-		width: 30%;
-		height: 40px;
-		cursor: pointer;
-		margin: 2px;
-		border-radius:12px
-	}
-	.addButton{
-		width: 94px;
-		height: 23px;
-	}	
-	.searchButton{
-		width : 94px;
-		height: 43px;
-	}
-	button:hover{
-		background-color: #e57575;
-		color: white;
-	}
-	button:active{
-		background-color: #770600;
-		color: white;
-	}
-	input[type = text]{
-		background-color: LightGray;
-		width: 40%;
-		margin: 8px 4px ;  
-		padding: 12px 20px;   
-		display: inline-block;   
-		border: 2px solid DarkGray;   
-		box-sizing: border-box; 
-		border-radius:12px  
-	}
-	a:visited{
-		color: LightGray;
-		background-color: transparent;
-  		text-decoration: none;
-	}
-	a:hover {
-  		color: #770600;
-  		background-color: transparent;
-  		text-decoration: underline;
-	}
+table, .container{
+	margin: .3em;
+	width: 100%;
+	text-align: center;
+	background-color: cornflowerblue;
+	border-radius:10px;
+	font-family: verdana;
+	color : LightGray;
+	font-size: 24;
+}
 
-	a:active {
-  		color: black;
-  		background-color: transparent;
-  		text-decoration: underline;
-	}
-	h1{
-		text-align: center;
-		font-size: 6em;
-		color: #b22222;
-		font-family: Garamond;
-	}
+.container{
+	position: relative;
+	left: 215px;
+	width: 84%;
+	top: 29px;
+}
+
+td{
+	width: 25%;
+}
+
+button{
+	background-color: blue;
+	color: white;
+	width: 30%;
+	height: 40px;
+	cursor: pointer;
+	margin: 2px;
+	border-radius:12px
+}
+
+.addButton{
+	width: 94px;
+	height: 23px;
+}	
+
+.searchButton{		
+	width : 94px;
+	height: 43px;
+}
+
+button:hover{
+	background-color: lightBlue;
+	color: navy;
+}
+
+button:active{
+	background-color: navy;
+	color: white;
+}
+
+input[type = text]{
+	background-color: LightGray;
+	width: 40%;
+	margin: 8px 4px ;  
+	padding: 12px 20px;   
+	display: inline-block;   
+	border: 2px solid DarkGray;   
+	box-sizing: border-box; 
+	border-radius:12px  
+}
+
+a:visited{
+	color: LightGray;
+	background-color: transparent;
+  	text-decoration: none;
+}
+
+a:hover {
+  	color: #770600;
+  	background-color: transparent;
+  	text-decoration: underline;
+}
+
+a:active {
+	color: black;
+  	background-color: transparent;
+  	text-decoration: underline;
+}
+
+.headerContainer{
+	position: fixed;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	width: 100%;
+  	height: 10%;
+  	left: 0;
+  	top: 0;
+  	margin: 0;
+  	border: 2px solid black;
+ 	padding: 0;
+ 	background-color: cornflowerblue;
+  	z-index: 1;
+}
+
+.sideMenu{
+  	position: fixed;
+  	top: 10%;
+  	bottom: 10%;
+  	left: 0;
+  	padding: 0;
+  	margin: 0;
+  	background-color: #070707e2;
+}
+
+.sideMenu ul{
+    	list-style-type: none;
+    	padding: 0;
+    	margin:0;
+}
+
+.sideMenu li{
+   	padding: 30px;
+	border: 1px solid black;
+	width: 165px;
+	color: white;
+    	font-weight: bold;
+}
+
+.sideMenu li a{
+   	text-decoration: none;
+    	color: white;
+}
+
+.footerContainer{
+    	position: fixed;
+    	height: 10%;
+    	width: 100%;
+    	bottom: 0;
+    	background-color: grey;
+    	left: 0;
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+    	border: 2px solid black;
+}
+
+#footerContainer{
+	background-color: aquamarine;
+}
+
+.logInButton{
+  	right: 10%;
+  	top: 3%;
+  	width: 6%;
+  	height: 4%;
+  	position: fixed;
+  	z-index: 2;
+}
+
+.signUpButton{
+  	right: 3%;
+  	top: 3%;
+  	width: 6%;
+  	height: 4%;
+  	position: fixed;
+  	z-index: 2;
+}	
