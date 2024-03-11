@@ -40,6 +40,7 @@ urlpatterns = [
     path("logout/", views.logout_view, name="logout"),
     path('login/', LoginView.as_view(), name='login'),
     path('accounts/profile/', views.profile_view, name='profile'),
+    path('signup/', views.signup_view, name='signup'),
 
     path('admin/', admin.site.urls),
     
