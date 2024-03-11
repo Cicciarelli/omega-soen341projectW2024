@@ -20,7 +20,7 @@
       <div class="header_right">
         {% if request.user.is_authenticated %}
         <div class="button_1">
-          <a href=""><button class="header_right_button">Sign Out</button></a>
+          <a href="{% url 'logout' %}"><button class="header_right_button">Sign Out</button></a>
         </div>
         <div class="button_2">
           <a href=""><button class="header_right_button">Account</button></a>
