@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from .models import Reservation
+from .forms import ReservationForm
 def my_view(request):
     return render(request, 'home.html')
 
@@ -45,6 +46,18 @@ def delete_reservation(request, reservation_id):
     item.delete()
 
     return redirect('reservations')
+
+@login_required
+def edit_reservation(request, reservation_id):
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+    if request.method == 'POST':
+        form = ReservationForm(request.POST, instance=reservation)
+        if form.is_valid():
+            form.save()
+            return redirect('reservations')
+    else:
+        form = ReservationForm(instance=reservation)
+    return render(request, 'edit_reservation.html', {'form': form})
 
 def reservations_view(request) -> HttpResponse:
     return render(request, 'reservations.html')
