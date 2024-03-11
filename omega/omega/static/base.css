@@ -96,8 +96,6 @@ a {
 
 .sideMenu {
   top: calc(3 * (20px + 1.5vw));
-  bottom: 10%;
-  
   position: sticky;
   flex: 1;
   width: 15%;

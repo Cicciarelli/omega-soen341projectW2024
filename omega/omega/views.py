@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 def my_view(request):
-    return render(request, 'home.html')
+    return render(request, 'startReservation.html')
 
 def login_view(request):
     if request.method == 'POST':
