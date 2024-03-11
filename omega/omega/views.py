@@ -56,6 +56,14 @@ def delete_reservation(request, reservation_id):
     return redirect('reservations')
 
 @login_required
+def profile_view(request):
+    user = request.user
+    context = {
+        'user': user,
+    }
+    return render(request, 'profile.html', context)
+
+@login_required
 def edit_reservation(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
     if request.method == 'POST':
