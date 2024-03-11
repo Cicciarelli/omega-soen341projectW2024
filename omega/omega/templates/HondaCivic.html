@@ -3,17 +3,17 @@
 <head>
         <title>Honda Civic</title>
 	<!-- {% load static %} -->
-    	<link rel="stylesheet" href="Product.css">
+    	<link rel="stylesheet" href="{%static 'Product.css' %}">
 </head>
 <body>
 	<h1>
 		2024 Honda Civic
 	</h1>
-	<a href="OMEGACarList.html"><button class = "backButton" type="button">Back to List</button></a>
+	<a href="{% url 'carList' %}"><button class = "backButton" type="button">Back to List</button></a>
         <table>
 		<tr>
 			<td>
-				<img src="img/honda_civic.jpg" width = "630" height = "400">
+				<img src="{%static 'img/honda_civic.jpg' %}" width = "630" height = "400">
 			</td>
 			<td>
 				<table>
@@ -61,9 +61,9 @@
 	<table class = "mileage">
 		<tr>
 			<td class = "infoCell">
-				4 People <img src="img/person_icon.jpg" width = "20" height = "20"><br>
-				3 Baggages <img src="img/baggage_icon.jpg" width = "24" height = "24"><br>
-				Automatic <img src="img/automatic_icon.jpg" width = "20" height = "20">
+				4 People <img src="{%static 'img/person_icon.jpg' %}" width = "20" height = "20"><br>
+				3 Baggages <img src="{%static 'img/baggage_icon.jpg' %}" width = "24" height = "24"><br>
+				Automatic <img src="{%static 'img/automatic_icon.jpg' %}" width = "20" height = "20">
 			</td>
 			<td class = "infoCell">
 				Included in your price is 300km of mileage per day. <br>
