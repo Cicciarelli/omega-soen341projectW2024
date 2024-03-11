@@ -21,10 +21,10 @@ from django.contrib.auth import views as auth_views
 from django.urls import include
 from . import views
 from django.contrib.auth.views import LogoutView
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('',views.my_view,name='home'),
-    path('login/', views.login_view, name='login'),
     path('signup/', views.signup_view, name='signup'),
     path('startReservation/', views.startres_view, name='startres'),
     path('economyReservation/', views.economy_view, name='economyres'),
@@ -38,6 +38,8 @@ urlpatterns = [
     path('reservation/generate/', views.generate_random_reservation, name='generate_random_reservation'),
     
     path("logout/", views.logout_view, name="logout"),
+    path('login/', LoginView.as_view(), name='login'),
+    path('accounts/profile/', views.profile_view, name='profile'),
 
     path('admin/', admin.site.urls),
     
