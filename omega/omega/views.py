@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 from django.contrib.auth import logout
 import random
 def my_view(request):
-    return render(request, 'home.html')
+    return render(request, 'startReservation.html')
 
 def login_view(request):
     if request.method == 'POST':
