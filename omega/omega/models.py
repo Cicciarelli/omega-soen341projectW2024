@@ -14,6 +14,5 @@ class Reservation(models.Model):
   account = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE) # Deletes reservation if user account is deleted
   reservation_start = models.DateTimeField()
   reservation_end = models.DateTimeField()
-  reservation_price = models.DecimalField(decimal_places = 2, max_digits = 10)
 
   
