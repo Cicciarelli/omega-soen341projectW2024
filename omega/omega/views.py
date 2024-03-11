@@ -6,8 +6,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
-from .models import Reservation
+from .models import Reservation, vehicles
 from .forms import ReservationForm
+from datetime import datetime, timedelta
+import random
 def my_view(request):
     return render(request, 'home.html')
 
@@ -58,6 +60,17 @@ def edit_reservation(request, reservation_id):
     else:
         form = ReservationForm(instance=reservation)
     return render(request, 'edit_reservation.html', {'form': form})
+
+@login_required
+def generate_random_reservation(request):
+    user = request.user
+    available_vehicles = vehicles.objects.all()
+    if available_vehicles.exists():
+        random_vehicle = random.choice(available_vehicles)
+        start_date = datetime.now()
+        end_date = start_date + timedelta(days=random.randint(1, 7))
+        Reservation.objects.create(vehicle=random_vehicle, account=user, reservation_start=start_date, reservation_end=end_date)
+    return redirect('reservations')
 
 def reservations_view(request) -> HttpResponse:
     return render(request, 'reservations.html')

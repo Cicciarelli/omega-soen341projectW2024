@@ -34,6 +34,7 @@ urlpatterns = [
 
     path('reservation/delete/<int:reservation_id>/', views.delete_reservation, name='delete_reservation'),
     path('reservation/edit/<int:reservation_id>/', views.edit_reservation, name='edit_reservation'),
+    path('reservation/generate/', views.generate_random_reservation, name='generate_random_reservation'),
 
     path('admin/', admin.site.urls),
     
