@@ -20,6 +20,7 @@ from .views import my_view
 from django.contrib.auth import views as auth_views
 from django.urls import include
 from . import views
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('',views.my_view,name='home'),
@@ -35,6 +36,8 @@ urlpatterns = [
     path('reservation/delete/<int:reservation_id>/', views.delete_reservation, name='delete_reservation'),
     path('reservation/edit/<int:reservation_id>/', views.edit_reservation, name='edit_reservation'),
     path('reservation/generate/', views.generate_random_reservation, name='generate_random_reservation'),
+    
+    path("logout/", LogoutView.as_view(), name="logout"),
 
     path('admin/', admin.site.urls),
     
