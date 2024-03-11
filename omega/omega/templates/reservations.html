@@ -22,7 +22,10 @@
           <td>{{ reservation.reservation_price }}</td>
           <td>
             <a href="#"><button class="edit_reservation_button">Edit</button></a>
-            <a href="#"><button class="delete_reservation_button">Delete</button></a>
+            <form action="{% url 'delete_reservation' reservation.id %}" method="post" style="display: inline;">
+              {% csrf_token %}
+              <button type="submit" class="delete_reservation_button" onclick="return confirm('Are you sure you want to delete this reservation?')">Delete</button>
+            </form>
           </td>
         </tr>
       {% endfor %}
