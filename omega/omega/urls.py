@@ -37,7 +37,7 @@ urlpatterns = [
     path('reservation/edit/<int:reservation_id>/', views.edit_reservation, name='edit_reservation'),
     path('reservation/generate/', views.generate_random_reservation, name='generate_random_reservation'),
     
-    path("logout/", LogoutView.as_view(), name="logout"),
+    path("logout/", views.logout_view, name="logout"),
 
     path('admin/', admin.site.urls),
     
