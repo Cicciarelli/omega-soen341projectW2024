@@ -11,7 +11,7 @@ from .forms import ReservationForm
 from datetime import datetime, timedelta
 import random
 def my_view(request):
-    return render(request, 'home.html')
+    return render(request, 'startReservation.html')
 
 def login_view(request):
     if request.method == 'POST':
