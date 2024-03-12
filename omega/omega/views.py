@@ -9,6 +9,7 @@ from django.shortcuts import get_object_or_404
 from .models import Reservation, vehicles
 from .forms import ReservationForm
 from datetime import datetime, timedelta
+from django.contrib.auth import logout
 import random
 def my_view(request):
     return render(request, 'startReservation.html')
@@ -32,15 +33,20 @@ def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            user=form.save(commit=False)
-            user.email = form.cleaned_data.get('email')
-            user.password = form.cleaned_data.get('password')
             form.save()
-            # Redirect to the home page or any other page after successful sign-up
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
             return redirect('home')
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
+
+@login_required
+def logout_view(request):
+    logout(request)
+    return redirect('home')
 
 @login_required
 def delete_reservation(request, reservation_id):
@@ -48,6 +54,14 @@ def delete_reservation(request, reservation_id):
     item.delete()
 
     return redirect('reservations')
+
+@login_required
+def profile_view(request):
+    user = request.user
+    context = {
+        'user': user,
+    }
+    return render(request, 'profile.html', context)
 
 @login_required
 def edit_reservation(request, reservation_id):

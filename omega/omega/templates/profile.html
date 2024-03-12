@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block page_title %}Login{% endblock %}
+{% block header_title %}Login{% endblock %}
+{% block content %}
+<div class="profile">
+    <h1>User Profile</h1>
+    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+</div>
+{% endblock content %}
