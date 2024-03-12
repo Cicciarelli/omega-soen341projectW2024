@@ -86,6 +86,9 @@ def generate_random_reservation(request):
         Reservation.objects.create(vehicle=random_vehicle, account=user, reservation_start=start_date, reservation_end=end_date)
     return redirect('reservations')
 
+def vehicle_view(request):
+    return render(request, 'Addvehicle.html')
+
 def reservations_view(request) -> HttpResponse:
     return render(request, 'reservations.html')
 

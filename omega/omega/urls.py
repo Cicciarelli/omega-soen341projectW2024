@@ -46,6 +46,8 @@ urlpatterns = [
     
     path('convertibleReservation/', views.convertible_view, name='convertibleres'),
 
+    path('Addvehicle/',views.vehicle_view, name='vehicle'),
+
 #car lists
     
     path('OMEGACarList/',views.OMEGACarList,name='carList'),
