@@ -30,7 +30,7 @@ class ReservationTest(TestCase):
         self.reservation = Reservation.objects.create(
             vehicle=self.vehicle,
             account=self.user,
-            reservation_start=datetime.now(),
+            reservation_start=self.test_date,
             reservation_end = self.test_date + timedelta(hours=1)
         )
 
