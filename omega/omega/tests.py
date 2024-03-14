@@ -45,4 +45,8 @@ class ReservationTest(TestCase):
         with self.assertRaises(Exception):
             self.vehicle.delete()
 
-    
+    def test_user_deletion_cascades(self):
+        # Delete the user
+        self.user.delete()
+        # Check that the reservation is also deleted
+        self.assertFalse(Reservation.objects.filter(id=self.reservation.id).exists())
