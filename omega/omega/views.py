@@ -11,6 +11,7 @@ from .forms import ReservationForm
 from datetime import datetime, timedelta
 from django.contrib.auth import logout
 import random
+from .decorators import login_required_redirect
 def my_view(request):
     return render(request, 'startReservation.html')
 
@@ -92,15 +93,19 @@ def vehicle_view(request):
 def reservations_view(request) -> HttpResponse:
     return render(request, 'reservations.html')
 
+@login_required_redirect
 def startres_view(request):
     return render(request, 'startReservation.html')
 
+@login_required_redirect
 def economy_view(request):
     return render(request, 'economyReservation.html')
 
+@login_required_redirect
 def luxury_view(request):
     return render(request, 'luxuryReservation.html')
 
+@login_required_redirect
 def convertible_view(request):
     return render(request, 'convertibleReservation.html')
     
