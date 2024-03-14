@@ -55,3 +55,12 @@ class LogoutTest(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='testuser', password='12345')
         self.client.login(username='testuser', password='12345')
+
+    def test_logout_view(self):
+        response = self.client.get(reverse('logout'))  # Assuming the URL name for logout is 'logout'
+        self.assertEqual(response.status_code, 302)  # Expecting a redirect
+        self.assertTrue('_auth_user_id' not in self.client.session)  # Asserting user is logged out
+        self.assertEqual(response.url, reverse('home'))  # Asserting redirection to the home page
+
+    def tearDown(self):
+        self.client.logout()
