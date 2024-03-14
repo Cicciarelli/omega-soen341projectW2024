@@ -24,7 +24,7 @@ class ReservationTest(TestCase):
         self.assertIsInstance(reservation, Reservation)
 
 class loginTest(TestCase):
-    def redirect_login_button(self):
+    def test_redirect_login_button(self):
         login_url = reverse('login')
         response = self.client.post(login_url, {'username': 'user', 'password': 'liam12345'}, follow=True)
         self.assertEqual(response.status_code, 302)
