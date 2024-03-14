@@ -40,3 +40,9 @@ class ReservationTest(TestCase):
         self.assertEqual(self.reservation.reservation_start, self.test_date)
         self.assertEqual(self.reservation.reservation_end, self.test_date + timedelta(hours=1))
 
+    def test_vehicle_deletion_protected(self):
+        # Try to delete the vehicle
+        with self.assertRaises(Exception):
+            self.vehicle.delete()
+
+    
