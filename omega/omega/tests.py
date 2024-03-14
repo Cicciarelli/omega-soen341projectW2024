@@ -50,3 +50,8 @@ class ReservationTest(TestCase):
         self.user.delete()
         # Check that the reservation is also deleted
         self.assertFalse(Reservation.objects.filter(id=self.reservation.id).exists())
+
+class LogoutTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(username='testuser', password='12345')
+        self.client.login(username='testuser', password='12345')
