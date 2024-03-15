@@ -1,8 +1,11 @@
-Meeting Minutes - February 28th, 2024 - 2 hours
+Meeting Minutes - February 23th, 2024 - 2 hours
 
 Matthew, Liam, Maxime and Daniel met on Feb23rd on Discord at 6pm until 8pm to discuss how to use Django and how the framwork works. 
-We talked how to create an application and where to store our static, html and python code.
-We talked how to create a virtual enviroment for our project and how to run the server locally on our computers to test out our website. We also discussed how we will do the acceptance tests for sprint 2.
-We also added a continuous integration pipeline
 
-For next meeting, we will discuss how to combine our templates together and how we want to style our website. We will also discuss any problems that we are having while coding.
+For 45 minutes, we talked how to create an application and where to store our static, html and python code.
+For 30 minutes, we talked how to create a virtual environment for our project and how to run the server locally on our computers to test out our website. 
+For 30 minutes, we also discussed how we will do the acceptance tests for sprint 2.
+In 15 minutes, we also added a continuous integration pipeline.
+
+For next meeting, we will discuss how to combine our templates together and how we want to style our website. 
+We will also discuss any problems that we are having while coding.
