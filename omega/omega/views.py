@@ -12,6 +12,8 @@ from datetime import datetime, timedelta
 from django.contrib.auth import logout
 import random
 from .decorators import login_required_redirect
+
+@login_required_redirect
 def my_view(request):
     return render(request, 'startReservation.html')
 
@@ -90,6 +92,7 @@ def generate_random_reservation(request):
 def vehicle_view(request):
     return render(request, 'Addvehicle.html')
 
+@login_required_redirect
 def reservations_view(request) -> HttpResponse:
     return render(request, 'reservations.html')
 
@@ -103,7 +106,21 @@ def economy_view(request):
 
 @login_required_redirect
 def luxury_view(request):
-    return render(request, 'luxuryReservation.html')
+    if request.method == 'POST':
+        car_name = request.POST.get('convertibleCarDropdown')
+        start_date = request.POST.get('start_date')
+        end_date = request.POST.get('end_date')
+
+        # Get the selected vehicle from the database
+        vehicle = vehicles.objects.get(name=car_name)
+
+        # Create a new reservation
+        reservation = Reservation.objects.create(vehicle=vehicle, account=request.user, reservation_start=start_date, reservation_end=end_date)
+
+        # Optionally, you can redirect the user to a success page or render a template
+        return render(request, 'reservations.html', {'reservation': reservation})
+
+    return render(request, 'luxuryReservation.html')  # Render the reservation form template
 
 @login_required_redirect
 def convertible_view(request):
