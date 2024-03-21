@@ -49,10 +49,21 @@
 						</td>
 					</tr>
 					<tr>
-						<td>	
-							<br><br><br><br>
-							<button type="button">Reserve</button>
-						</td>
+						{% if request.user.is_authenticated %}
+							<td>	
+								<br><br><br><br>
+								<a href="{% url 'convertibleres' %}">
+									<button type="button">Reserve</button>
+								</a>
+							</td>
+						{% else %}
+							<td>	
+								<br><br><br><br>
+								<a href="{% url 'login' %}">
+									<button type="button">Reserve</button>
+								</a>
+							</td>
+						{% endif %}
 					</tr>
 				</table>
 			</td>
