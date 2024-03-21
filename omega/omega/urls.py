@@ -30,6 +30,7 @@ urlpatterns = [
     path('economyReservation/', views.economy_view, name='economyres'),
     path('luxuryReservation/', views.luxury_view, name='luxuryres'),
     path('convertibleReservation/', views.convertible_view, name='convertibleres'),
+    path('findABranch/', views.findabranch_view, name='findabranch'),
 
     path('reservations/', views.reservations_view, name='reservations'),
 
