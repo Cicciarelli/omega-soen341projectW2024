@@ -125,7 +125,10 @@ def luxury_view(request):
 @login_required_redirect
 def convertible_view(request):
     return render(request, 'convertibleReservation.html')
-    
+
+def findabranch_view(request):
+    return render(request, 'findABranch.html')
+
 def OMEGACarList(request):
     return render(request, 'OMEGACarList.html')
 
@@ -167,3 +170,4 @@ def ferrari_roma(request):
 
 def bentley_bentayga(request):
     return render(request, 'BentleyBentayga.html')
+
