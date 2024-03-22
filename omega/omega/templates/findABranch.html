@@ -36,8 +36,13 @@
           <li><a href="{% url 'findabranch' %}">Find a Branch</a></li>
       </ul>
     </div>
-    <div class="carClassContainer">
-      
+    <div class="findABranchContainer">
+        <form method="post">
+            <label for="postalcode">Enter your postal code</label>
+            <input type="text" name="postalcode" id="postalcode">
+            <button type="submit">Submit</button>
+        </form>
+
     </div>
     
     <footer>
