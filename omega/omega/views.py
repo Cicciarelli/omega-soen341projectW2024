@@ -100,6 +100,10 @@ def generate_random_reservation(request):
         Reservation.objects.create(vehicle=random_vehicle, account=user, reservation_start=start_date, reservation_end=end_date)
     return redirect('reservations')
 
+@login_required_redirect
+def rental_agreement_view(request, reservation_id):
+    return render(request, 'rental_agreement.html')
+
 def vehicle_view(request):
     return render(request, 'Addvehicle.html')
 
