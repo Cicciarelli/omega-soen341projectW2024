@@ -1,5 +1,7 @@
 from django import forms
 from .models import Reservation
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class LoginForm(forms.Form):
     email = forms.EmailField()
@@ -9,3 +11,9 @@ class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
         fields = ['vehicle', 'reservation_start', 'reservation_end']
+
+class UserCreationFormWithEmail(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        model = User
+        fields = UserCreationForm.Meta.fields + ("email",)
+        field_classes = {'email': forms.EmailField}
