@@ -22,7 +22,7 @@ class ReservationTest(TestCase):
         )
         
         # Create a vehicle for testing
-        self.vehicle = vehicles.objects.create(vehicle_id=0)
+        self.vehicle = Vehicle.objects.create(vehicle_vin=1001)
 
         self.test_date = datetime.now()
         
