@@ -12,6 +12,7 @@ from datetime import datetime, timedelta
 from django.contrib.auth import logout
 import random
 from .decorators import login_required_redirect
+from django.http import Http404
 
 @login_required_redirect
 def my_view(request):
@@ -77,6 +78,12 @@ def edit_reservation(request, reservation_id):
     else:
         form = ReservationForm(instance=reservation)
     return render(request, 'edit_reservation.html', {'form': form})
+
+@login_required
+def check_in(request, reservation_id):
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+    # Write your view code here
+    raise Http404
 
 @login_required
 def generate_random_reservation(request):
