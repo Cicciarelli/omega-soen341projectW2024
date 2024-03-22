@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Member, Reservation, vehicles
+from .models import Member, Reservation, Vehicle
 
 admin.site.register(Member)
-admin.site.register(vehicles)
+admin.site.register(Vehicle)
 admin.site.register(Reservation)
