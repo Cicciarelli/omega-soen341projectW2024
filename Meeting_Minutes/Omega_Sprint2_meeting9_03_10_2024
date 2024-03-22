@@ -1,17 +1,3 @@
-Discord meeting
-
-2024-03-10
-
-1:00pm to 4:00pm
-
-Topics of discussion:
-
-1) assigning all HTML URLs so that the home page has links to all HTML pages
-2) creating reservation, vehicle and user models
-
-These topics were discussed in depth and many troubleshooting occurred. We encountered issues with implementation
-of the html pages but we found solutions.
-
 Meeting Minutes - March 10th, 2024 - 3 hours
 
 Liam, Daniel, Maxime, Maria and Matthew met on March 10th on Discord at 1pm until 4pm.
@@ -19,3 +5,5 @@ Liam, Daniel, Maxime, Maria and Matthew met on March 10th on Discord at 1pm unti
 For an hour and a half, we created and named all the URLs in the django file. We then updated all the URLs across all the HTML templates so that everything was
 linked properly.
 For an hour and half, we discussed creating reservation, vehicle and user models with the django framework.
+
+For next meeting, we will discuss Sprint 3.
