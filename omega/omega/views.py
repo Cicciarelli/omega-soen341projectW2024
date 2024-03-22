@@ -13,6 +13,7 @@ from django.contrib.auth import logout
 import random
 from .decorators import login_required_redirect
 from django.http import Http404
+from .forms import UserCreationFormWithEmail
 
 @login_required_redirect
 def my_view(request):
@@ -35,16 +36,19 @@ def login_view(request):
 
 def signup_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserCreationFormWithEmail(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
             raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
+            user = authenticate(username=username,
+                                password=raw_password,
+                                email = email)
             login(request, user)
             return redirect('home')
     else:
-        form = UserCreationForm()
+        form = UserCreationFormWithEmail()
     return render(request, 'signup.html', {'form': form})
 
 @login_required
