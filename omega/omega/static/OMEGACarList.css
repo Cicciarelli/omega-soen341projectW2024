@@ -163,3 +163,68 @@ a:active {
   	position: fixed;
   	z-index: 2;
 }	
+.economyCars{
+	border: 2px solid black;
+	margin-left: 20%;
+	margin-top: 10%;
+	width: 25%;
+	text-align: center;
+}
+  
+.viewEconomyCars{
+	padding: 20px;
+	margin-bottom: 20px;
+}
+  
+.economyChoices{
+	font-size: larger;
+}
+  
+.economyLink{
+	font-size: x-large;
+}
+  
+.luxuryCars{
+	border: 2px solid black;
+	margin-left: 2%;
+	margin-top: 10%;
+	width: 25%;
+	text-align: center;
+}
+  
+.viewluxuryCars{
+	padding: 20px;
+	margin-bottom: 20px;
+}
+  
+.luxuryChoices{
+	font-size: larger;
+}
+  
+.luxuryLink{
+	font-size: x-large;
+}
+  
+.convertibleCars{
+	border: 2px solid black;
+	margin-left: 2%;
+	margin-top: 10%;
+	width: 25%;
+	text-align: center;
+}
+  
+.viewconvertibleCars{
+	padding: 20px;
+	margin-bottom: 20px;
+}
+  
+.convertibleChoices{
+	font-size: larger;
+}
+  
+.convertibleLink{
+	font-size: x-large;
+}
+.carClassContainer{
+	display: flex;
+}

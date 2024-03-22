@@ -30,8 +30,13 @@ urlpatterns = [
     path('economyReservation/', views.economy_view, name='economyres'),
     path('luxuryReservation/', views.luxury_view, name='luxuryres'),
     path('convertibleReservation/', views.convertible_view, name='convertibleres'),
+    path('findABranch/', views.findabranch_view, name='findabranch'),
 
     path('reservations/', views.reservations_view, name='reservations'),
+
+    path('check_in/<int:reservation_id>/', views.check_in, name='check_in'),
+
+    path('rental_agreement/<int:reservation_id>/',views.rental_agreement_view,name='rental_agreement'),
 
     path('reservation/delete/<int:reservation_id>/', views.delete_reservation, name='delete_reservation'),
     path('reservation/edit/<int:reservation_id>/', views.edit_reservation, name='edit_reservation'),
