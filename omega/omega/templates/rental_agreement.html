@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block page_title %}Rental Agreement{% endblock %}
+{% block header_title %}Rental Agreement{% endblock %}
+{% block content %}
+<form action="#" method="post">
+
+    <h1>Car Rental Agreement</h1>
+    <p>Rental Agreement Number: <span id="rental-agreement-number">[Unique Rental Agreement Number]</span></p>
+    
+    <h2>Rental Agreement</h2>
+    <p>This Rental Agreement ("Agreement") is entered into between <span id="rental-company-name">[Car Rental Agency Name]</span>, located at <span id="rental-company-address">[Address]</span>, hereinafter referred to as the "Rental Company," and the individual or entity identified below, hereinafter referred to as the "Renter":</p>
+    
+    <h3>Renter's Information:</h3>
+    <p>Name: <span id="renter-name"></span></p>
+    <p>Address: <span id="renter-address"></span></p>
+    <p>Contact Number: <span id="renter-contact-number"></span></p>
+    <p>Email Address: <span id="renter-email"></span></p>
+    <p>Driver's License Number: <span id="renter-license-number"></span></p>
+    
+    <h3>Vehicle Information:</h3>
+    <p>Make: <span id="vehicle-make"></span></p>
+    <p>Model: <span id="vehicle-model"></span></p>
+    <p>Year: <span id="vehicle-year"></span></p>
+    <p>License Plate Number: <span id="vehicle-license-plate"></span></p>
+    <p>Vehicle Identification Number (VIN): <span id="vehicle-vin"></span></p>
+    <p>Color: <span id="vehicle-color"></span></p>
+    
+    <h3>Rental Details:</h3>
+    <p>Rental Start Date: <span id="rental-start-date"></span></p>
+    <p>Rental End Date: <span id="rental-end-date"></span></p>
+    <p>Pick-up Location: <span id="pick-up-location"></span></p>
+    <p>Drop-off Location: <span id="drop-off-location"></span></p>
+    <p>Rental Period: <span id="rental-period"></span></p>
+    <p>Mileage Limit (if applicable): <span id="mileage-limit"></span></p>
+    <p>Rental Rate: <span id="rental-rate"></span></p>
+    <p>Additional Services (if any): <span id="additional-services"></span></p>
+    
+    <h3>Rental Terms and Conditions:</h3>
+    <ul>
+        <li>The Renter acknowledges receiving the vehicle described above in good condition and agrees to return it to the Rental Company in the same condition, subject to normal wear and tear.</li>
+        <li>The Renter agrees to use the vehicle solely for personal or business purposes and not for any illegal activities.</li>
+        <li>The Renter agrees to pay the Rental Company the agreed-upon rental rate for the specified rental period. Additional charges may apply for exceeding the mileage limit, late returns, fuel refueling, or other damages.</li>
+        <li>The Renter agrees to bear all costs associated with traffic violations, tolls, and parking fines incurred during the rental period.</li>
+        <li>The Renter acknowledges that they are responsible for any loss or damage to the vehicle, including theft, vandalism, accidents, or negligence, and agrees to reimburse the Rental Company for all repair or replacement costs.</li>
+        <li>The Renter agrees to return the vehicle to the designated drop-off location at the agreed-upon date and time. Failure to do so may result in additional charges.</li>
+        <li>The Rental Company reserves the right to terminate this agreement and repossess the vehicle without prior notice if the Renter breaches any terms or conditions of this agreement.</li>
+        <li>The Renter acknowledges receiving and reviewing a copy of the vehicle's insurance coverage and agrees to comply with all insurance requirements during the rental period.</li>
+    </ul>
+    
+    <h3>Indemnification:</h3>
+    <p>The Renter agrees to indemnify and hold harmless the Rental Company, its employees, agents, and affiliates from any claims, liabilities, damages, or expenses arising out of or related to the Renter's use of the vehicle.</p>
+    
+    <h3>Governing Law:</h3>
+    <p>This Agreement shall be governed by and construed in accordance with the laws of <span id="jurisdiction"></span>. Any disputes arising under or related to this Agreement shall be resolved exclusively by the courts of <span id="jurisdiction"></span>.</p>
+    
+    <h3>Entire Agreement:</h3>
+    <p>This Agreement constitutes the entire understanding between the parties concerning the subject matter hereof and supersedes all prior agreements and understandings, whether written or oral.</p>
+        
+    <fieldset>
+        <legend>Signatures</legend>
+        <label for="renter_signature">Renter's Signature:</label><br>
+        <input type="text" id="renter_signature" name="renter_signature" required><br>
+        <label for="renter_name">Print Name:</label><br>
+        <input type="text" id="renter_name" name="renter_name" required><br>
+        <p>Date: <span id="renter-date"></span>{% now "jS F Y H:i" %}</p>
+        <p>Company Signature: <span id="renter-signature">Omega</span></p>
+        <p>Company Print Name: <span id="renter-print-name">Omega</span></p>
+        <p>Company Signature Date: <span id="renter-date"></span>{% now "jS F Y H:i" %}</p>
+    </fieldset>
+    
+    <input type="submit" value="Submit">
+</form>
+{% endblock content %}
