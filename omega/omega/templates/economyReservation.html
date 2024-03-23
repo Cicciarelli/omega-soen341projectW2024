@@ -37,33 +37,139 @@
 
       </ul>
     </div>
-    <div class="economyChoiceContainer">
-      <div class="chevroletVolt">
-        <a href="{% url 'chevroletVoltReserve' %}" class="carLink">Chevrolet Volt</a>
-        <img src="{%static 'img/chevrolet_volt.jpg' %}" alt="Picture of the Chevrolet Volt" height="300" width="300">
-        <br>
-        <a href="{% url 'chevroletVoltReserve' %}"><button class="viewEconomyCars">Reserve</button></a>
-      </div>
-      <div class="toyotaPrius">
-        <a href="{% url 'toyotaPriusReserve' %}" class="carLink">Toyota Prius</a>
-        <img src="{%static 'img/toyota_prius.jpg' %}" alt="Picture of the Toyota Prius" height="300" width="300">
-        <br>
-        <a href="{% url 'toyotaPriusReserve' %}"><button class="viewluxuryCars">Reserve</button></a>
-      </div>
-      <div class="kiaNiro">
-        <a href="{% url 'kiaNiroReserve' %}" class="carLink">Kia Niro</a>
-        
-        <img src="{%static 'img/kia_niro.jpg' %}" alt="Picture of the Kia Niro" height="300" width="300">
-        <br>
-        <a href="{% url 'kiaNiroReserve' %}"><button class="viewconvertibleCars">Reserve</button></a>
-      </div>
-      <div class="hondaCivic">
-        <a href="{% url 'hondaCivicReserve' %}" class="carLink">Honda Civic</a>
-        
-        <img src="{%static 'img/honda_civic.jpg' %}" alt="Picture of the Honda Civic" height="300" width="300">
-        <br>
-        <a href="{% url 'hondaCivicReserve' %}"><button class="viewconvertibleCars">Reserve</button></a>
-      </div>
+    <div class="economyTableContainer">
+      <table class="economyCarsTable">
+        <tr>
+          <td style = "text-align: left;">
+            <label><h1>Vehicle</h1></label>
+          </td>
+          <td>
+            <label><h1>Information</h1></label>
+          </td>
+          <td>
+            <label><h1>Price</h1></label>
+          </td>
+        </tr>
+        <tr>
+          <td style = "text-align: left;">
+            <img src="{%static 'img/honda_civic.jpg' %}" width = "350" height = "200">
+            <br>
+            <a href="{% url 'Civic' %}">Honda Civic</a>
+          </td>
+          <td>
+            <label>
+              4 People <br>
+              3 Baggages <br>
+              Automatic
+            </label>
+          </td>
+          <td>
+            <label>84.99$/day</label>
+          </td>
+          {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}">
+								<button id="hondaCivicButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button type="hondaCivicButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          <tr>
+            <td style = "text-align: left;">
+              <img src="{%static 'img/chevrolet_volt.jpg' %}" width = "350" height = "200">
+              <br>
+              <a href="{% url 'Volt' %}">Chevrolet Volt</a>
+            </td>
+            <td>
+              <label>
+                4 People <br>
+                4 Baggages <br>
+                Automatic
+              </label>
+            </td>
+            <td>
+              <label>89.99$/day</label>
+            </td>
+            {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}">
+								<button id="chevroletVoltButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button id="chevroletVoltButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          </tr>
+          <tr>
+            <td style = "text-align: left;">
+              <img src="{%static 'img/toyota_prius.jpg' %}" width = "350" height = "200">
+              <br>
+              <a href="{% url 'Prius' %}">Toyota Prius</a>
+            </td>
+            <td>
+              <label>
+                4 People <br>
+                3 Baggages <br>
+                Automatic
+              </label>
+            </td>
+            <td>
+              <label>84.99$/day</label>
+            </td>
+            {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}">
+								<button id="toyotaPriusButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button type="toyotaPriusButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          </tr>
+          <tr>
+            <td style = "text-align: left;">
+              <img src="{%static 'img/kia_niro.jpg' %}" width = "350" height = "200">
+              <br>
+              <a href="{% url 'Niro' %}">Kia Niro</a>
+            </td>
+            <td>
+              <label>
+                5 People <br>
+                3 Baggages <br>
+                Automatic
+              </label>
+            </td>
+            <td>
+              <label>94.99$/day</label>
+            </td>
+            {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}">
+								<button id="kiaNiroButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button type="kiaNiroButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          </tr>
+      </table>
     </div>
     <footer>
       <div class="footerContainer">
