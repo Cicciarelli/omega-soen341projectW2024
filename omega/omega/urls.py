@@ -69,6 +69,14 @@ urlpatterns = [
     path('AudiA4/',views.audi_a4,name='A4'),
     path('FerrariRoma/',views.ferrari_roma,name='Roma'),
     path('BentleyBentayga/',views.bentley_bentayga,name='Bentayga'),
+    path('audiA5Reserve/',views.audiA5Reserve_view,name='audiA5Reserve'),
+    path('porsche911Reserve/',views.porsche911Reserve_view,name='porsche911Reserve'),
+    path('ferrariRomaReserve/',views.ferrariRomaReserve_view,name='ferrariRomaReserve'),
+    path('bentleyBentaygaReserve/',views.bentleyBentaygaReserve_view,name='bentleyBentaygaReserve'),
+    path('chevroletVoltReserve/',views.chevroletVoltReserve_view,name='chevroletVoltReserve'),
+    path('toyotaPriusReserve/',views.toyotaPriusReserve_view,name='toyotaPriusReserve'),
+    path('kiaNiroReserve/',views.kiaNiroReserve_view,name='kiaNiroReserve'),
+    path('hondaCivicReserve/',views.hondaCivicReserve_view,name='hondaCivicReserve'),
 
 
 ]
