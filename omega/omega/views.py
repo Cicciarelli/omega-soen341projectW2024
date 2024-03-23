@@ -188,3 +188,26 @@ def ferrari_roma(request):
 def bentley_bentayga(request):
     return render(request, 'BentleyBentayga.html')
 
+def audiA5Reserve_view(request):
+    return render(request, 'audiA5Reserve.html')
+
+def porsche911Reserve_view(request):
+    return render(request, 'porsche911Reserve.html')
+
+def ferrariRomaReserve_view(request):
+    return render(request, 'ferrariRomaReserve.html')
+
+def bentleyBentaygaReserve_view(request):
+    return render(request, 'bentleyBentaygaReserve.html')
+
+def chevroletVoltReserve_view(request):
+    return render(request, 'chevroletVoltReserve.html')
+
+def toyotaPriusReserve_view(request):
+    return render(request, 'toyotaPriusReserve.html')
+
+def kiaNiroReserve_view(request):
+    return render(request, 'kiaNiroReserve.html')
+
+def hondaCivicReserve_view(request):
+    return render(request, 'hondaCivicReserve.html')

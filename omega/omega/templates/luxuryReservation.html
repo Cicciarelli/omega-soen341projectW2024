@@ -37,40 +37,35 @@
 
       </ul>
     </div>
-    <div class="reservationForm">
-        <form action="#" method="post">
-            {% csrf_token %}
-            <label for="car">Select a Car:</label>
-            <select id="luxuryCarDropdown" name="luxuryCarDropdown" required>
-                <option value="" selected disabled>Please select a car</option>
-                <option value="audiA4">Audi A4</option>
-                <option value="Porsche911">Porsche 911</option>
-                <option value="ferrariRoma">Ferrari Roma</option>
-                <option value="bentleyBentayga">Bentley Bentayga</option>
-            </select>
-            <br><br>
-            <div class="reservationDates">
-                <div>
-                    <label for="start_date">Start Date:</label>
-                    <input type="text" id="start_date" name="start_date">
-                </div>
-                <div class="endDate">
-                    <label for="end_date">End Date:</label>
-                    <input type="text" id="end_date" name="end_date">
-                </div>
-            </div>
-            <br>
-            <button type="submit">Submit</button>
-        </form>
+    <div class="luxuryChoiceContainer">
+      <div class="audiA5">
+        <a href="{% url 'audiA5Reserve' %}" class="audiA5Link">Audi A5</a>
+        <img src="{%static 'img/audi_a5.jpg' %}" alt="Picture of Audi A5" height="300" width="300">
+        <br>
+        <a href="{% url 'audiA5Reserve' %}"><button class="viewEconomyCars">Reserve</button></a>
+      </div>
+      <div class="porsche911">
+        <a href="{% url 'porsche911Reserve' %}" class="porsche911Link">Porsche 911</a>
+        <img src="{%static 'img/porsche_911.jpg' %}" alt="Picture of the Porsche 911" height="300" width="300">
+        <br>
+        <a href="{% url 'porsche911Reserve' %}"><button class="viewluxuryCars">Reserve</button></a>
+      </div>
+      <div class="ferrariRoma">
+        <a href="{% url 'ferrariRomaReserve' %}" class="ferrariRomaLink">Ferrari Roma</a>
+        
+        <img src="{%static 'img/ferrari_roma.jpg' %}" alt="Picture of the Ferarri Roma" height="300" width="300">
+        <br>
+        <a href="{% url 'ferrariRomaReserve' %}"><button class="viewconvertibleCars">Reserve</button></a>
+      </div>
+      <div class="bentleyBentayga">
+        <a href="{% url 'bentleyBentaygaReserve' %}" class="bentleyBentaygaLink">Bentley Bentayga</a>
+        
+        <img src="{%static 'img/bentley_bentayga.jpg' %}" alt="Picture of the Bentley Bentayga" height="300" width="300">
+        <br>
+        <a href="{% url 'bentleyBentaygaReserve' %}"><button class="viewconvertibleCars">Reserve</button></a>
+      </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script>
-        $(function() {
-            $("#start_date").datepicker();
-            $("#end_date").datepicker();
-        });
-    </script>
+        
     <footer>
       <div class="footerContainer">
           <table id="footerTable">

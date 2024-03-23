@@ -37,41 +37,34 @@
 
       </ul>
     </div>
-    <div class="reservationForm">
-        <form action="#" method="post">
-            {% csrf_token %}
-            <label for="car">Select a Car:</label>
-            <select id="economyCarDropdown" name="economyCarDropdown" required>
-                <option value="" selected disabled>Please select a car</option>
-                <option value="chevroletVolt">Chevrolet Volt</option>
-                <option value="toyotaPrius">Toyota Prius</option>
-                <option value="kiaNiro">Kia Niro</option>
-                <option value="hondaCivic">Honda Civic</option>
-                <option value="toyotaCorolla">Toyota Corolla</option>
-            </select>
-            <br><br>
-            <div class="reservationDates">
-                <div>
-                    <label for="start_date">Start Date:</label>
-                    <input type="text" id="start_date" name="start_date">
-                </div>
-                <div class="endDate">
-                    <label for="end_date">End Date:</label>
-                    <input type="text" id="end_date" name="end_date">
-                </div>
-            </div>
-            <br>
-            <button type="submit">Submit</button>
-        </form>
+    <div class="economyChoiceContainer">
+      <div class="chevroletVolt">
+        <a href="{% url 'chevroletVoltReserve' %}" class="chevroletVoltLink">Chevrolet Volt</a>
+        <img src="{%static 'img/chevrolet_volt.jpg' %}" alt="Picture of the Chevrolet Volt" height="300" width="300">
+        <br>
+        <a href="{% url 'chevroletVoltReserve' %}"><button class="viewEconomyCars">Reserve</button></a>
+      </div>
+      <div class="toyotaPrius">
+        <a href="{% url 'toyotaPriusReserve' %}" class="toyotaPriusLink">Toyota Prius</a>
+        <img src="{%static 'img/toyota_prius.jpg' %}" alt="Picture of the Toyota Prius" height="300" width="300">
+        <br>
+        <a href="{% url 'toyotaPriusReserve' %}"><button class="viewluxuryCars">Reserve</button></a>
+      </div>
+      <div class="kiaNiro">
+        <a href="{% url 'kiaNiroReserve' %}" class="kiaNiroLink">Kia Niro</a>
+        
+        <img src="{%static 'img/kia_niro.jpg' %}" alt="Picture of the Kia Niro" height="300" width="300">
+        <br>
+        <a href="{% url 'kiaNiroReserve' %}"><button class="viewconvertibleCars">Reserve</button></a>
+      </div>
+      <div class="hondaCivic">
+        <a href="{% url 'hondaCivicReserve' %}" class="hondaCivicLink">Honda Civic</a>
+        
+        <img src="{%static 'img/honda_civic.jpg' %}" alt="Picture of the Honda Civic" height="300" width="300">
+        <br>
+        <a href="{% url 'hondaCivicReserve' %}"><button class="viewconvertibleCars">Reserve</button></a>
+      </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script>
-        $(function() {
-            $("#start_date").datepicker();
-            $("#end_date").datepicker();
-        });
-    </script>
     <footer>
       <div class="footerContainer">
           <table id="footerTable">
