@@ -9,28 +9,29 @@
 	<div class="headerContainer">
         	<h1>Omega's Car Reservations</h1>
 	</div>
-     	{% if request.user.is_authenticated %}
-        	<div class="signOutButton">
-          		<a href="{% url 'logout' %}"><button class="header_right_button">Sign Out</button></a>
-        	</div>
-        	<div class="accountButton">
-          		<a href="{% url 'profile' %}"><button class="header_right_button">Account</button></a>
-        	</div>
-      	{% else %}
-        	<div class="logInButton">
-         	 	<a href="{% url 'login' %}"><button class="header_right_button">Login</button></a>
-        	</div>
-        	<div class="signUpButton">
-          		<a href="{% url 'signup' %}"><button class="header_right_button">Sign Up</button></a>
-        	</div>
-      	{% endif %}
+	{% if request.user.is_authenticated %}
+        <div class="signOutButton">
+          <a href="{% url 'logout' %}"><button class="header_right_button">Sign Out</button></a>
+        </div>
+        <div class="accountButton">
+          <a href="{% url 'profile' %}"><button class="header_right_button">Account</button></a>
+        </div>
+      {% else %}
+        <div class="logInButton">
+          <a href="{% url 'login' %}"><button class="header_right_button">Login</button></a>
+        </div>
+        <div class="signUpButton">
+          <a href="{% url 'signup' %}"><button class="header_right_button">Sign Up</button></a>
+        </div>
+      {% endif %}
 </header>
     	<div class="sideMenu">
       		<ul>
           		<li><a href="{% url 'startres' %}">Start a Reservation</a></li>
         		<li><a href="{% url 'reservations' %}">Existing Reservation</a></li>
-			<li><a href="{% url 'carList' %}">Browse Vehicles</a></li>
-		</ul>
+				<li><a href="{% url 'carList' %}">Browse Vehicles</a></li>
+				<li><a href="{% url 'findabranch' %}">Find a Branch</a></li>
+			</ul>
 	</div>
 	<br><br>
 	<div class = "container"> 
