@@ -370,3 +370,21 @@ td{
   width: 88;
   height: 79vh;
 }
+
+.luxuryCarsTable{
+	width: 100%;
+	text-align: center;
+	background-color: cornflowerblue;
+	border-radius:10px;
+	font-family: verdana;
+	color : LightGray;
+	font-size: 24;
+}
+
+.luxuryTableContainer{
+  margin-left: 12.5%;
+  margin-top: 5%;
+  overflow: auto;
+  width: 88;
+  height: 79vh;
+}

@@ -37,33 +37,139 @@
 
       </ul>
     </div>
-    <div class="luxuryChoiceContainer">
-      <div class="audiA4">
-        <a href="{% url 'audiA4Reserve' %}" class="carLink">Audi A5</a>
-        <img src="{%static 'img/audi_a4.jpg' %}" alt="Picture of Audi A5" height="300" width="300">
-        <br>
-        <a href="{% url 'audiA4Reserve' %}"><button class="viewEconomyCars">Reserve</button></a>
-      </div>
-      <div class="porsche911">
-        <a href="{% url 'porsche911Reserve' %}" class="carLink">Porsche 911</a>
-        <img src="{%static 'img/porsche_911.jpg' %}" alt="Picture of the Porsche 911" height="300" width="300">
-        <br>
-        <a href="{% url 'porsche911Reserve' %}"><button class="viewluxuryCars">Reserve</button></a>
-      </div>
-      <div class="ferrariRoma">
-        <a href="{% url 'ferrariRomaReserve' %}" class="carLink">Ferrari Roma</a>
-        
-        <img src="{%static 'img/ferrari_roma.jpg' %}" alt="Picture of the Ferarri Roma" height="300" width="300">
-        <br>
-        <a href="{% url 'ferrariRomaReserve' %}"><button class="viewconvertibleCars">Reserve</button></a>
-      </div>
-      <div class="bentleyBentayga">
-        <a href="{% url 'bentleyBentaygaReserve' %}" class="Link">Bentley Bentayga</a>
-        
-        <img src="{%static 'img/bentley_bentayga.jpg' %}" alt="Picture of the Bentley Bentayga" height="300" width="300">
-        <br>
-        <a href="{% url 'bentleyBentaygaReserve' %}"><button class="viewconvertibleCars">Reserve</button></a>
-      </div>
+    <div class="luxuryTableContainer">
+      <table class="luxuryCarsTable">
+        <tr>
+          <td style = "text-align: left;">
+            <label><h1>Vehicle</h1></label>
+          </td>
+          <td>
+            <label><h1>Information</h1></label>
+          </td>
+          <td>
+            <label><h1>Price</h1></label>
+          </td>
+        </tr>
+        <tr>
+          <td style = "text-align: left;">
+            <img src="{%static 'img/audi_a4.jpg' %}" width = "350" height = "200">
+            <br>
+            <a href="{% url 'Mustang' %}">Audi A4</a>
+          </td>
+          <td>
+            <label>
+              4 People <br>
+              3 Baggages <br>
+              Automatic
+            </label>
+          </td>
+          <td>
+            <label>124.99$/day</label>
+          </td>
+          {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}">
+								<button id="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button type="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          <tr>
+            <td style = "text-align: left;">
+              <img src="{%static 'img/porsche_911.jpg' %}" width = "350" height = "200">
+              <br>
+              <a href="{% url 'Volt' %}">Porsche 911</a>
+            </td>
+            <td>
+              <label>
+                2 People <br>
+                1 Baggages <br>
+                Manual
+              </label>
+            </td>
+            <td>
+              <label>134.99$/day</label>
+            </td>
+            {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}">
+								<button id="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button id="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          </tr>
+          <tr>
+            <td style = "text-align: left;">
+              <img src="{%static 'img/ferrari_roma.jpg' %}" width = "350" height = "200">
+              <br>
+              <a href="{% url 'Prius' %}">Ferrari Roma</a>
+            </td>
+            <td>
+              <label>
+                2 People <br>
+                1 Baggages <br>
+                Automatic
+              </label>
+            </td>
+            <td>
+              <label>199.99$/day</label>
+            </td>
+            {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}">
+								<button id="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button type="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          </tr>
+          <tr>
+            <td style = "text-align: left;">
+              <img src="{%static 'img/bentley_bentayga.jpg' %}" width = "350" height = "200">
+              <br>
+              <a href="{% url 'Niro' %}">Bentley Bentayga</a>
+            </td>
+            <td>
+              <label>
+                5 People <br>
+                4 Baggages <br>
+                Automatic
+              </label>
+            </td>
+            <td>
+              <label>199.99$/day</label>
+            </td>
+            {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}">
+								<button id="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button type="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          </tr>
+      </table>
     </div>
         
     <footer>
