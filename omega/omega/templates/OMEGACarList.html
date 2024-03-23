@@ -54,11 +54,16 @@
 				<td>
 					<label>Price</label>
 				</td>
-				<td style = "text-align: right;">
-					<a href="{% url 'vehicle' %}">
-						<button type="button" class = "addButton">Add Product</button>
-					</a>
-				</td>
+				{% if user.is_superuser %}
+					<td style = "text-align: right;">
+						<a href="{% url 'vehicle' %}">
+							<button type="button" class = "addButton">Add Product</button>
+						</a>
+					</td>
+				{% else %}
+					<td>
+					</td>
+				{% endif %}
 			</tr>
 		</table>
 		<table>
@@ -78,11 +83,27 @@
 				<td>
 					<label>79.99$/day</label>
 				</td>
-				<td style = "text-align: right;">
-					<button type="button">Edit<br>Product</button>
-					<br>
-					<button type="button">Delete Product</button>
-				</td>
+				{% if user.is_superuser %}
+					<td style = "text-align: right;">
+						<button type="button">Edit<br>Product</button>
+						<br>
+						<button type="button">Delete Product</button>
+					</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -100,11 +121,27 @@
 				<td>
 					<label>84.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -122,11 +159,27 @@
 				<td>
 					<label>89.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -144,11 +197,27 @@
 				<td>
 					<label>84.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -166,11 +235,27 @@
 				<td>
 					<label>94.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'economyres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -188,11 +273,27 @@
 				<td>
 					<label>99.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'convertibleres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -210,11 +311,27 @@
 				<td>
 					<label>99.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'convertibleres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -232,11 +349,27 @@
 				<td>
 					<label>104.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'convertibleres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -254,11 +387,27 @@
 				<td>
 					<label>134.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'convertibleres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -276,11 +425,27 @@
 				<td>
 					<label>134.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'luxuryres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -298,11 +463,27 @@
 				<td>
 					<label>124.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'luxuryres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -320,11 +501,27 @@
 				<td>
 					<label>199.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'luxuryres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 			<tr>
 				<td style = "text-align: left;">
@@ -342,11 +539,27 @@
 				<td>
 					<label>199.99$/day</label>
 				</td>
+				{% if user.is_superuser %}
 				<td style = "text-align: right;">
 					<button type="button">Edit<br>Product</button>
 					<br>
 					<button type="button">Delete Product</button>
 				</td>
+				{% else %}
+					{% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'luxuryres' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}>
+								<button type="button">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+				{% endif %}
 			</tr>
 		</table>
 	<br><br>
