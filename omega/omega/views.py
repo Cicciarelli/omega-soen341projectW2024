@@ -106,6 +106,8 @@ def economy_view(request):
 
 @login_required_redirect
 def luxury_view(request):
+    
+    """
     if request.method == 'POST':
         car_name = request.POST.get('convertibleCarDropdown')
         start_date = request.POST.get('start_date')
@@ -119,7 +121,7 @@ def luxury_view(request):
 
         # Optionally, you can redirect the user to a success page or render a template
         return render(request, 'reservations.html', {'reservation': reservation})
-
+    """
     return render(request, 'luxuryReservation.html')  # Render the reservation form template
 
 @login_required_redirect
