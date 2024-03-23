@@ -69,7 +69,7 @@ urlpatterns = [
     path('AudiA4/',views.audi_a4,name='A4'),
     path('FerrariRoma/',views.ferrari_roma,name='Roma'),
     path('BentleyBentayga/',views.bentley_bentayga,name='Bentayga'),
-    path('audiA5Reserve/',views.audiA5Reserve_view,name='audiA5Reserve'),
+    path('audiA4Reserve/',views.audiA4Reserve_view,name='audiA4Reserve'),
     path('porsche911Reserve/',views.porsche911Reserve_view,name='porsche911Reserve'),
     path('ferrariRomaReserve/',views.ferrariRomaReserve_view,name='ferrariRomaReserve'),
     path('bentleyBentaygaReserve/',views.bentleyBentaygaReserve_view,name='bentleyBentaygaReserve'),
@@ -77,6 +77,10 @@ urlpatterns = [
     path('toyotaPriusReserve/',views.toyotaPriusReserve_view,name='toyotaPriusReserve'),
     path('kiaNiroReserve/',views.kiaNiroReserve_view,name='kiaNiroReserve'),
     path('hondaCivicReserve/',views.hondaCivicReserve_view,name='hondaCivicReserve'),
+    path('fordMustangReserve/',views.fordMustangReserve_view,name='fordMustangReserve'),
+    path('audiA5Reserve/',views.audiA5Reserve_view,name='audiA5Reserve'),
+    path('bmwM4Reserve/',views.bmwM4Reserve_view,name='bmwM4Reserve'),
+    path('chevroletCorvetteReserve/',views.chevroletCorvetteReserve_view,name='chevroletCorvetteReserve'),
 
 
 ]
