@@ -347,24 +347,26 @@ td{
 }
 
 
-#kiaNiroButton{
+#tableReserveButton{
   margin-right:20vh;
   width: 10vh;
   height: 6vh;
 }
 
-#hondaCivicButton{
-  margin-right:20vh;
-  width: 10vh;
-  height: 6vh;
+.convertibleCarsTable{
+	width: 100%;
+	text-align: center;
+	background-color: cornflowerblue;
+	border-radius:10px;
+	font-family: verdana;
+	color : LightGray;
+	font-size: 24;
 }
-#chevroletVoltButton{
-  margin-right:20vh;
-  width: 10vh;
-  height: 6vh;
-}
-#toyotaPriusButton{
-  margin-right:20vh;
-  width: 10vh;
-  height: 6vh;
+
+.convertibleTableContainer{
+  margin-left: 12.5%;
+  margin-top: 5%;
+  overflow: auto;
+  width: 88;
+  height: 79vh;
 }
