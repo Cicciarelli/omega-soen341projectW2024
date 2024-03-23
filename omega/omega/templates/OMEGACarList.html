@@ -67,44 +67,7 @@
 			</tr>
 		</table>
 		<table>
-			<tr>
-				<td style = "text-align: left;">
-					<img src="{%static 'img/toyota_corolla.jpg' %}" width = "350" height = "200">
-					<br>
-					<a href="{% url 'Corolla' %}">Toyota Corolla</a>
-				</td>
-				<td>
-					<label>
-						4 People <br>
-						3 Baggages <br>
-						Automatic
-					</label>
-				</td>
-				<td>
-					<label>79.99$/day</label>
-				</td>
-				{% if user.is_superuser %}
-					<td style = "text-align: right;">
-						<button type="button">Edit<br>Product</button>
-						<br>
-						<button type="button">Delete Product</button>
-					</td>
-				{% else %}
-					{% if request.user.is_authenticated %}
-						<td style = "text-align: right;">
-							<a href="{% url 'economyres' %}>
-								<button type="button">Reserve</button>
-							</a>
-						</td>
-					{% else %}
-						<td style = "text-align: right;">
-							<a href="{% url 'login' %}>
-								<button type="button">Reserve</button>
-							</a>
-						</td>
-					{% endif %}
-				{% endif %}
-			</tr>
+			
 			<tr>
 				<td style = "text-align: left;">
 					<img src="{%static 'img/honda_civic.jpg' %}" width = "350" height = "200">
