@@ -217,7 +217,7 @@ background-color: aquamarine;
   margin-left: 15%;
 }
 
-.audiA5{
+.audiA4{
   border: 2px solid black;
   margin-left: 2%;
   margin-top: 10%;
@@ -286,34 +286,43 @@ background-color: aquamarine;
   text-align: center;
 }
 
-.audiA5Link{
+.carLink{
   font-size: x-large;
 }
 
-.porsche911Link{
-  font-size: x-large;
+.convertibleChoiceContainer{
+  display: flex;
+  margin-left: 15%;
 }
 
-.ferrariRomaLink{
-  font-size: x-large;
+.fordMustang{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
 }
 
-.bentleyBentaygaLink{
-  font-size: x-large;
+.audiA5{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
 }
 
-.chevroletVoltLink{
-  font-size: x-large;
+.chevroletCorvette{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
 }
 
-.toyotaPriusLink{
-  font-size: x-large;
-}
-
-.kiaNiroLink{
-  font-size: x-large;
-}
-
-.hondaCivicLink{
-  font-size: x-large;
+.bmwM4{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
 }
