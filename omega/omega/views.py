@@ -188,38 +188,50 @@ def ferrari_roma(request):
 def bentley_bentayga(request):
     return render(request, 'BentleyBentayga.html')
 
+@login_required_redirect
 def audiA4Reserve_view(request):
     return render(request, 'audiA4Reserve.html')
 
+@login_required_redirect
 def porsche911Reserve_view(request):
     return render(request, 'porsche911Reserve.html')
 
+@login_required_redirect
 def ferrariRomaReserve_view(request):
     return render(request, 'ferrariRomaReserve.html')
 
+@login_required_redirect
 def bentleyBentaygaReserve_view(request):
     return render(request, 'bentleyBentaygaReserve.html')
 
+@login_required_redirect
 def chevroletVoltReserve_view(request):
     return render(request, 'chevroletVoltReserve.html')
 
+@login_required_redirect
 def toyotaPriusReserve_view(request):
     return render(request, 'toyotaPriusReserve.html')
 
+@login_required_redirect
 def kiaNiroReserve_view(request):
     return render(request, 'kiaNiroReserve.html')
 
+@login_required_redirect
 def hondaCivicReserve_view(request):
     return render(request, 'hondaCivicReserve.html')
 
+@login_required_redirect
 def fordMustangReserve_view(request):
     return render(request, 'fordMustangReserve.html')
 
+@login_required_redirect
 def audiA5Reserve_view(request):
     return render(request, 'audiA5Reserve.html')
 
+@login_required_redirect
 def bmwM4Reserve_view(request):
     return render(request, 'bmwM4Reserve.html')
 
+@login_required_redirect
 def chevroletCorvetteReserve_view(request):
     return render(request, 'bmwM4Reserve.html')
