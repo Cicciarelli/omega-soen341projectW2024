@@ -1,5 +1,5 @@
 from django.test import TestCase, Client
-from .models import  Reservation, vehicles
+from .models import  Reservation, Vehicle
 from datetime import datetime, timedelta
 from django.utils import timezone
 from django.http import HttpRequest
@@ -22,7 +22,7 @@ class ReservationTest(TestCase):
         )
         
         # Create a vehicle for testing
-        self.vehicle = vehicles.objects.create(vehicle_id=0)
+        self.vehicle = Vehicle.objects.create(vehicle_vin=1, is_rented=False)
 
         self.test_date = datetime.now()
         
