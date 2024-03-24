@@ -54,7 +54,7 @@
           <td style = "text-align: left;">
             <img src="{%static 'img/honda_civic.jpg' %}" width = "350" height = "200">
             <br>
-            <a href="{% url 'Civic' %}">Honda Civic</a>
+            <a href="{% url 'hondaCivicReserve' %}">Honda Civic</a>
           </td>
           <td>
             <label>
@@ -83,7 +83,7 @@
             <td style = "text-align: left;">
               <img src="{%static 'img/chevrolet_volt.jpg' %}" width = "350" height = "200">
               <br>
-              <a href="{% url 'Volt' %}">Chevrolet Volt</a>
+              <a href="{% url 'chevroletVoltReserve' %}">Chevrolet Volt</a>
             </td>
             <td>
               <label>
@@ -97,7 +97,7 @@
             </td>
             {% if request.user.is_authenticated %}
 						<td style = "text-align: right;">
-							<a href="{% url 'economyres' %}">
+							<a href="{% url 'chevroletVoltReserve' %}">
 								<button id="tableReserveButton">Reserve</button>
 							</a>
 						</td>
@@ -113,7 +113,7 @@
             <td style = "text-align: left;">
               <img src="{%static 'img/toyota_prius.jpg' %}" width = "350" height = "200">
               <br>
-              <a href="{% url 'Prius' %}">Toyota Prius</a>
+              <a href="{% url 'toyotaPriusReserve' %}">Toyota Prius</a>
             </td>
             <td>
               <label>
@@ -127,7 +127,7 @@
             </td>
             {% if request.user.is_authenticated %}
 						<td style = "text-align: right;">
-							<a href="{% url 'economyres' %}">
+							<a href="{% url 'toyotaPriusReserve' %}">
 								<button id="tableReserveButton">Reserve</button>
 							</a>
 						</td>
@@ -143,7 +143,7 @@
             <td style = "text-align: left;">
               <img src="{%static 'img/kia_niro.jpg' %}" width = "350" height = "200">
               <br>
-              <a href="{% url 'Niro' %}">Kia Niro</a>
+              <a href="{% url 'kiaNiroReserve' %}">Kia Niro</a>
             </td>
             <td>
               <label>
@@ -157,7 +157,7 @@
             </td>
             {% if request.user.is_authenticated %}
 						<td style = "text-align: right;">
-							<a href="{% url 'economyres' %}">
+							<a href="{% url 'kiaNiroReserve' %}">
 								<button id="tableReserveButton">Reserve</button>
 							</a>
 						</td>
