@@ -211,3 +211,180 @@ background-color: aquamarine;
   text-align: center;
   padding: 20px;
 }
+
+.luxuryChoiceContainer{
+  display: flex;
+  margin-left: 15%;
+}
+
+.audiA4{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+.ferrariRoma{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+.porsche911{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+.bentleyBentayga{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+
+
+.chevroletVolt{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+.kiaNiro{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+.toyotaPrius{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+.hondaCivic{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+.carLink{
+  font-size: x-large;
+}
+
+.convertibleChoiceContainer{
+  display: flex;
+  margin-left: 15%;
+}
+
+.fordMustang{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+.audiA5{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+.chevroletCorvette{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+.bmwM4{
+  border: 2px solid black;
+  margin-left: 2%;
+  margin-top: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+.economyCarsTable{
+	width: 100%;
+	text-align: center;
+	background-color: cornflowerblue;
+	border-radius:10px;
+	font-family: verdana;
+	color : LightGray;
+	font-size: 24;
+}
+
+.economyTableContainer{
+  margin-left: 12.5%;
+  margin-top: 5%;
+  overflow: auto;
+  width: 88;
+  height: 79vh;
+}
+
+td{
+	width: 25%;
+}
+
+
+#tableReserveButton{
+  margin-right:20vh;
+  width: 10vh;
+  height: 6vh;
+}
+
+.convertibleCarsTable{
+	width: 100%;
+	text-align: center;
+	background-color: cornflowerblue;
+	border-radius:10px;
+	font-family: verdana;
+	color : LightGray;
+	font-size: 24;
+}
+
+.convertibleTableContainer{
+  margin-left: 12.5%;
+  margin-top: 5%;
+  overflow: auto;
+  width: 88;
+  height: 79vh;
+}
+
+.luxuryCarsTable{
+	width: 100%;
+	text-align: center;
+	background-color: cornflowerblue;
+	border-radius:10px;
+	font-family: verdana;
+	color : LightGray;
+	font-size: 24;
+}
+
+.luxuryTableContainer{
+  margin-left: 12.5%;
+  margin-top: 5%;
+  overflow: auto;
+  width: 88;
+  height: 79vh;
+}

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Start Reservation</title>
+    <title>Ford Mustang Reserve</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{%static 'Style.css' %}">
   </head>
@@ -34,33 +34,44 @@
           <li><a href="{% url 'reservations' %}">Existing Reservation</a></li>
           <li><a href="{% url 'carList' %}">Browse Vehicles</a></li>
           <li><a href="{% url 'findabranch' %}">Find a Branch</a></li>
+
       </ul>
     </div>
-    <div class="carClassContainer">
-      <div class="economyCars">
-        <a href="{% url 'economyres' %}" class="economyLink">Economy</a>
-        <p class="economyChoices">Chevrolet Volt, Toyota Prius, Kia Niro, Honda Civic</p>
-        
-        <img src="{%static 'chevroletvolt.jpg' %}" alt="Picture of the Chevrolet volt" height="300" width="300">
-        <br>
-        <a href="{% url 'economyres' %}"><button class="viewEconomyCars">View cars</button></a>
-      </div>
-      <div class="luxuryCars">
-        <a href="{% url 'luxuryres' %}" class="economyLink">Luxury</a>
-        <p class="luxuryChoices">Audi A4, Porsche 911, Ferrari Roma, Bentley Bentayga </p>
-        <img src="{%static 'audia4.jpg' %}" alt="Picture of the Audi A4" height="300" width="300">
-        <br>
-        <a href="{% url 'luxuryres' %}"><button class="viewluxuryCars">View cars</button></a>
-      </div>
-      <div class="convertibleCars">
-        <a href="{% url 'convertibleres' %}" class="convertibleLink">Convertible</a>
-        <p class="convertibleChoices">Ford Mustang, Audi A5, BMW M4, Chevrolet corvette</p>
-        <img src="{%static 'mustang.jpg' %}" alt="Picture of the Ford Mustang" height="300" width="300">
-        <br>
-        <a href="{% url 'convertibleres' %}"><button class="viewconvertibleCars">View cars</button></a>
-      </div>
+    <div class="reservationForm">
+      <form action="#" method="post">
+          {% csrf_token %}
+          <label for="car">Select a Car:</label>
+          <select id="luxuryCarDropdown" name="luxuryCarDropdown" required>
+              <option value="" selected disabled>Please select a car</option>
+              <option value="audiA4">Audi A4</option>
+              <option value="Porsche911">Porsche 911</option>
+              <option value="ferrariRoma">Ferrari Roma</option>
+              <option value="bentleyBentayga">Bentley Bentayga</option>
+          </select>
+          <br><br>
+          <div class="reservationDates">
+              <div>
+                  <label for="start_date">Start Date:</label>
+                  <input type="text" id="start_date" name="start_date">
+              </div>
+              <div class="endDate">
+                  <label for="end_date">End Date:</label>
+                  <input type="text" id="end_date" name="end_date">
+              </div>
+          </div>
+          <br>
+          <button type="submit">Submit</button>
+      </form>
     </div>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(function() {
+            $("#start_date").datepicker();
+            $("#end_date").datepicker();
+        });
+    </script>
+        
     <footer>
       <div class="footerContainer">
           <table id="footerTable">
