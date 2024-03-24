@@ -54,7 +54,7 @@
           <td style = "text-align: left;">
             <img src="{%static 'img/audi_a4.jpg' %}" width = "350" height = "200">
             <br>
-            <a href="{% url 'Mustang' %}">Audi A4</a>
+            <a href="{% url 'audiA4Reserve' %}">Audi A4</a>
           </td>
           <td>
             <label>
@@ -68,7 +68,7 @@
           </td>
           {% if request.user.is_authenticated %}
 						<td style = "text-align: right;">
-							<a href="{% url 'economyres' %}">
+							<a href="{% url 'audiA4Reserve' %}">
 								<button id="tableReserveButton">Reserve</button>
 							</a>
 						</td>
@@ -83,7 +83,7 @@
             <td style = "text-align: left;">
               <img src="{%static 'img/porsche_911.jpg' %}" width = "350" height = "200">
               <br>
-              <a href="{% url 'Volt' %}">Porsche 911</a>
+              <a href="{% url 'porsche911Reserve' %}">Porsche 911</a>
             </td>
             <td>
               <label>
@@ -97,7 +97,7 @@
             </td>
             {% if request.user.is_authenticated %}
 						<td style = "text-align: right;">
-							<a href="{% url 'economyres' %}">
+							<a href="{% url 'porsche911Reserve' %}">
 								<button id="tableReserveButton">Reserve</button>
 							</a>
 						</td>
@@ -113,7 +113,7 @@
             <td style = "text-align: left;">
               <img src="{%static 'img/ferrari_roma.jpg' %}" width = "350" height = "200">
               <br>
-              <a href="{% url 'Prius' %}">Ferrari Roma</a>
+              <a href="{% url 'ferrariRomaReserve' %}">Ferrari Roma</a>
             </td>
             <td>
               <label>
@@ -127,7 +127,7 @@
             </td>
             {% if request.user.is_authenticated %}
 						<td style = "text-align: right;">
-							<a href="{% url 'economyres' %}">
+							<a href="{% url 'ferrariRomaReserve' %}">
 								<button id="tableReserveButton">Reserve</button>
 							</a>
 						</td>
@@ -143,7 +143,7 @@
             <td style = "text-align: left;">
               <img src="{%static 'img/bentley_bentayga.jpg' %}" width = "350" height = "200">
               <br>
-              <a href="{% url 'Niro' %}">Bentley Bentayga</a>
+              <a href="{% url 'bentleyBentaygaReserve' %}">Bentley Bentayga</a>
             </td>
             <td>
               <label>
@@ -157,7 +157,7 @@
             </td>
             {% if request.user.is_authenticated %}
 						<td style = "text-align: right;">
-							<a href="{% url 'economyres' %}">
+							<a href="{% url 'bentleyBentaygaReserve' %}">
 								<button id="tableReserveButton">Reserve</button>
 							</a>
 						</td>
