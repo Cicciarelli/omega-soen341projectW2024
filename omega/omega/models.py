@@ -9,6 +9,7 @@ class Vehicle(models.Model):
   vehicle_year = models.CharField(max_length=255)
   vehicle_license_plate = models.CharField(max_length=255)
   vehicle_color = models.CharField(max_length=255)
+  is_rented = models.BooleanField()
 
 class Member(models.Model):
   firstname = models.CharField(max_length=255)
