@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import LoginForm
+from .forms import LoginForm, SignatureForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -100,9 +100,18 @@ def generate_random_reservation(request):
         Reservation.objects.create(vehicle=random_vehicle, account=user, reservation_start=start_date, reservation_end=end_date)
     return redirect('reservations')
 
-@login_required_redirect
 def rental_agreement_view(request, reservation_id):
-    return render(request, 'rental_agreement.html')
+    reservation_id = reservation_id
+    if request.method == 'POST':
+        form = SignatureForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            name = form.cleaned_data['name']
+            # Do whatever you want with the name
+    else:
+        form = SignatureForm()
+    return render(request, 'rental_agreement.html', {'form': form,
+                                                     'reservation_id': reservation_id,})
 
 def vehicle_view(request):
     return render(request, 'Addvehicle.html')
@@ -121,6 +130,8 @@ def economy_view(request):
 
 @login_required_redirect
 def luxury_view(request):
+    
+    """
     if request.method == 'POST':
         car_name = request.POST.get('convertibleCarDropdown')
         start_date = request.POST.get('start_date')
@@ -134,7 +145,7 @@ def luxury_view(request):
 
         # Optionally, you can redirect the user to a success page or render a template
         return render(request, 'reservations.html', {'reservation': reservation})
-
+    """
     return render(request, 'luxuryReservation.html')  # Render the reservation form template
 
 @login_required_redirect
@@ -186,3 +197,50 @@ def ferrari_roma(request):
 def bentley_bentayga(request):
     return render(request, 'BentleyBentayga.html')
 
+@login_required_redirect
+def audiA4Reserve_view(request):
+    return render(request, 'audiA4Reserve.html')
+
+@login_required_redirect
+def porsche911Reserve_view(request):
+    return render(request, 'porsche911Reserve.html')
+
+@login_required_redirect
+def ferrariRomaReserve_view(request):
+    return render(request, 'ferrariRomaReserve.html')
+
+@login_required_redirect
+def bentleyBentaygaReserve_view(request):
+    return render(request, 'bentleyBentaygaReserve.html')
+
+@login_required_redirect
+def chevroletVoltReserve_view(request):
+    return render(request, 'chevroletVoltReserve.html')
+
+@login_required_redirect
+def toyotaPriusReserve_view(request):
+    return render(request, 'toyotaPriusReserve.html')
+
+@login_required_redirect
+def kiaNiroReserve_view(request):
+    return render(request, 'kiaNiroReserve.html')
+
+@login_required_redirect
+def hondaCivicReserve_view(request):
+    return render(request, 'hondaCivicReserve.html')
+
+@login_required_redirect
+def fordMustangReserve_view(request):
+    return render(request, 'fordMustangReserve.html')
+
+@login_required_redirect
+def audiA5Reserve_view(request):
+    return render(request, 'audiA5Reserve.html')
+
+@login_required_redirect
+def bmwM4Reserve_view(request):
+    return render(request, 'bmwM4Reserve.html')
+
+@login_required_redirect
+def chevroletCorvetteReserve_view(request):
+    return render(request, 'chevroletCorvetteReserve.html')

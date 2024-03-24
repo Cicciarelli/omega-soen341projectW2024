@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Chevrolet Volt Reserve</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static 'carReservation.css' %}">
+  </head>
+  <body>
+    <header>
+      <div class="headerContainer">
+        <h1>Omega's Car Reservations</h1>
+      </div>
+      {% if request.user.is_authenticated %}
+        <div class="signOutButton">
+          <a href="{% url 'logout' %}"><button class="header_right_button">Sign Out</button></a>
+        </div>
+        <div class="accountButton">
+          <a href="{% url 'profile' %}"><button class="header_right_button">Account</button></a>
+        </div>
+      {% else %}
+        <div class="logInButton">
+          <a href="{% url 'login' %}"><button class="header_right_button">Login</button></a>
+        </div>
+        <div class="signUpButton">
+          <a href="{% url 'signup' %}"><button class="header_right_button">Sign Up</button></a>
+        </div>
+      {% endif %}
+    </header>
+    <div class="sideMenu">
+      <ul>
+          
+          <li><a href="{% url 'startres' %}">Start a Reservation</a></li>
+          <li><a href="{% url 'reservations' %}">Existing Reservation</a></li>
+          <li><a href="{% url 'carList' %}">Browse Vehicles</a></li>
+          <li><a href="{% url 'findabranch' %}">Find a Branch</a></li>
+
+      </ul>
+    </div>
+    <div class="tableContainer">
+      <table class="table">
+          <tr>
+              <td>
+                  <img src="{%static 'img/chevrolet_volt.jpg' %}" width = "630" height = "400">
+              </td>
+              <td>
+                  <table>
+                      <tr>
+                          <td>	
+                              <div class="reservationForm">
+                                  <form action="#" method="post">
+                                      {% csrf_token %}
+                                      <br><br>
+                                      <div class="reservationDates">
+                                          <table class="metricsTable">
+                                              <tr>
+                                                  <td>
+                                                      <div>
+                                                          <label for="start_date">Start Date:</label>
+                                                          <input type="text" id="start_date" name="start_date">
+                                                      </div>
+                                                      
+                                                  </td>
+                                                  <td>
+                                                      <div class="endDate">
+                                                          <label for="end_date">End Date:</label>
+                                                          <input type="text" id="end_date" name="end_date">
+                                                      </div>
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      <div>
+                                                          <label for="duration">Duration:</label>
+                                                          <input type="text" id="duration" name="duration" readonly>
+                                                      </div>
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      <label for="vehiclePrice">Price:</label>
+                                                      <input type="text" id="vehiclePrice" name="vehiclePrice" readonly>
+                                                  </td>
+                                              </tr>
+                                              
+                                          </table>
+                                          
+                                      </div>
+                                      <br>
+                                      
+                                  </form>
+                              </div>
+                              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                              <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+                              <script>
+                                  $(function() {
+                                      $("#start_date").datepicker();
+                                      $("#end_date").datepicker();
+
+                                      $("#start_date, #end_date").on("change", function() {
+                                          const startDate = $("#start_date").datepicker("getDate");
+                                          const endDate = $("#end_date").datepicker("getDate");
+                                          if (startDate && endDate) {
+                                              const diffTime = Math.abs(endDate - startDate);
+                                              const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                                              $("#duration").val(`${diffDays} days`);
+                                              const pricePerDay = 89.99; 
+                                              const totalPrice = diffDays * pricePerDay;
+                                              $("#vehiclePrice").val(`$${totalPrice.toFixed(2)}`);
+                                          }
+                                      });
+                                  });
+                              </script>
+                              
+                          </td>
+                      </tr>
+                      <tr>
+                          {% if request.user.is_authenticated %}
+                              <td>	
+                                  <br><br><br><br>
+                                  <a href="{% url 'economyres' %}">
+                                      <button id="tableReserveButton">Reserve</button>
+                                  </a>
+                              </td>
+                          {% else %}
+                              <td>	
+                                  <br><br><br><br>
+                                  <a href="{% url 'login' %}">
+                                      <button type="tableReservebutton">Reserve</button>
+                                  </a>
+                              </td>
+                          {% endif %}
+                      </tr>
+                  </table>
+              </td>
+          </tr>
+      </table>
+      <table class = "table2">
+          <tr>
+              <td class = "infoCell">
+                  4 People <img src="{%static 'img/person_icon.jpg' %}" width = "20" height = "20"><br>
+                  4 Baggages <img src="{%static 'img/baggage_icon.jpg' %}" width = "24" height = "24"><br>
+                  Automatic <img src="{%static 'img/automatic_icon.jpg' %}" width = "20" height = "20"><br>
+                  89.99$/day
+              </td>
+              <td class = "infoCell">
+                  Included in your price is 300km of mileage per day. <br>
+                  Additional kilometres driven will incur a fee of 0.22$ per kilometre.
+              </td>
+          </tr>
+      </table>
+      <table class = "table3">
+          <tr>
+              <td>
+                Is there a perfect car for everyone? If there is, it has to be the 2024 Toyota Corolla. With the right balance of performance and stunning design, it may be the ultimate compact sedan. And with the choice of the comfortable, reliable Corolla LE, the sharp and stylish Corolla XSE, or the Corolla Hybrid with eAWD for great fuel efficiency and performance, there’s a Corolla that’s just right for you. Whichever one you choose, you’ll get advanced features like Toyota Safety Sense 3.0 and an intuitive Toyota Multimedia system, so comfort and safety are always front and centre.
+
+              </td>
+          </tr>
+      </table>
+  </div>
+        
+    <footer>
+      <div class="footerContainer">
+          <table id="footerTable">
+              
+          </table>
+      </div>
+   </footer>
+  </body>
+</html>

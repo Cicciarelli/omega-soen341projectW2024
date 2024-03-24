@@ -11,8 +11,21 @@
       <div class="headerContainer">
         <h1>Omega's Car Reservations</h1>
       </div>
-      <a href="{% url 'login' %}"><button class="logInButton">Login</button></a>
-      <a href="{% url 'signup' %}"><button class="signUpButton">Sign Up</button></a>
+      {% if request.user.is_authenticated %}
+        <div class="signOutButton">
+          <a href="{% url 'logout' %}"><button class="header_right_button">Sign Out</button></a>
+        </div>
+        <div class="accountButton">
+          <a href="{% url 'profile' %}"><button class="header_right_button">Account</button></a>
+        </div>
+      {% else %}
+        <div class="logInButton">
+          <a href="{% url 'login' %}"><button class="header_right_button">Login</button></a>
+        </div>
+        <div class="signUpButton">
+          <a href="{% url 'signup' %}"><button class="header_right_button">Sign Up</button></a>
+        </div>
+      {% endif %}
     </header>
     <div class="sideMenu">
       <ul>
@@ -24,40 +37,141 @@
 
       </ul>
     </div>
-    <div class="reservationForm">
-        <form action="#" method="post">
-            {% csrf_token %}
-            <label for="car">Select a Car:</label>
-            <select id="luxuryCarDropdown" name="luxuryCarDropdown" required>
-                <option value="" selected disabled>Please select a car</option>
-                <option value="audiA4">Audi A4</option>
-                <option value="Porsche911">Porsche 911</option>
-                <option value="ferrariRoma">Ferrari Roma</option>
-                <option value="bentleyBentayga">Bentley Bentayga</option>
-            </select>
-            <br><br>
-            <div class="reservationDates">
-                <div>
-                    <label for="start_date">Start Date:</label>
-                    <input type="text" id="start_date" name="start_date">
-                </div>
-                <div class="endDate">
-                    <label for="end_date">End Date:</label>
-                    <input type="text" id="end_date" name="end_date">
-                </div>
-            </div>
+    <div class="luxuryTableContainer">
+      <table class="luxuryCarsTable">
+        <tr>
+          <td style = "text-align: left;">
+            <label><h1>Vehicle</h1></label>
+          </td>
+          <td>
+            <label><h1>Information</h1></label>
+          </td>
+          <td>
+            <label><h1>Price</h1></label>
+          </td>
+        </tr>
+        <tr>
+          <td style = "text-align: left;">
+            <img src="{%static 'img/audi_a4.jpg' %}" width = "350" height = "200">
             <br>
-            <button type="submit">Submit</button>
-        </form>
+            <a href="{% url 'audiA4Reserve' %}">Audi A4</a>
+          </td>
+          <td>
+            <label>
+              4 People <br>
+              3 Baggages <br>
+              Automatic
+            </label>
+          </td>
+          <td>
+            <label>124.99$/day</label>
+          </td>
+          {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'audiA4Reserve' %}">
+								<button id="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button type="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          <tr>
+            <td style = "text-align: left;">
+              <img src="{%static 'img/porsche_911.jpg' %}" width = "350" height = "200">
+              <br>
+              <a href="{% url 'porsche911Reserve' %}">Porsche 911</a>
+            </td>
+            <td>
+              <label>
+                2 People <br>
+                1 Baggages <br>
+                Manual
+              </label>
+            </td>
+            <td>
+              <label>134.99$/day</label>
+            </td>
+            {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'porsche911Reserve' %}">
+								<button id="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button id="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          </tr>
+          <tr>
+            <td style = "text-align: left;">
+              <img src="{%static 'img/ferrari_roma.jpg' %}" width = "350" height = "200">
+              <br>
+              <a href="{% url 'ferrariRomaReserve' %}">Ferrari Roma</a>
+            </td>
+            <td>
+              <label>
+                2 People <br>
+                1 Baggages <br>
+                Automatic
+              </label>
+            </td>
+            <td>
+              <label>199.99$/day</label>
+            </td>
+            {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'ferrariRomaReserve' %}">
+								<button id="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button type="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          </tr>
+          <tr>
+            <td style = "text-align: left;">
+              <img src="{%static 'img/bentley_bentayga.jpg' %}" width = "350" height = "200">
+              <br>
+              <a href="{% url 'bentleyBentaygaReserve' %}">Bentley Bentayga</a>
+            </td>
+            <td>
+              <label>
+                5 People <br>
+                4 Baggages <br>
+                Automatic
+              </label>
+            </td>
+            <td>
+              <label>199.99$/day</label>
+            </td>
+            {% if request.user.is_authenticated %}
+						<td style = "text-align: right;">
+							<a href="{% url 'bentleyBentaygaReserve' %}">
+								<button id="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% else %}
+						<td style = "text-align: right;">
+							<a href="{% url 'login' %}">
+								<button type="tableReserveButton">Reserve</button>
+							</a>
+						</td>
+					{% endif %}
+          </tr>
+      </table>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script>
-        $(function() {
-            $("#start_date").datepicker();
-            $("#end_date").datepicker();
-        });
-    </script>
+        
     <footer>
       <div class="footerContainer">
           <table id="footerTable">
