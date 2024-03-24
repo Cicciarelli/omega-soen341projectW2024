@@ -121,9 +121,9 @@ background-color: aquamarine;
 
 .economyCars{
   border: 2px solid black;
-  margin-left: 20%;
+  margin-left: 10%;
   margin-top: 10%;
-  width: 25%;
+  width: 80%;
   text-align: center;
 }
 
@@ -142,9 +142,9 @@ background-color: aquamarine;
 
 .luxuryCars{
   border: 2px solid black;
-  margin-left: 2%;
+  margin-left: 5%;
   margin-top: 10%;
-  width: 25%;
+  width: 80%;
   text-align: center;
 }
 
@@ -163,9 +163,9 @@ background-color: aquamarine;
 
 .convertibleCars{
   border: 2px solid black;
-  margin-left: 2%;
+  margin-left: 0%;
   margin-top: 10%;
-  width: 25%;
+  width: 80%;
   text-align: center;
 }
 
@@ -182,8 +182,26 @@ background-color: aquamarine;
   font-size: x-large;
 }
 .carClassContainer{
-  display: flex;
+  margin-left: 12.5%;
+  margin-top: 5%;
+ 
+  overflow: auto;
+  width: 88;
+  height: 79vh;
 }
+
+.carClassTable{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  text-align: center;
+  background-color: cornflowerblue;
+  font-family: verdana;
+  color : LightGray;
+  font-size: 18;
+}
+
+
 
 .reservationForm{
   border: 2px solid black;
