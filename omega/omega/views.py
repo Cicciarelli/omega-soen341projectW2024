@@ -234,4 +234,4 @@ def bmwM4Reserve_view(request):
 
 @login_required_redirect
 def chevroletCorvetteReserve_view(request):
-    return render(request, 'bmwM4Reserve.html')
+    return render(request, 'chevroletCorvetteReserve.html')
