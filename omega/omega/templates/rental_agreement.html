@@ -55,19 +55,18 @@
     
     <h3>Entire Agreement:</h3>
     <p>This Agreement constitutes the entire understanding between the parties concerning the subject matter hereof and supersedes all prior agreements and understandings, whether written or oral.</p>
-        
-    <fieldset>
-        <legend>Signatures</legend>
-        <label for="renter_signature">Renter's Signature:</label><br>
-        <input type="text" id="renter_signature" name="renter_signature" required><br>
-        <label for="renter_name">Print Name:</label><br>
-        <input type="text" id="renter_name" name="renter_name" required><br>
-        <p>Date: <span id="renter-date"></span>{% now "jS F Y H:i" %}</p>
-        <p>Company Signature: <span id="renter-signature">Omega</span></p>
-        <p>Company Print Name: <span id="renter-print-name">Omega</span></p>
-        <p>Company Signature Date: <span id="renter-date"></span>{% now "jS F Y H:i" %}</p>
-    </fieldset>
     
-    <input type="submit" value="Submit">
+    <legend>Signatures</legend>
+        
+    <p>Date: <span id="renter-date"></span>{% now "jS F Y H:i" %}</p>
+    <p>Company Signature: <span id="renter-signature">Omega</span></p>
+    <p>Company Print Name: <span id="renter-print-name">Omega</span></p>
+    <p>Company Signature Date: <span id="renter-date"></span>{% now "jS F Y H:i" %}</p>
+    
+    <form action="{% url 'rental_agreement' reservation_id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
 </form>
 {% endblock content %}

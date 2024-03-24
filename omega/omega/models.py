@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from jsignature.fields import JSignatureField
 
 # Create your models here.
 class vehicles(models.Model):
@@ -15,4 +16,5 @@ class Reservation(models.Model):
   reservation_start = models.DateTimeField()
   reservation_end = models.DateTimeField()
 
-  
+class SignatureModel(models.Model):
+    signature = JSignatureField()

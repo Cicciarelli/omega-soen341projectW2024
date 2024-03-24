@@ -18,5 +18,5 @@ class UserCreationFormWithEmail(UserCreationForm):
         fields = UserCreationForm.Meta.fields + ("email",)
         field_classes = {'email': forms.EmailField}
 
-class ReservationSignatureForm(forms.Form):
-    signature = forms.CharField(label="Signature", max_length=100)
+class SignatureForm(forms.Form):
+    name = forms.CharField(label='Your Signature', max_length=100)
