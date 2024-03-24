@@ -1,6 +1,5 @@
 from django.db import models
 from django.conf import settings
-from jsignature.fields import JSignatureField
 
 # Create your models here.
 class vehicles(models.Model):
