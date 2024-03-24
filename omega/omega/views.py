@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import LoginForm
+from .forms import LoginForm, SignatureForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -100,9 +100,18 @@ def generate_random_reservation(request):
         Reservation.objects.create(vehicle=random_vehicle, account=user, reservation_start=start_date, reservation_end=end_date)
     return redirect('reservations')
 
-@login_required_redirect
 def rental_agreement_view(request, reservation_id):
-    return render(request, 'rental_agreement.html')
+    reservation_id = reservation_id
+    if request.method == 'POST':
+        form = SignatureForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            name = form.cleaned_data['name']
+            # Do whatever you want with the name
+    else:
+        form = SignatureForm()
+    return render(request, 'rental_agreement.html', {'form': form,
+                                                     'reservation_id': reservation_id,})
 
 def vehicle_view(request):
     return render(request, 'Addvehicle.html')
