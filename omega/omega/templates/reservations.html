@@ -43,7 +43,11 @@
                 {% csrf_token %}
                 <button type="submit" class="delete_reservation_button" onclick="return confirm('Are you sure you want to delete this reservation?')">Delete</button>
               </form>
+              {% if reservation.is_signed %}
+              <a href="{% url 'check_in' reservation.id %}"><button class="check_out_button">Check-Out</button></a>
+              {% else %}
               <a href="{% url 'check_in' reservation.id %}"><button class="check_in_button">Check-In</button></a>
+              {% endif %}
             </td>
           </tr>
         {% endfor %}
