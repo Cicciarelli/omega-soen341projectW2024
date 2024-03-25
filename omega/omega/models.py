@@ -50,3 +50,7 @@ class Reservation(models.Model):
                                          blank=True,
                                          null=True)
   is_signed = models.BooleanField(default=False)
+
+class PaymentInfo(models.Model):
+   account = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+   card_number = models.IntegerField()
