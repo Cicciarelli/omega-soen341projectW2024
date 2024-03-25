@@ -28,7 +28,7 @@
     <p>Rental End Date: <span id="rental-end-date">{{ reservation.reservation_end }}</span></p>
     <p>Pick-up Location: <span id="pick-up-location">{{ reservation.pick_up_location|slugify }}</span></p>
     <p>Drop-off Location: <span id="drop-off-location">{{ reservation.drop_off_location|slugify }}</span></p>
-    <p>Rental Period: <span id="rental-period"></span>{{ reservation.reservation_end|timeuntil:reservation.reservation_start }}</p>
+    <p>Rental Period: <span id="rental-period">{{ reservation.reservation_end|timeuntil:reservation.reservation_start }}</span></p>
     <p>Mileage Limit (if applicable): <span id="mileage-limit">{{ reservation.reservation_end }}</span></p>
     <p>Rental Rate: <span id="rental-rate">{{ reservation.reservation_end }}</span></p>
     <p>Additional Services (if any): <span id="additional-services">{{ reservation.additional_services }}</span></p>
