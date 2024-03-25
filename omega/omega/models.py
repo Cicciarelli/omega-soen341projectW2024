@@ -15,8 +15,13 @@ class Vehicle(models.Model):
         return self.vehicle_license_plate
 
 class Member(models.Model):
+  account = models.OneToOneField(settings.AUTH_USER_MODEL,
+                                 on_delete=models.CASCADE,
+                                 primary_key=True)
   firstname = models.CharField(max_length=255)
   lastname = models.CharField(max_length=255)
+  address = models.CharField(max_length=255)
+  drivers_license = models.CharField(max_length=255)
 
 class Location(models.Model):
   title = models.CharField(max_length=255)
