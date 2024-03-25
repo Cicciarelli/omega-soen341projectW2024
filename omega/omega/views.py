@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
-from .models import Reservation, vehicles
+from .models import Reservation, Vehicle
 from .forms import ReservationForm
 from datetime import datetime, timedelta
 from django.contrib.auth import logout
@@ -92,7 +92,7 @@ def check_in(request, reservation_id):
 @login_required
 def generate_random_reservation(request):
     user = request.user
-    available_vehicles = vehicles.objects.all()
+    available_vehicles = Vehicle.objects.all()
     if available_vehicles.exists():
         random_vehicle = random.choice(available_vehicles)
         start_date = datetime.now()
@@ -139,7 +139,7 @@ def luxury_view(request):
         end_date = request.POST.get('end_date')
 
         # Get the selected vehicle from the database
-        vehicle = vehicles.objects.get(name=car_name)
+        vehicle = Vehicle.objects.get(vehicle_make=car_name)
 
         # Create a new reservation
         reservation = Reservation.objects.create(vehicle=vehicle, account=request.user, reservation_start=start_date, reservation_end=end_date)
