@@ -9,7 +9,7 @@
     <p>This Rental Agreement ("Agreement") is entered into between <span id="rental-company-name">[Car Rental Agency Name]</span>, located at <span id="rental-company-address">[Address]</span>, hereinafter referred to as the "Rental Company," and the individual or entity identified below, hereinafter referred to as the "Renter":</p>
     
     <h3>Renter's Information:</h3>
-    <p>Name: <span id="renter-name">{{ user }}</span></p>
+    <p>Name: <span id="renter-name">{{ user.first_name }} {{ user.last_name }}</span></p>
     <p>Address: <span id="renter-address"></span></p>
     <p>Contact Number: <span id="renter-contact-number"></span></p>
     <p>Email Address: <span id="renter-email">{{ user.email }}</span></p>
