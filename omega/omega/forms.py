@@ -10,7 +10,13 @@ class LoginForm(forms.Form):
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = ['vehicle', 'reservation_start', 'reservation_end']
+        fields = ['vehicle',
+                  'reservation_start',
+                  'reservation_end',
+                  'pick_up_location',
+                  'drop_off_location',
+                  'mileage_limit',
+                  'additional_services']
 
 class UserCreationFormWithEmail(UserCreationForm):
     class Meta(UserCreationForm.Meta):
