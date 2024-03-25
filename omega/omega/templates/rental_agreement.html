@@ -6,7 +6,7 @@
     <p>Rental Agreement Number: <span id="rental-agreement-number">[Unique Rental Agreement Number]</span></p>
     
     <h2>Rental Agreement</h2>
-    <p>This Rental Agreement ("Agreement") is entered into between <span id="rental-company-name">[Car Rental Agency Name]</span>, located at <span id="rental-company-address">[Address]</span>, hereinafter referred to as the "Rental Company," and the individual or entity identified below, hereinafter referred to as the "Renter":</p>
+    <p>This Rental Agreement ("Agreement") is entered into between <span id="rental-company-name">Omega</span>, located at <span id="rental-company-address">Montreal</span>, hereinafter referred to as the "Rental Company," and the individual or entity identified below, hereinafter referred to as the "Renter":</p>
     
     <h3>Renter's Information:</h3>
     <p>Name: <span id="renter-name">{{ user.first_name }} {{ user.last_name }}</span></p>
@@ -49,7 +49,7 @@
     <p>The Renter agrees to indemnify and hold harmless the Rental Company, its employees, agents, and affiliates from any claims, liabilities, damages, or expenses arising out of or related to the Renter's use of the vehicle.</p>
     
     <h3>Governing Law:</h3>
-    <p>This Agreement shall be governed by and construed in accordance with the laws of <span id="jurisdiction"></span>. Any disputes arising under or related to this Agreement shall be resolved exclusively by the courts of <span id="jurisdiction"></span>.</p>
+    <p>This Agreement shall be governed by and construed in accordance with the laws of <span id="jurisdiction"></span>. Any disputes arising under or related to this Agreement shall be resolved exclusively by the courts of <span id="jurisdiction">{{ reservation.pick_up_location|slugify }}</span>.</p>
     
     <h3>Entire Agreement:</h3>
     <p>This Agreement constitutes the entire understanding between the parties concerning the subject matter hereof and supersedes all prior agreements and understandings, whether written or oral.</p>
