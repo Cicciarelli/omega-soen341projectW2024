@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
-from .models import Reservation, Vehicle
+from .models import Reservation, Vehicle, Location
 from .forms import ReservationForm
 from datetime import datetime, timedelta
 from django.contrib.auth import logout
@@ -93,11 +93,22 @@ def check_in(request, reservation_id):
 def generate_random_reservation(request):
     user = request.user
     available_vehicles = Vehicle.objects.all()
+    branch_offices = Location.objects.all()
     if available_vehicles.exists():
         random_vehicle = random.choice(available_vehicles)
         start_date = datetime.now()
+        pick_up_location = random.choice(branch_offices)
+        drop_off_location = random.choice(branch_offices)
         end_date = start_date + timedelta(days=random.randint(1, 7))
-        Reservation.objects.create(vehicle=random_vehicle, account=user, reservation_start=start_date, reservation_end=end_date)
+        mileage_limit = random.randint(100, 700)
+        Reservation.objects.create(vehicle=random_vehicle,
+                                   account=user,
+                                   reservation_start=start_date,
+                                   reservation_end=end_date,
+                                   pick_up_location=pick_up_location,
+                                   drop_off_location=drop_off_location,
+                                   mileage_limit=mileage_limit,
+                                   additional_services = "")
     return redirect('reservations')
 
 def rental_agreement_view(request, reservation_id):
