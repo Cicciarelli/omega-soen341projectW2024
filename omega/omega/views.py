@@ -101,7 +101,7 @@ def generate_random_reservation(request):
     return redirect('reservations')
 
 def rental_agreement_view(request, reservation_id):
-    reservation_id = reservation_id
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
     if request.method == 'POST':
         form = SignatureForm(request.POST)
         if form.is_valid():
@@ -111,7 +111,8 @@ def rental_agreement_view(request, reservation_id):
     else:
         form = SignatureForm()
     return render(request, 'rental_agreement.html', {'form': form,
-                                                     'reservation_id': reservation_id,})
+                                                     'reservation_id': reservation_id,
+                                                     'reservation': reservation,})
 
 def vehicle_view(request):
     return render(request, 'Addvehicle.html')

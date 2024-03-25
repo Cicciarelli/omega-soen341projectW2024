@@ -11,23 +11,23 @@
     <p>This Rental Agreement ("Agreement") is entered into between <span id="rental-company-name">[Car Rental Agency Name]</span>, located at <span id="rental-company-address">[Address]</span>, hereinafter referred to as the "Rental Company," and the individual or entity identified below, hereinafter referred to as the "Renter":</p>
     
     <h3>Renter's Information:</h3>
-    <p>Name: <span id="renter-name"></span></p>
+    <p>Name: <span id="renter-name">{{ user.vehicle_make }}</span></p>
     <p>Address: <span id="renter-address"></span></p>
     <p>Contact Number: <span id="renter-contact-number"></span></p>
     <p>Email Address: <span id="renter-email"></span></p>
     <p>Driver's License Number: <span id="renter-license-number"></span></p>
     
     <h3>Vehicle Information:</h3>
-    <p>Make: <span id="vehicle-make"></span></p>
-    <p>Model: <span id="vehicle-model"></span></p>
-    <p>Year: <span id="vehicle-year"></span></p>
-    <p>License Plate Number: <span id="vehicle-license-plate"></span></p>
-    <p>Vehicle Identification Number (VIN): <span id="vehicle-vin"></span></p>
-    <p>Color: <span id="vehicle-color"></span></p>
+    <p>Make: <span id="vehicle-make">{{ reservation.vehicle.vehicle_make }}</span></p>
+    <p>Model: <span id="vehicle-model">{{ reservation.vehicle.vehicle_model }}</span></p>
+    <p>Year: <span id="vehicle-year">{{ reservation.vehicle.vehicle_year }}</span></p>
+    <p>License Plate Number: <span id="vehicle-license-plate">{{ reservation.vehicle.vehicle_license_plate }}</span></p>
+    <p>Vehicle Identification Number (VIN): <span id="vehicle-vin"></span>{{ reservation.vehicle.vehicle_vin }}</p>
+    <p>Color: <span id="vehicle-color"></span>{{ reservation.vehicle.vehicle_color }}</p>
     
     <h3>Rental Details:</h3>
-    <p>Rental Start Date: <span id="rental-start-date"></span></p>
-    <p>Rental End Date: <span id="rental-end-date"></span></p>
+    <p>Rental Start Date: <span id="rental-start-date">{{ reservation.reservation_start }}</span></p>
+    <p>Rental End Date: <span id="rental-end-date">{{ reservation.reservation_end }}</span></p>
     <p>Pick-up Location: <span id="pick-up-location"></span></p>
     <p>Drop-off Location: <span id="drop-off-location"></span></p>
     <p>Rental Period: <span id="rental-period"></span></p>
