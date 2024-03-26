@@ -300,3 +300,4 @@ def checkOutPayment(request):
 
 def checkOutConfirm(request):
     return render(request, 'checkOutConfirm.html')
+
