@@ -36,7 +36,11 @@ urlpatterns = [
 
     path('check_in/<int:reservation_id>/', views.check_in, name='check_in'),
 
-    path('rental_agreement/<int:reservation_id>/',views.rental_agreement_view,name='rental_agreement'),
+    path('checked_in/<int:reservation_id>/', views.checked_in_view, name='checked_in'),
+
+    path('rental_agreement/<int:reservation_id>/<str:address>/<str:driving_license>/<str:contact_number>/',views.rental_agreement_view,name='rental_agreement'),
+
+    path('rental_setup/<int:reservation_id>/',views.rental_setup_view,name='rental_setup'),
 
     path('reservation/delete/<int:reservation_id>/', views.delete_reservation, name='delete_reservation'),
     path('reservation/edit/<int:reservation_id>/', views.edit_reservation, name='edit_reservation'),

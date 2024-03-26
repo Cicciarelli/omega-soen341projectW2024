@@ -10,10 +10,10 @@
     
     <h3>Renter's Information:</h3>
     <p>Name: <span id="renter-name">{{ user.first_name }} {{ user.last_name }}</span></p>
-    <p>Address: <span id="renter-address"></span></p>
-    <p>Contact Number: <span id="renter-contact-number"></span></p>
+    <p>Address: <span id="renter-address">{{ address }}</span></p>
+    <p>Contact Number: <span id="renter-contact-number">{{ contact_number }}</span></p>
     <p>Email Address: <span id="renter-email">{{ user.email }}</span></p>
-    <p>Driver's License Number: <span id="renter-license-number"></span></p>
+    <p>Driver's License Number: <span id="renter-license-number">{{ driving_license }}</span></p>
     
     <h3>Vehicle Information:</h3>
     <p>Make: <span id="vehicle-make">{{ reservation.vehicle.vehicle_make }}</span></p>
@@ -61,7 +61,7 @@
     <p>Company Print Name: <span id="renter-print-name">Omega</span></p>
     <p>Company Signature Date: <span id="renter-date"></span>{% now "jS F Y H:i" %}</p>
     
-    <form action="{% url 'rental_agreement' reservation_id %}" method="post">
+    <form action="{% url 'checked_in' reservation_id %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit</button>
