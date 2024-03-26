@@ -15,8 +15,13 @@ class Vehicle(models.Model):
         return self.vehicle_license_plate
 
 class Member(models.Model):
-  firstname = models.CharField(max_length=255)
-  lastname = models.CharField(max_length=255)
+  account = models.OneToOneField(settings.AUTH_USER_MODEL,
+                                 on_delete=models.CASCADE,
+                                   default=1)
+  firstname = models.CharField(max_length=255, default='')
+  lastname = models.CharField(max_length=255, default='')
+  address = models.CharField(max_length=255, default='')
+  drivers_license = models.CharField(max_length=255, default='')
 
 class Location(models.Model):
   title = models.CharField(max_length=255)
@@ -50,3 +55,8 @@ class Reservation(models.Model):
                                          blank=True,
                                          null=True)
   is_signed = models.BooleanField(default=False)
+
+class PaymentInfo(models.Model):
+   account = models.ForeignKey(settings.AUTH_USER_MODEL,
+                               on_delete=models.CASCADE)
+   card_number = models.IntegerField()
