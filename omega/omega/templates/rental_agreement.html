@@ -61,7 +61,7 @@
     <p>Company Print Name: <span id="renter-print-name">Omega</span></p>
     <p>Company Signature Date: <span id="renter-date"></span>{% now "jS F Y H:i" %}</p>
     
-    <form method="post">
+    <form action="{% url 'checked_in' reservation_id %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit</button>

@@ -146,6 +146,19 @@ def rental_agreement_view(request, reservation_id, address, driving_license, con
                                                      'driving_license': driving_license,
                                                      'contact_number': contact_number})
 
+def checked_in_view(request, reservation_id):
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+    reservation.is_signed = True
+    reservation.save()
+    return redirect('checked_in', reservation_id=reservation_id)
+
+def checked_in_view(request, reservation_id):
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+    reservation.is_signed = True
+    reservation.save()
+    return redirect('checked_in', reservation_id=reservation_id)
+
+
 def vehicle_view(request):
     return render(request, 'Addvehicle.html')
 

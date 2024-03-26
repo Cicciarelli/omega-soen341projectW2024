@@ -36,6 +36,8 @@ urlpatterns = [
 
     path('check_in/<int:reservation_id>/', views.check_in, name='check_in'),
 
+    path('checked_in/<int:reservation_id>/', views.checked_in_view, name='checked_in'),
+
     path('rental_agreement/<int:reservation_id>/<str:address>/<str:driving_license>/<str:contact_number>/',views.rental_agreement_view,name='rental_agreement'),
 
     path('rental_setup/<int:reservation_id>/',views.rental_setup_view,name='rental_setup'),
