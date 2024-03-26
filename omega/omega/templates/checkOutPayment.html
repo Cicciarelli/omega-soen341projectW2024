@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="{%static 'checkOutStyle.css' %}">
+    <script defer src="{%static 'checkOutJS.js' %}"</script>
+</head>
+<h1>Omega Payment Services</h1>
+<body>
+    <div class="container">
+        <form id="form" action="/">
+            <h1>Payment Information</h1>
+            <div class="input-control">
+                <label for="fullName">Name on Card</label>
+                <input id="fullName" name="fullName" type="text" placeholder="Your name and surname">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="cardNumber">Card Number</label>
+                <input id="cardNumber" name="cardNumber" type="text" placeholder="1111-2222-3333-4444">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="expirationDate">Expiration Date</label>
+                <input id="expirationDate"name="expirationDate" type="text" placeholder="09/21">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="cardCCV">CCV</label>
+                <input id="cardCCV"name="cardCCV" type="password" placeholder="***">
+                <div class="error"></div>
+            </div>
+            <button type="submit">Confirm Payment</button>
+        </form>
+    </div>
+</body>
+</html>
