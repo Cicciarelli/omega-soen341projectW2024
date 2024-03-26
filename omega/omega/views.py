@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import LoginForm, SignatureForm
+from .forms import LoginForm, SignatureForm, RentalAgreementSetupForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
-from .models import Reservation, Vehicle, Location
+from .models import Reservation, Vehicle, Location, Member
 from .forms import ReservationForm
 from datetime import datetime, timedelta
 from django.contrib.auth import logout
@@ -14,6 +14,7 @@ import random
 from .decorators import login_required_redirect
 from django.http import Http404
 from .forms import UserCreationFormWithEmail
+from django.urls import reverse
 
 @login_required_redirect
 def my_view(request):
@@ -50,6 +51,23 @@ def signup_view(request):
     else:
         form = UserCreationFormWithEmail()
     return render(request, 'signup.html', {'form': form})
+
+def rental_setup_view(request, reservation_id):
+    if request.method == 'POST':
+        form = RentalAgreementSetupForm(request.POST)
+        if form.is_valid():
+            address = form.cleaned_data['address']
+            driving_license = form.cleaned_data['driving_license']
+            contact_number = form.cleaned_data['contact_number']
+            
+            url = reverse('rental_agreement', kwargs={'reservation_id': reservation_id,
+                                                       'address': address,
+                                                       'driving_license': driving_license,
+                                                       'contact_number': contact_number})
+            return redirect(url)
+    else:
+        form = RentalAgreementSetupForm()
+    return render(request, 'rental_setup.html', {'form': form})
 
 @login_required
 def logout_view(request):
@@ -111,7 +129,7 @@ def generate_random_reservation(request):
                                    additional_services = "")
     return redirect('reservations')
 
-def rental_agreement_view(request, reservation_id):
+def rental_agreement_view(request, reservation_id, address, driving_license, contact_number):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
     if request.method == 'POST':
         form = SignatureForm(request.POST)
@@ -123,7 +141,21 @@ def rental_agreement_view(request, reservation_id):
         form = SignatureForm()
     return render(request, 'rental_agreement.html', {'form': form,
                                                      'reservation_id': reservation_id,
-                                                     'reservation': reservation,})
+                                                     'reservation': reservation,
+                                                     'address': address,
+                                                     'driving_license': driving_license,
+                                                     'contact_number': contact_number})
+
+def checked_in_view(request, reservation_id):
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+    reservation.is_signed = True
+    reservation.save()
+    return render(request, 'checked_in.html', {'reservation_id': reservation_id })
+
+def check_out_view(request, reservation_id):
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+    # Write your view code here
+    raise Http404
 
 def vehicle_view(request):
     return render(request, 'Addvehicle.html')
@@ -148,7 +180,7 @@ def economy_view(request):
 
 @login_required_redirect
 def luxury_view(request):
-    
+
     """
     if request.method == 'POST':
         car_name = request.POST.get('convertibleCarDropdown')
@@ -262,3 +294,10 @@ def bmwM4Reserve_view(request):
 @login_required_redirect
 def chevroletCorvetteReserve_view(request):
     return render(request, 'chevroletCorvetteReserve.html')
+
+def checkOutPayment(request):
+    return render(request, 'checkOutPayment.html')
+
+def checkOutConfirm(request):
+    return render(request, 'checkOutConfirm.html')
+

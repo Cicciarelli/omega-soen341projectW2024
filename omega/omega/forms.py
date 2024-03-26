@@ -29,5 +29,10 @@ class UserCreationFormWithEmail(UserCreationForm):
         'email': forms.EmailField,
     }
 
+class RentalAgreementSetupForm(forms.Form):
+    address = forms.CharField(label='Address', max_length=100)
+    driving_license = forms.CharField(label='Driving License', max_length=100)
+    contact_number = forms.CharField(label='Contact Number', max_length=100)
+
 class SignatureForm(forms.Form):
     name = forms.CharField(label='Your Signature', max_length=100)
