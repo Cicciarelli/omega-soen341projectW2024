@@ -155,13 +155,10 @@ def checked_in_view(request, reservation_id):
 def check_out_view(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
     # Write your view code here
-    raise Http404
+    return render(request, 'CheckOut.html')
 
 def vehicle_view(request):
     return render(request, 'Addvehicle.html')
-
-def check_out_view(request):
-    return render(request, 'CheckOut.html')
 
 def final_receipt_view(request):
     return render(request, 'FinalReceipt.html')
