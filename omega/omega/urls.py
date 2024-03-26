@@ -41,20 +41,24 @@ urlpatterns = [
     path('reservation/delete/<int:reservation_id>/', views.delete_reservation, name='delete_reservation'),
     path('reservation/edit/<int:reservation_id>/', views.edit_reservation, name='edit_reservation'),
     path('reservation/generate/', views.generate_random_reservation, name='generate_random_reservation'),
-    
+
     path("logout/", views.logout_view, name="logout"),
     path('login/', LoginView.as_view(), name='login'),
     path('accounts/profile/', views.profile_view, name='profile'),
     path('signup/', views.signup_view, name='signup'),
 
     path('admin/', admin.site.urls),
-    
+
     path('convertibleReservation/', views.convertible_view, name='convertibleres'),
 
     path('Addvehicle/',views.vehicle_view, name='vehicle'),
 
+    path('checkOutPayment', views.checkOutPayment, name='checkOutPayment'),
+    path('checkOutConfirm', views.checkOutConfirm, name='checkOutConfirm'),
+
+
 #car lists
-    
+
     path('OMEGACarList/',views.OMEGACarList,name='carList'),
     path('ToyotaCorolla/',views.toyota_corolla,name='Corolla'),
     path('HondaCivic/',views.honda_civic,name='Civic'),
@@ -83,6 +87,5 @@ urlpatterns = [
     path('chevroletCorvetteReserve/',views.chevroletCorvetteReserve_view,name='chevroletCorvetteReserve'),
 
 
+
 ]
-
-
