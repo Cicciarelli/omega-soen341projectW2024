@@ -150,13 +150,12 @@ def checked_in_view(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
     reservation.is_signed = True
     reservation.save()
-    return redirect('checked_in', reservation_id=reservation_id)
+    return render(request, 'checked_in.html', {'reservation_id': reservation_id })
 
 def check_out_view(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
     # Write your view code here
     raise Http404
-
 
 def vehicle_view(request):
     return render(request, 'Addvehicle.html')
