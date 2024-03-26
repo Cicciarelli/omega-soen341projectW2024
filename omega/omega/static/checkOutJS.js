@@ -8,6 +8,7 @@ form.addEventListener('submit', e => {
     e.preventDefault();
 
     validateInputs();
+    redirectFunction();
 });
 
 const setError = (element, message) => {
@@ -80,3 +81,6 @@ const validateInputs = () => {
     }
 
 };
+function redirectFunction(){
+    window.location.href = "{% url 'checkOutConfirm' %}"
+}
