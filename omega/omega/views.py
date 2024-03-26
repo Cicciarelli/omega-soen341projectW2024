@@ -176,7 +176,7 @@ def economy_view(request):
 
 @login_required_redirect
 def luxury_view(request):
-    
+
     """
     if request.method == 'POST':
         car_name = request.POST.get('convertibleCarDropdown')
@@ -290,3 +290,9 @@ def bmwM4Reserve_view(request):
 @login_required_redirect
 def chevroletCorvetteReserve_view(request):
     return render(request, 'chevroletCorvetteReserve.html')
+
+def checkOutPayment(request):
+    return render(request, 'checkOutPayment.html')
+
+def checkOutConfirm(request):
+    return render(request, 'checkOutConfirm.html')
