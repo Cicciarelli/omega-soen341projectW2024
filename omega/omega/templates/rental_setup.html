@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block page_title %}Check In{% endblock %}
+{% block header_title %}Check In{% endblock %}
+{% block content %}
+<div class="check_in">
+    <h2>Check In</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Check In</button>
+    </form>
+</div>
+{% endblock content %}

@@ -18,6 +18,8 @@ class Member(models.Model):
   account = models.OneToOneField(settings.AUTH_USER_MODEL,
                                  on_delete=models.CASCADE,
                                    default=1)
+  firstname = models.CharField(max_length=255, default='')
+  lastname = models.CharField(max_length=255, default='')
   address = models.CharField(max_length=255, default='')
   drivers_license = models.CharField(max_length=255, default='')
 
