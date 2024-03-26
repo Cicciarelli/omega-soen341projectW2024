@@ -17,11 +17,11 @@ class Vehicle(models.Model):
 class Member(models.Model):
   account = models.OneToOneField(settings.AUTH_USER_MODEL,
                                  on_delete=models.CASCADE,
-                                 primary_key=True)
-  firstname = models.CharField(max_length=255)
-  lastname = models.CharField(max_length=255)
-  address = models.CharField(max_length=255)
-  drivers_license = models.CharField(max_length=255)
+                                   default=1)
+  firstname = models.CharField(max_length=255, default='')
+  lastname = models.CharField(max_length=255, default='')
+  address = models.CharField(max_length=255, default='')
+  drivers_license = models.CharField(max_length=255, default='')
 
 class Location(models.Model):
   title = models.CharField(max_length=255)
@@ -57,5 +57,6 @@ class Reservation(models.Model):
   is_signed = models.BooleanField(default=False)
 
 class PaymentInfo(models.Model):
-   account = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+   account = models.ForeignKey(settings.AUTH_USER_MODEL,
+                               on_delete=models.CASCADE)
    card_number = models.IntegerField()
