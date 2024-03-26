@@ -44,7 +44,7 @@
                 <button type="submit" class="delete_reservation_button" onclick="return confirm('Are you sure you want to delete this reservation?')">Delete</button>
               </form>
               {% if reservation.is_signed %}
-              <a href="{% url 'checkout' reservation.id %}"><button class="check_out_button">Check-Out</button></a>
+              <a href="{% url 'check_out' reservation.id %}"><button class="check_out_button">Check-Out</button></a>
               {% else %}
               <a href="{% url 'rental_setup' reservation.id %}"><button class="check_in_button">Check-In</button></a>
               {% endif %}
