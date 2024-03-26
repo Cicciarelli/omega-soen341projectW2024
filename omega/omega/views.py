@@ -160,6 +160,12 @@ def check_out_view(request, reservation_id):
 def vehicle_view(request):
     return render(request, 'Addvehicle.html')
 
+def check_out_view(request):
+    return render(request, 'CheckOut.html')
+
+def final_receipt_view(request):
+    return render(request, 'FinalReceipt.html')
+
 @login_required_redirect
 def reservations_view(request) -> HttpResponse:
     return render(request, 'reservations.html')
