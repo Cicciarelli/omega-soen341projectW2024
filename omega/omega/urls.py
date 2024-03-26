@@ -59,6 +59,10 @@ urlpatterns = [
 
     path('Addvehicle/',views.vehicle_view, name='vehicle'),
 
+    path('CheckOut/', views.check_out_view, name='checkout'),
+    path('FinalReceipt/', views.final_receipt_view, name='receipt'),
+
+
     path('checkOutPayment', views.checkOutPayment, name='checkOutPayment'),
     path('checkOutConfirm', views.checkOutConfirm, name='checkOutConfirm'),
 
