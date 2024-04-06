@@ -274,6 +274,21 @@ def kiaNiroReserve_view(request):
 
 @login_required_redirect
 def hondaCivicReserve_view(request):
+
+    """
+    if request.method == 'POST':
+        start_date=request.POST.get("start_date")
+        end_date=request.POST.get("end_date")
+        vehicle=
+        random_location1 = Location.objects.order_by('?').first()  # Get a random location
+        pick_up_location = random_location1.title
+        random_location2 = Location.objects.order_by('?').first()  # Get a random location
+        drop_off_location = random_location2.title
+        rental_period=5
+        mileage_limit=1000
+        additional_services=0
+        is_signed=0
+        """
     return render(request, 'hondaCivicReserve.html')
 
 @login_required_redirect
