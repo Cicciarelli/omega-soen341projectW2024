@@ -60,3 +60,9 @@ class PaymentInfo(models.Model):
    account = models.ForeignKey(settings.AUTH_USER_MODEL,
                                on_delete=models.CASCADE)
    card_number = models.IntegerField()
+
+class Review(models.Model):
+   account = models.ForeignKey(settings.AUTH_USER_MODEL,
+                               on_delete=models.CASCADE)
+   rating = models.PositiveIntegerField()
+   text = models.CharField(max_length=2048)
