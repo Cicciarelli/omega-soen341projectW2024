@@ -225,7 +225,7 @@ background-color: aquamarine;
   border: 2px solid black;
   margin-left: 20%;
   margin-top: 10%;
-  width: 25%;
+  width: 80%;
   text-align: center;
   padding: 20px;
 }
@@ -407,3 +407,6 @@ td{
   height: 79vh;
 }
 
+#map{
+  
+}

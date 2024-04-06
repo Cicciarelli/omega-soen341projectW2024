@@ -250,6 +250,40 @@ def audiA4Reserve_view(request):
 
 @login_required_redirect
 def porsche911Reserve_view(request):
+    if request.method == 'POST':
+        start_date911=request.POST.get("start_date")
+        end_date911=request.POST.get("end_date")
+
+        vehicle911=Vehicle.objects.create(
+            vehicle_vin=123456,
+            vehicle_make="porsche",
+            vehicle_model="911",
+            vehicle_year="2020",
+            vehicle_license_plate="a1b2c3",
+            vehicle_color="blue",
+            is_rented=False
+        )
+        random_location1 = Location.objects.order_by('?').first()  # Get a random location
+        pick_up_location911 = random_location1.title
+        random_location2 = Location.objects.order_by('?').first()  # Get a random location
+        drop_off_location911 = random_location2.title
+        rental_period=request.POST.get("duration")
+        mileage_limit911=300
+        additional_services911="extra luggage space"
+        is_signed911=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicle911,  
+            account=request.user,
+            reservation_start=start_date911,
+            reservation_end=end_date911,
+            pick_up_location=pick_up_location911,
+            drop_off_location=drop_off_location911,
+            rental_period=rental_period,
+            mileage_limit=mileage_limit911,
+            additional_services=additional_services911,
+            is_signed=is_signed911,
+        )
     return render(request, 'porsche911Reserve.html')
 
 @login_required_redirect
