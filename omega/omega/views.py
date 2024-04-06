@@ -286,6 +286,16 @@ def hondaCivicReserve_view(request):
         mileage_limit=300
         additional_services="extra luggage space"
         is_signed=True
+        reservation = Reservation.objects.create(
+            vehicle=getVehicle,  # Assuming you have a hidden input for vehicle_id
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            rental_period=rental_period,
+            mileage_limit=getMileage_limit,
+            additional_services=additional_services,
+            is_signed=is_signed,
+        )
     return render(request, 'hondaCivicReserve.html')
 
 @login_required_redirect
