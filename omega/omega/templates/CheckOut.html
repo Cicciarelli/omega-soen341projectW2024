@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Check Out</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'OMEGACarList.css' %}">
+</head>
+
+<body>
+  <div class="headerContainer">
+    <h1>Check Out</h1>
+  </div>
+  <div class="sideMenu">
+    <ul>
+        <li><a href="{% url 'startres' %}">Start a Reservation</a></li>
+        <li><a href="{% url 'reservations' %}">Existing Reservation</a></li>
+        <li><a href="{% url 'carList' %}">Browse Vehicles</a></li>
+        <li><a href="{% url 'findabranch' %}">Find a Branch</a></li>
+</ul>
+</div>
+<br><br>
+
+<div class = "container"> 
+<br><br>
+<form>
+    <fieldset>
+  
+  
+  
+     <p> 
+    <label>Was the car dropped off at the correct location?</label><br>
+      <input type="radio" id="right" name="location" value="Right">
+      <label for="right">Yes</label>
+      <input type="radio" id="wrong" name="location" value="Wrong">
+      <label for="wrong">No</label> 
+    </p>
+  
+      <p><label>Is there any damages to the car?</label><br>
+      <input type="radio" id="yes" name="damages" value="Yes">
+      <label for="yes">Yes</label>
+      <input type="radio" id="no" name="damages" value="No">
+      <label for="no">No</label></p>
+      
+    </form>
+
+    <a href="{% url 'receipt' %}">
+        <button type="button" class = "addButton">Proceed to your Receipt</button>
+    </a>
+    </div>
+
+<footer>
+	<div class="footerContainer">
+        	<table id="footerTable"> 
+         	</table>
+	</div>
+</footer>
+</body>
+
+</html>
