@@ -275,26 +275,36 @@ def kiaNiroReserve_view(request):
 @login_required_redirect
 def hondaCivicReserve_view(request):
     if request.method == 'POST':
-        start_date=request.POST.get("start_date")
-        end_date=request.POST.get("end_date")
-        vehicle=abc123
+        start_date = request.POST.get("start_date")
+        end_date = request.POST.get("end_date")
+        getVehicle = Vehicle.objects.create(
+            vehicle_vin=19284756,
+            vehicle_make="Honda",
+            vehicle_model="Civic",
+            vehicle_year="2005",
+            vehicle_license_plate="a2b3c4",
+            vehicle_color="blue",
+            is_rented=False
+        )
         random_location1 = Location.objects.order_by('?').first()  # Get a random location
-        pick_up_location = random_location1.title
+        getPick_up_location = random_location1.title
         random_location2 = Location.objects.order_by('?').first()  # Get a random location
-        drop_off_location = random_location2.title
-        rental_period=request.POST.get("duration")
-        mileage_limit=300
-        additional_services="extra luggage space"
-        is_signed=True
+        getDrop_off_location = random_location2.title
+        getRental_period = request.POST.get("duration")
+        getMileage_limit = 300
+        getAdditional_services = "extra luggage space"
+        getIs_signed = True
         reservation = Reservation.objects.create(
-            vehicle=getVehicle,  # Assuming you have a hidden input for vehicle_id
-            account=request.user,
-            reservation_start=start_date,
-            reservation_end=end_date,
-            rental_period=rental_period,
-            mileage_limit=getMileage_limit,
-            additional_services=additional_services,
-            is_signed=is_signed,
+            vehicle = getVehicle,  # Assuming you have a hidden input for vehicle_id
+            account = request.user,
+            reservation_start = start_date,
+            reservation_end = end_date,
+            pick_up_location = getPick_up_location,
+            drop_off_location = getDrop_off_location,
+            rental_period = getRental_period,
+            mileage_limit = getMileage_limit,
+            additional_services = getAdditional_services,
+            is_signed = getIs_signed,
         )
     return render(request, 'hondaCivicReserve.html')
 
