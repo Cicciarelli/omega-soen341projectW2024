@@ -36,3 +36,7 @@ class RentalAgreementSetupForm(forms.Form):
 
 class SignatureForm(forms.Form):
     name = forms.CharField(label='Your Signature', max_length=100)
+
+class ReviewForm(forms.Form):
+    score = forms.IntegerField(label='Score')
+    review = forms.CharField(label='Review', max_length=2048)
