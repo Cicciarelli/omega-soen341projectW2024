@@ -4,9 +4,10 @@
 
 {% block content %}
     {% for review in vehicle.review_set.all %}
+        <h2>Average Score: {{ average_score }}</h2>
         <tr>
             <div class="review">
-                <h1>{{ review.account.username }}</h1>
+                <h2>{{ review.account.username }}</h2>
                 <p>Score: {{ review.rating }}</p>
                 <p>{{ review.text }}</p>
             </div>
