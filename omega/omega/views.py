@@ -175,7 +175,7 @@ def create_review_view(request, vehicle_id):
                                    rating=score,
                                    text=review)
             
-            review_page_view(request, vehicle_id)
+            return redirect('reviews', vehicle_id=vehicle_id)
     else:
         form = ReviewForm()
     return render(request, 'review_page.html', {'form': form,
