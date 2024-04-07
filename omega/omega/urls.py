@@ -34,6 +34,10 @@ urlpatterns = [
 
     path('reservations/', views.reservations_view, name='reservations'),
 
+    path('create_review/<int:vehicle_id>/', views.create_review_view, name='create_review'),
+
+    path('reviews/<int:vehicle_id>/', views.review_page_view, name='reviews'),
+
     path('check_in/<int:reservation_id>/', views.check_in, name='check_in'),
 
     path('check_out/<int:reservation_id>/', views.check_out_view, name='check_out'),
