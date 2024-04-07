@@ -63,6 +63,9 @@ class PaymentInfo(models.Model):
    card_number = models.IntegerField()
 
 class Review(models.Model):
+   vehicle = models.ForeignKey(Vehicle,
+                               on_delete=models.CASCADE,
+                                default=None)
    account = models.ForeignKey(settings.AUTH_USER_MODEL,
                                on_delete=models.CASCADE)
    rating = models.PositiveIntegerField()
