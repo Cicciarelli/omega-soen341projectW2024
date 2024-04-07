@@ -15,6 +15,7 @@ from .decorators import login_required_redirect
 from django.http import Http404
 from .forms import UserCreationFormWithEmail
 from django.urls import reverse
+from django.db.models import Avg
 
 @login_required_redirect
 def my_view(request):
@@ -148,7 +149,10 @@ def rental_agreement_view(request, reservation_id, address, driving_license, con
 
 def review_page_view(request, vehicle_id):
     vehicle = get_object_or_404(Vehicle, pk=vehicle_id)
-    return render(request, 'reviews.html', {'vehicle': vehicle })
+    reviews = Review.objects.filter(vehicle_id=vehicle_id)
+    average_score = reviews.aggregate(Avg('rating'))['rating__avg']
+    return render(request, 'reviews.html', {'vehicle': vehicle,
+                                            'average_score': average_score })
 
 def create_review_view(request, vehicle_id):
     vehicle = get_object_or_404(Vehicle, pk=vehicle_id)
@@ -157,14 +161,21 @@ def create_review_view(request, vehicle_id):
         form = ReviewForm(request.POST)
         if form.is_valid():
             score = form.cleaned_data['score']
+            score = min(score, 100)
+            score = max(score, 0)
             review = form.cleaned_data['review']
+
+            existing_reviews = Review.objects.filter(vehicle=vehicle, account=user)
+
+            if existing_reviews.first():
+                Review.objects.all().delete()
 
             Review.objects.create(vehicle=vehicle,
                                    account=user,
                                    rating=score,
                                    text=review)
             
-            review_page_view(request, vehicle_id)
+            return redirect('reviews', vehicle_id=vehicle_id)
     else:
         form = ReviewForm()
     return render(request, 'review_page.html', {'form': form,
