@@ -181,3 +181,12 @@ a:active {
 	position: fixed;
 	z-index: 2;
   }
+
+.receiptButton {
+	width: 150px;
+	height: 25px;
+}
+  .payementButton {
+	width: 175px;
+	height: 25px;
+}
