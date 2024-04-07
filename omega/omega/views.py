@@ -157,7 +157,14 @@ def create_review_view(request, vehicle_id):
         form = ReviewForm(request.POST)
         if form.is_valid():
             score = form.cleaned_data['score']
+            score = min(score, 100)
+            score = max(score, 0)
             review = form.cleaned_data['review']
+
+            existing_reviews = Review.objects.filter(vehicle=vehicle, account=user)
+
+            if existing_reviews.first():
+                Review.objects.all().delete()
 
             Review.objects.create(vehicle=vehicle,
                                    account=user,
