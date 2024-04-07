@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import LoginForm, SignatureForm, RentalAgreementSetupForm
+from .forms import LoginForm, SignatureForm, RentalAgreementSetupForm, ReviewForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
-from .models import Reservation, Vehicle, Location, Member
+from .models import Reservation, Vehicle, Location, Member, Review
 from .forms import ReservationForm
 from datetime import datetime, timedelta
 from django.contrib.auth import logout
@@ -134,9 +134,9 @@ def rental_agreement_view(request, reservation_id, address, driving_license, con
     if request.method == 'POST':
         form = SignatureForm(request.POST)
         if form.is_valid():
-            # Process the form data
-            name = form.cleaned_data['name']
-            # Do whatever you want with the name
+
+            form.save()
+            return redirect('reservations')
     else:
         form = SignatureForm()
     return render(request, 'rental_agreement.html', {'form': form,
@@ -145,6 +145,30 @@ def rental_agreement_view(request, reservation_id, address, driving_license, con
                                                      'address': address,
                                                      'driving_license': driving_license,
                                                      'contact_number': contact_number})
+
+def review_page_view(request, vehicle_id):
+    vehicle = get_object_or_404(Vehicle, pk=vehicle_id)
+    return render(request, 'reviews.html', {'vehicle': vehicle })
+
+def create_review_view(request, vehicle_id):
+    vehicle = get_object_or_404(Vehicle, pk=vehicle_id)
+    user = request.user
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            score = form.cleaned_data['score']
+            review = form.cleaned_data['review']
+
+            Review.objects.create(vehicle=vehicle,
+                                   account=user,
+                                   rating=score,
+                                   text=review)
+            
+            review_page_view(request, vehicle_id)
+    else:
+        form = ReviewForm()
+    return render(request, 'review_page.html', {'form': form,
+                                                'vehicle': vehicle })
 
 def checked_in_view(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
