@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block page_title %}Login{% endblock %}
+{% block header_title %}Login{% endblock %}
+
+{% block content %}
+    {% for review in vehicle.review_set.all %}
+        <tr>
+            <div class="review">
+                <h1>{{ review.account.username }}</h1>
+                <p>Score: {{ review.rating }}</p>
+                <p>{{ review.text }}</p>
+            </div>
+        </tr>
+    {% endfor %}
+{% endblock content %}
