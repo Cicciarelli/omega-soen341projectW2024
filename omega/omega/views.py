@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import LoginForm, SignatureForm, RentalAgreementSetupForm, ReviewForm
+from .forms import LoginForm, SignatureForm, RentalAgreementSetupForm, ReviewForm, PostForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
-from .models import Reservation, Vehicle, Location, Member, Review
+from .models import Reservation, Vehicle, Location, Member, Review, ForumPost
 from .forms import ReservationForm
 from datetime import datetime, timedelta
 from django.contrib.auth import logout
@@ -180,6 +180,52 @@ def create_review_view(request, vehicle_id):
         form = ReviewForm()
     return render(request, 'review_page.html', {'form': form,
                                                 'vehicle': vehicle })
+
+def forum_view(request, forumpost_id):
+    root = get_object_or_404(ForumPost, pk=forumpost_id)
+    return render(request, 'forum.html', {'post': root })
+
+def reply_view(request, forumpost_id):
+    parent = get_object_or_404(ForumPost, pk=forumpost_id)
+    user = request.user
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            text = form.cleaned_data['text']
+            date = datetime.now()
+
+            ForumPost.objects.create(parent=parent,
+                                     account=user,
+                                     date=date,
+                                     text=text)
+            
+            return redirect('forum', forumpost_id=forumpost_id)
+    else:
+        form = PostForm()
+    return render(request, 'reply_form_page.html', {'parent': parent,
+                                                    'form': form })
+
+def make_post_view(request):
+    user = request.user
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            text = form.cleaned_data['text']
+            date = datetime.now()
+
+            ForumPost.objects.create(parent=None,
+                                     account=user,
+                                     date=date,
+                                     text=text)
+            
+            return redirect('posts')
+    else:
+        form = PostForm()
+    return render(request, 'reply_form_page.html', { 'form': form })
+
+def root_posts_view(request):
+    root_posts = ForumPost.objects.filter(parent=None).order_by('date')
+    return render(request, 'posts.html', {'root_posts': root_posts})
 
 def checked_in_view(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
