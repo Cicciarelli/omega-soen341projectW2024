@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block page_title %}Reply{% endblock %}
+{% block header_title %}Reply{% endblock %}
+{% block content %}
+<div class="post_form">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock content %}
