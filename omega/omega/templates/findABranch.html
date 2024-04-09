@@ -74,6 +74,17 @@
               center: { lat: 45.4948, lng: -73.5779 }
           });
       
+      
+
+      var permanentMarker1 = new H.map.Marker({lat: 45.685543, lng: -74.021608});
+      map.addObject(permanentMarker1);
+      var permanentMarker2 = new H.map.Marker({lat: 46.842235, lng: -71.398334});
+      map.addObject(permanentMarker2);
+      var permanentMarker3 = new H.map.Marker({lat: 43.753298, lng: -79.487724});
+      map.addObject(permanentMarker3);
+
+      var ui = H.ui.UI.createDefault(map, defaultLayers);
+
       function geocodeAndUpdateMap(postalcode) {
         var service = platform.getSearchService();
         service.geocode({
@@ -86,6 +97,7 @@
                     lng: locations[0].position.lng
                 };
                 map.setCenter(position);
+
                 var marker = new H.map.Marker(position);
                 map.addObject(marker);
             } else {
