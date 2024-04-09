@@ -87,50 +87,44 @@
                                           
                                       </div>
                                       <br>
-                                      
+                                      <button type="submit">Reserve</button>
                                   </form>
                               </div>
                               <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                               <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
                               <script>
-                                  $(function() {
-                                      $("#start_date").datepicker();
-                                      $("#end_date").datepicker();
-
-                                      $("#start_date, #end_date").on("change", function() {
-                                          const startDate = $("#start_date").datepicker("getDate");
-                                          const endDate = $("#end_date").datepicker("getDate");
-                                          if (startDate && endDate) {
-                                              const diffTime = Math.abs(endDate - startDate);
-                                              const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                                              $("#duration").val(`${diffDays} days`);
-                                              const pricePerDay = 124.99; 
-                                              const totalPrice = diffDays * pricePerDay;
-                                              $("#vehiclePrice").val(`$${totalPrice.toFixed(2)}`);
-                                          }
+                                $(function() {
+                                    $("#start_date").datepicker({
+                                      dateFormat: 'yy/mm/dd'
+                                    });
+                                          
+                                    $("#end_date").datepicker({
+                                          dateFormat: 'yy/mm/dd' // Set the date format to year/month/day
                                       });
-                                  });
-                              </script>
+
+                                    $("#start_date, #end_date").on("change", function() {
+                                      const startDateStr = $("#start_date").val();
+                                      const endDateStr = $("#end_date").val();
+                                      
+                                      const startDate = new Date(startDateStr);
+                                      const endDate = new Date(endDateStr);
+                                        if (startDate && endDate) {
+                                            
+                                            
+                                            const diffTime = Math.abs(endDate - startDate);
+                                            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                                            $("#duration").val(`${diffDays} days`);
+                                            const pricePerDay = 124.99; 
+                                            const totalPrice = diffDays * pricePerDay;
+                                            $("#vehiclePrice").val(`$${totalPrice.toFixed(2)}`);
+                                        }
+                                    });
+                                });
+                               </script>
                               
                           </td>
                       </tr>
-                      <tr>
-                          {% if request.user.is_authenticated %}
-                              <td>	
-                                  <br><br><br><br>
-                                  <a href="{% url 'economyres' %}">
-                                      <button id="tableReserveButton">Reserve</button>
-                                  </a>
-                              </td>
-                          {% else %}
-                              <td>	
-                                  <br><br><br><br>
-                                  <a href="{% url 'login' %}">
-                                      <button type="tableReservebutton">Reserve</button>
-                                  </a>
-                              </td>
-                          {% endif %}
-                      </tr>
+                      
                   </table>
               </td>
           </tr>

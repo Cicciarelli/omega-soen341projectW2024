@@ -327,6 +327,48 @@ def bentley_bentayga(request):
 
 @login_required_redirect
 def audiA4Reserve_view(request):
+    if request.method == 'POST':
+        start_dateA4=request.POST.get("start_date")
+        end_dateA4=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateA4, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateA4, "%Y/%m/%d")
+
+        vehicleA4=Vehicle.objects.create(
+            vehicle_vin=612978,
+            vehicle_make="Audi",
+            vehicle_model="A4",
+            vehicle_year="2020",
+            vehicle_license_plate="H9R77S",
+            vehicle_color="black",
+            is_rented=False
+        )
+
+        pick_up_locationA4=Location.objects.create(
+            title="Montreal"
+        )
+        
+        drop_off_locationA4 = Location.objects.create(
+            title="Laval"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limit911=300
+        additional_servicesA4="extra luggage space"
+        is_signedA4=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleA4,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationA4,
+            drop_off_location=drop_off_locationA4,
+            rental_period=rental_period,
+            mileage_limit=mileage_limit911,
+            additional_services=additional_servicesA4,
+            is_signed=is_signedA4,
+        )
     return render(request, 'audiA4Reserve.html')
 
 @login_required_redirect
