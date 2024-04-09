@@ -333,6 +333,48 @@ def toyota_corolla(request):
     return render(request, 'ToyotaCorolla.html')
 
 def honda_civic(request):
+    if request.method == 'POST':
+        start_dateCIV=request.POST.get("start_date")
+        end_dateCIV=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateCIV, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateCIV, "%Y/%m/%d")
+
+        vehicleCIV=Vehicle.objects.create(
+            vehicle_vin=420420,
+            vehicle_make="Honda",
+            vehicle_model="Civic",
+            vehicle_year="2005",
+            vehicle_license_plate="G3TR3KT",
+            vehicle_color="MATTE BLACK",
+            is_rented=False
+        )
+
+        pick_up_locationCIV=Location.objects.create(
+            title="Ottawa"
+        )
+        
+        drop_off_locationA4 = Location.objects.create(
+            title="Cote Sud"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitCIV=300
+        additional_servicesCIV="1100 HP Supercharger"
+        is_signedCIV=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleCIV,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationCIV,
+            drop_off_location=drop_off_locationCIV,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitCIV,
+            additional_services=additional_servicesCIV,
+            is_signed=is_signedCIV,
+        )
     return render(request, 'HondaCivic.html')
 
 def chevrolet_volt(request):
