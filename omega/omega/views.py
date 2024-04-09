@@ -286,7 +286,50 @@ def findabranch_view(request):
 def OMEGACarList(request):
     return render(request, 'OMEGACarList.html')
 
+@login_required_redirect
 def toyota_corolla(request):
+    if request.method == 'POST':
+        start_dateCRL=request.POST.get("start_date")
+        end_dateCRL=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateCRL, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateCRL, "%Y/%m/%d")
+
+        vehicleCRL=Vehicle.objects.create(
+            vehicle_vin=694201,
+            vehicle_make="Toyota",
+            vehicle_model="Corolla",
+            vehicle_year="2019",
+            vehicle_license_plate="B00BAP",
+            vehicle_color="Rainbow",
+            is_rented=False
+        )
+
+        pick_up_locationCRL=Location.objects.create(
+            title="Brossard"
+        )
+        
+        drop_off_locationCRL = Location.objects.create(
+            title="Montreal Nord"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitCRL=300
+        additional_servicesCRL="Twin Turbo for fuel efficiency"
+        is_signedCRL=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleCRL,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationCRL,
+            drop_off_location=drop_off_locationCRL,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitCRL,
+            additional_services=additional_servicesCRL,
+            is_signed=is_signedCRL,
+        )
     return render(request, 'ToyotaCorolla.html')
 
 def honda_civic(request):
@@ -322,7 +365,50 @@ def audi_a4(request):
 def ferrari_roma(request):
     return render(request, 'FerrariRoma.html')
 
+@login_required_redirect
 def bentley_bentayga(request):
+    if request.method == 'POST':
+        start_dateBTA=request.POST.get("start_date")
+        end_dateBTA=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateBTA, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateBTA, "%Y/%m/%d")
+
+        vehicleBTA=Vehicle.objects.create(
+            vehicle_vin=947322,
+            vehicle_make="Bentley",
+            vehicle_model="Bentayga",
+            vehicle_year="2023",
+            vehicle_license_plate="H1N1N1",
+            vehicle_color="Red",
+            is_rented=False
+        )
+
+        pick_up_locationBTA=Location.objects.create(
+            title="Montreal"
+        )
+
+        drop_off_locationBTA = Location.objects.create(
+            title="Laval"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitBTA=300
+        additional_servicesBTA="N/A"
+        is_signedBTA=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleBTA,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationBTA,
+            drop_off_location=drop_off_locationBTA,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitBTA,
+            additional_services=additional_servicesBTA,
+            is_signed=is_signedBTA,
+        )
     return render(request, 'BentleyBentayga.html')
 
 @login_required_redirect
