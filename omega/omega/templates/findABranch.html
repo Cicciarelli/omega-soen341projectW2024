@@ -34,6 +34,8 @@
           <li><a href="{% url 'reservations' %}">Existing Reservation</a></li>
           <li><a href="{% url 'carList' %}">Browse Vehicles</a></li>
           <li><a href="{% url 'findabranch' %}">Find a Branch</a></li>
+          <li><a href="{% url 'make_post' %}">Make Post</a></li>
+          <li><a href="{% url 'posts' %}">Posts</a></li>
       </ul>
     </div>
     <div class="findABranchContainer" style="width: 80%; height: 80%; margin-left: 15%; text-align: center;" >
@@ -74,6 +76,17 @@
               center: { lat: 45.4948, lng: -73.5779 }
           });
       
+      
+
+      var permanentMarker1 = new H.map.Marker({lat: 45.685543, lng: -74.021608});
+      map.addObject(permanentMarker1);
+      var permanentMarker2 = new H.map.Marker({lat: 46.842235, lng: -71.398334});
+      map.addObject(permanentMarker2);
+      var permanentMarker3 = new H.map.Marker({lat: 43.753298, lng: -79.487724});
+      map.addObject(permanentMarker3);
+
+      var ui = H.ui.UI.createDefault(map, defaultLayers);
+
       function geocodeAndUpdateMap(postalcode) {
         var service = platform.getSearchService();
         service.geocode({
@@ -86,6 +99,7 @@
                     lng: locations[0].position.lng
                 };
                 map.setCenter(position);
+
                 var marker = new H.map.Marker(position);
                 map.addObject(marker);
             } else {

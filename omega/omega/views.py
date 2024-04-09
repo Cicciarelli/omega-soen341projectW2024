@@ -335,6 +335,9 @@ def porsche911Reserve_view(request):
         start_date911=request.POST.get("start_date")
         end_date911=request.POST.get("end_date")
 
+        start_date = datetime.strptime(start_date911, "%Y/%m/%d")
+        end_date = datetime.strptime(end_date911, "%Y/%m/%d")
+
         vehicle911=Vehicle.objects.create(
             vehicle_vin=123456,
             vehicle_make="porsche",
@@ -344,11 +347,16 @@ def porsche911Reserve_view(request):
             vehicle_color="blue",
             is_rented=False
         )
-        random_location1 = Location.objects.order_by('?').first()  # Get a random location
-        pick_up_location911 = random_location1.title
-        random_location2 = Location.objects.order_by('?').first()  # Get a random location
-        drop_off_location911 = random_location2.title
-        rental_period=request.POST.get("duration")
+
+        pick_up_location911=Location.objects.create(
+            title="Montreal"
+        )
+        
+        drop_off_location911 = Location.objects.create(
+            title="Laval"
+        )
+        
+        rental_period = (end_date - start_date)
         mileage_limit911=300
         additional_services911="extra luggage space"
         is_signed911=True
@@ -356,8 +364,8 @@ def porsche911Reserve_view(request):
         reservation=Reservation.objects.create(
             vehicle=vehicle911,  
             account=request.user,
-            reservation_start=start_date911,
-            reservation_end=end_date911,
+            reservation_start=start_date,
+            reservation_end=end_date,
             pick_up_location=pick_up_location911,
             drop_off_location=drop_off_location911,
             rental_period=rental_period,
