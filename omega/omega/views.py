@@ -355,7 +355,7 @@ def honda_civic(request):
             title="Ottawa"
         )
         
-        drop_off_locationA4 = Location.objects.create(
+        drop_off_locationCIV = Location.objects.create(
             title="Cote Sud"
         )
         
@@ -470,7 +470,50 @@ def toyota_prius(request):
         )
     return render(request, 'ToyotaPrius.html')
 
+@login_required_redirect
 def kia_niro(request):
+    if request.method == 'POST':
+        start_dateN=request.POST.get("start_date")
+        end_dateN=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateN, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateN, "%Y/%m/%d")
+
+        vehicleN=Vehicle.objects.create(
+            vehicle_vin=284756,
+            vehicle_make="KIA",
+            vehicle_model="Niro",
+            vehicle_year="2019",
+            vehicle_license_plate="D3N1R0",
+            vehicle_color="White",
+            is_rented=False
+        )
+
+        pick_up_locationN=Location.objects.create(
+            title="Montreal"
+        )
+        
+        drop_off_locationN = Location.objects.create(
+            title="Dorval"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitN=300
+        additional_servicesN="N/A"
+        is_signedN=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleN,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationN,
+            drop_off_location=drop_off_locationN,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitN,
+            additional_services=additional_servicesN,
+            is_signed=is_signedN,
+        )
     return render(request, 'KiaNiro.html')
 
 def ford_mustang(request):
