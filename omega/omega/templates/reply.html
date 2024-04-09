@@ -1,0 +1,13 @@
+
+
+{% for reply in parent.forumpost_set.all %}
+    <div class="reply" style="padding-left: {{ depth }}rem;">
+        <span class="username">{{ reply.account.username }}</span>
+        <span class="date">{{ reply.date }}</span>
+        <p>{{ reply.text }}</p>
+        <a href="{% url 'reply' reply.id %}"><button class="reply_button">Reply</button></a>
+        {% with new_depth=depth|add:1 %}
+            {% include 'reply.html' with parent=reply depth=new_depth %}
+        {% endwith %}
+    </div>
+{% endfor %}

@@ -1,0 +1,25 @@
+Meeting Minutes - March 27th, 2024 - 2 hours
+
+Liam, Daniel, Maxime, Matthew and Maria met on March 27th on Discord for 2 hours.
+
+Following the submission of Sprint 3, it is now time to start working on Sprint 4. The first thing we did in this meeting was go over the Sprint 4
+instructions all together. The most prominent part of this sprint is the introduction of a new feature. We decided that the new feature we would
+implement would be a rating system for customers. So once checked out, a user will have the option to leave a rating out of 5 stars and a written 
+review. We divided this User Story into the following tasks:
+
+                    -Create a button that redirects to review and rating page #327
+                    -Create a page with a form containing a form for leaving a review, as well as a list of reviews left by previous customers. #329
+                    -Create a Review List to display in review page #330
+                    -Create a Star-Based Rating system #332
+                    -Create a function to leave 0 to 5 stars on a review #334
+
+We assigned Max to #327, Matthew to #329, Maria to #330, Daniel to #332 and Liam to #334.
+
+Also, in the sprint instructions, we saw that we had to reorganize our code and our naming conventions for our files. We decided to do this after
+we got all the features working, because we wanted to be sure the code ran properly before committing time to organization. 
+
+Finally, we saw that we had to do code review for each others codes. Again, we decided to only focus on this once the entire project has been 
+completed because we want to prioritize the functionality of the project first.
+
+For our next meeting, we want the feature to be implemented so we can begin to focus on the next parts of the sprint. We will discuss the 
+implementation, if all was done correctly, and then begin to plan for the organization and review components of the sprint.

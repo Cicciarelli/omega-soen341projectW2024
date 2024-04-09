@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block page_title %}Forum{% endblock %}
+{% block header_title %}Forum{% endblock %}
+
+{% block content %}
+    <div class="forum-posts">
+        <span class="username">{{ post.account.username }}</span>
+        <span class="date">{{ post.date }}</span>
+        <p>{{ post.text }}</p>
+        <a href="{% url 'reply' post.id %}"><button class="reply_button">Reply</button></a>
+        {% include 'reply.html' with parent=post depth=1 %}
+    </div>
+{% endblock content %}

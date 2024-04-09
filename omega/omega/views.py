@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import LoginForm, SignatureForm, RentalAgreementSetupForm
+from .forms import LoginForm, SignatureForm, RentalAgreementSetupForm, ReviewForm, PostForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
-from .models import Reservation, Vehicle, Location, Member
+from .models import Reservation, Vehicle, Location, Member, Review, ForumPost
 from .forms import ReservationForm
 from datetime import datetime, timedelta
 from django.contrib.auth import logout
@@ -15,6 +15,7 @@ from .decorators import login_required_redirect
 from django.http import Http404
 from .forms import UserCreationFormWithEmail
 from django.urls import reverse
+from django.db.models import Avg
 
 @login_required_redirect
 def my_view(request):
@@ -134,9 +135,9 @@ def rental_agreement_view(request, reservation_id, address, driving_license, con
     if request.method == 'POST':
         form = SignatureForm(request.POST)
         if form.is_valid():
-            # Process the form data
-            name = form.cleaned_data['name']
-            # Do whatever you want with the name
+
+            form.save()
+            return redirect('reservations')
     else:
         form = SignatureForm()
     return render(request, 'rental_agreement.html', {'form': form,
@@ -145,6 +146,86 @@ def rental_agreement_view(request, reservation_id, address, driving_license, con
                                                      'address': address,
                                                      'driving_license': driving_license,
                                                      'contact_number': contact_number})
+
+def review_page_view(request, vehicle_id):
+    vehicle = get_object_or_404(Vehicle, pk=vehicle_id)
+    reviews = Review.objects.filter(vehicle_id=vehicle_id)
+    average_score = reviews.aggregate(Avg('rating'))['rating__avg']
+    return render(request, 'reviews.html', {'vehicle': vehicle,
+                                            'average_score': average_score })
+
+def create_review_view(request, vehicle_id):
+    vehicle = get_object_or_404(Vehicle, pk=vehicle_id)
+    user = request.user
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            score = form.cleaned_data['score']
+            score = min(score, 100)
+            score = max(score, 0)
+            review = form.cleaned_data['review']
+
+            existing_reviews = Review.objects.filter(vehicle=vehicle, account=user)
+
+            if existing_reviews.first():
+                Review.objects.all().delete()
+
+            Review.objects.create(vehicle=vehicle,
+                                   account=user,
+                                   rating=score,
+                                   text=review)
+            
+            return redirect('reviews', vehicle_id=vehicle_id)
+    else:
+        form = ReviewForm()
+    return render(request, 'review_page.html', {'form': form,
+                                                'vehicle': vehicle })
+
+def forum_view(request, forumpost_id):
+    root = get_object_or_404(ForumPost, pk=forumpost_id)
+    return render(request, 'forum.html', {'post': root })
+
+def reply_view(request, forumpost_id):
+    parent = get_object_or_404(ForumPost, pk=forumpost_id)
+    user = request.user
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            text = form.cleaned_data['text']
+            date = datetime.now()
+
+            ForumPost.objects.create(parent=parent,
+                                     account=user,
+                                     date=date,
+                                     text=text)
+            
+            return redirect('forum', forumpost_id=forumpost_id)
+    else:
+        form = PostForm()
+    return render(request, 'reply_form_page.html', {'parent': parent,
+                                                    'form': form })
+
+def make_post_view(request):
+    user = request.user
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            text = form.cleaned_data['text']
+            date = datetime.now()
+
+            ForumPost.objects.create(parent=None,
+                                     account=user,
+                                     date=date,
+                                     text=text)
+            
+            return redirect('posts')
+    else:
+        form = PostForm()
+    return render(request, 'reply_form_page.html', { 'form': form })
+
+def root_posts_view(request):
+    root_posts = ForumPost.objects.filter(parent=None).order_by('date')
+    return render(request, 'posts.html', {'root_posts': root_posts})
 
 def checked_in_view(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
@@ -308,6 +389,38 @@ def kiaNiroReserve_view(request):
 
 @login_required_redirect
 def hondaCivicReserve_view(request):
+    if request.method == 'POST':
+        start_date = request.POST.get("start_date")
+        end_date = request.POST.get("end_date")
+        getVehicle = Vehicle.objects.create(
+            vehicle_vin=19284756,
+            vehicle_make="Honda",
+            vehicle_model="Civic",
+            vehicle_year="2005",
+            vehicle_license_plate="a2b3c4",
+            vehicle_color="blue",
+            is_rented=False
+        )
+        random_location1 = Location.objects.order_by('?').first()  # Get a random location
+        getPick_up_location = random_location1.title
+        random_location2 = Location.objects.order_by('?').first()  # Get a random location
+        getDrop_off_location = random_location2.title
+        getRental_period = request.POST.get("duration")
+        getMileage_limit = 300
+        getAdditional_services = "extra luggage space"
+        getIs_signed = True
+        reservation = Reservation.objects.create(
+            vehicle = getVehicle,  # Assuming you have a hidden input for vehicle_id
+            account = request.user,
+            reservation_start = start_date,
+            reservation_end = end_date,
+            pick_up_location = getPick_up_location,
+            drop_off_location = getDrop_off_location,
+            rental_period = getRental_period,
+            mileage_limit = getMileage_limit,
+            additional_services = getAdditional_services,
+            is_signed = getIs_signed,
+        )
     return render(request, 'hondaCivicReserve.html')
 
 @login_required_redirect
