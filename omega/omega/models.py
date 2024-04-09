@@ -73,7 +73,9 @@ class Review(models.Model):
 
 class ForumPost(models.Model):
    parent = models.ForeignKey('ForumPost',
-                               on_delete=models.CASCADE)
+                               on_delete=models.CASCADE,
+                               default=None,
+                               null=True)
    account = models.ForeignKey(settings.AUTH_USER_MODEL,
                                on_delete=models.CASCADE)
    date = models.DateTimeField()
