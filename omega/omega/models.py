@@ -70,3 +70,13 @@ class Review(models.Model):
                                on_delete=models.CASCADE)
    rating = models.PositiveIntegerField()
    text = models.CharField(max_length=2048)
+
+class ForumPost(models.Model):
+   parent = models.ForeignKey('ForumPost',
+                               on_delete=models.CASCADE,
+                               default=None,
+                               null=True)
+   account = models.ForeignKey(settings.AUTH_USER_MODEL,
+                               on_delete=models.CASCADE)
+   date = models.DateTimeField()
+   text = models.CharField(max_length=2048)

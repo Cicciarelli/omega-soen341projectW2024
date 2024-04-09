@@ -38,6 +38,14 @@ urlpatterns = [
 
     path('reviews/<int:vehicle_id>/', views.review_page_view, name='reviews'),
 
+    path('reply/<int:forumpost_id>/', views.reply_view, name='reply'),
+
+    path('make_post', views.make_post_view, name='make_post'),
+
+    path('forum/<int:forumpost_id>/', views.forum_view, name='forum'),
+
+    path('posts/', views.root_posts_view, name='posts'),
+
     path('check_in/<int:reservation_id>/', views.check_in, name='check_in'),
 
     path('check_out/<int:reservation_id>/', views.check_out_view, name='check_out'),
