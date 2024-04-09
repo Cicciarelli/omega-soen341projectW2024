@@ -40,3 +40,6 @@ class SignatureForm(forms.Form):
 class ReviewForm(forms.Form):
     score = forms.IntegerField(label='score')
     review = forms.CharField(label='review', max_length=2048, widget=forms.Textarea)
+
+class PostForm(forms.Form):
+    text = forms.CharField(label='text', max_length=2048, widget=forms.Textarea)
