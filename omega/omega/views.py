@@ -521,7 +521,7 @@ def chevroletVoltReserve_view(request):
 
 @login_required_redirect
 def toyotaPriusReserve_view(request):
-        if request.method == 'POST':
+    if request.method == 'POST':
         start_dateP=request.POST.get("start_date")
         end_dateP=request.POST.get("end_date")
 
@@ -659,7 +659,7 @@ def hondaCivicReserve_view(request):
 
 @login_required_redirect
 def fordMustangReserve_view(request):
-            if request.method == 'POST':
+    if request.method == 'POST':
         start_dateMust=request.POST.get("start_date")
         end_dateMust=request.POST.get("end_date")
 
@@ -705,7 +705,7 @@ def fordMustangReserve_view(request):
 
 @login_required_redirect
 def audiA5Reserve_view(request):
-            if request.method == 'POST':
+    if request.method == 'POST':
         start_dateA5=request.POST.get("start_date")
         end_dateA5=request.POST.get("end_date")
 
