@@ -475,7 +475,7 @@ def bentleyBentaygaReserve_view(request):
 
 @login_required_redirect
 def chevroletVoltReserve_view(request):
-        if request.method == 'POST':
+    if request.method == 'POST':
         start_dateV=request.POST.get("start_date")
         end_dateV=request.POST.get("end_date")
 
