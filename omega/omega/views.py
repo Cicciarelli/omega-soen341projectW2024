@@ -185,6 +185,7 @@ def forum_view(request, forumpost_id):
     root = get_object_or_404(ForumPost, pk=forumpost_id)
     return render(request, 'forum.html', {'post': root })
 
+@login_required_redirect
 def reply_view(request, forumpost_id):
     parent = get_object_or_404(ForumPost, pk=forumpost_id)
     user = request.user
@@ -204,7 +205,7 @@ def reply_view(request, forumpost_id):
         form = PostForm()
     return render(request, 'reply_form_page.html', {'parent': parent,
                                                     'form': form })
-
+@login_required_redirect
 def make_post_view(request):
     user = request.user
     if request.method == 'POST':
