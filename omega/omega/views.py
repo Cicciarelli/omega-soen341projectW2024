@@ -667,7 +667,7 @@ def fordMustangReserve_view(request):
         end_date = datetime.strptime(end_dateMust, "%Y/%m/%d")
 
         vehicleMust=Vehicle.objects.create(
-            vehicle_vin=010101,
+            vehicle_vin=100101,
             vehicle_make="Ford",
             vehicle_model="Mustang",
             vehicle_year="2018",
