@@ -286,234 +286,19 @@ def findabranch_view(request):
 def OMEGACarList(request):
     return render(request, 'OMEGACarList.html')
 
-@login_required_redirect
 def toyota_corolla(request):
-    if request.method == 'POST':
-        start_dateCRL=request.POST.get("start_date")
-        end_dateCRL=request.POST.get("end_date")
-
-        start_date = datetime.strptime(start_dateCRL, "%Y/%m/%d")
-        end_date = datetime.strptime(end_dateCRL, "%Y/%m/%d")
-
-        vehicleCRL=Vehicle.objects.create(
-            vehicle_vin=694201,
-            vehicle_make="Toyota",
-            vehicle_model="Corolla",
-            vehicle_year="2019",
-            vehicle_license_plate="B00BAP",
-            vehicle_color="Rainbow",
-            is_rented=False
-        )
-
-        pick_up_locationCRL=Location.objects.create(
-            title="Brossard"
-        )
-        
-        drop_off_locationCRL = Location.objects.create(
-            title="Montreal Nord"
-        )
-        
-        rental_period = (end_date - start_date)
-        mileage_limitCRL=300
-        additional_servicesCRL="Twin Turbo for fuel efficiency"
-        is_signedCRL=True
-
-        reservation=Reservation.objects.create(
-            vehicle=vehicleCRL,  
-            account=request.user,
-            reservation_start=start_date,
-            reservation_end=end_date,
-            pick_up_location=pick_up_locationCRL,
-            drop_off_location=drop_off_locationCRL,
-            rental_period=rental_period,
-            mileage_limit=mileage_limitCRL,
-            additional_services=additional_servicesCRL,
-            is_signed=is_signedCRL,
-        )
     return render(request, 'ToyotaCorolla.html')
 
-@login_required_redirect
 def honda_civic(request):
-    if request.method == 'POST':
-        start_dateCIV=request.POST.get("start_date")
-        end_dateCIV=request.POST.get("end_date")
-
-        start_date = datetime.strptime(start_dateCIV, "%Y/%m/%d")
-        end_date = datetime.strptime(end_dateCIV, "%Y/%m/%d")
-
-        vehicleCIV=Vehicle.objects.create(
-            vehicle_vin=420420,
-            vehicle_make="Honda",
-            vehicle_model="Civic",
-            vehicle_year="2005",
-            vehicle_license_plate="G3TR3KT",
-            vehicle_color="MATTE BLACK",
-            is_rented=False
-        )
-
-        pick_up_locationCIV=Location.objects.create(
-            title="Ottawa"
-        )
-        
-        drop_off_locationCIV = Location.objects.create(
-            title="Cote Sud"
-        )
-        
-        rental_period = (end_date - start_date)
-        mileage_limitCIV=300
-        additional_servicesCIV="1100 HP Supercharger"
-        is_signedCIV=True
-
-        reservation=Reservation.objects.create(
-            vehicle=vehicleCIV,  
-            account=request.user,
-            reservation_start=start_date,
-            reservation_end=end_date,
-            pick_up_location=pick_up_locationCIV,
-            drop_off_location=drop_off_locationCIV,
-            rental_period=rental_period,
-            mileage_limit=mileage_limitCIV,
-            additional_services=additional_servicesCIV,
-            is_signed=is_signedCIV,
-        )
     return render(request, 'HondaCivic.html')
 
-@login_required_redirect
 def chevrolet_volt(request):
-    if request.method == 'POST':
-        start_dateV=request.POST.get("start_date")
-        end_dateV=request.POST.get("end_date")
-
-        start_date = datetime.strptime(start_dateV, "%Y/%m/%d")
-        end_date = datetime.strptime(end_dateV, "%Y/%m/%d")
-
-        vehicleV=Vehicle.objects.create(
-            vehicle_vin=192837,
-            vehicle_make="Chevrolet",
-            vehicle_model="Volt",
-            vehicle_year="2018",
-            vehicle_license_plate="GR33NY",
-            vehicle_color="Blue",
-            is_rented=False
-        )
-
-        pick_up_locationV=Location.objects.create(
-            title="Montreal"
-        )
-        
-        drop_off_locationV = Location.objects.create(
-            title="Mont Tremblant"
-        )
-        
-        rental_period = (end_date - start_date)
-        mileage_limitV=300
-        additional_servicesV="N/A"
-        is_signedV=True
-
-        reservation=Reservation.objects.create(
-            vehicle=vehicleV,  
-            account=request.user,
-            reservation_start=start_date,
-            reservation_end=end_date,
-            pick_up_location=pick_up_locationV,
-            drop_off_location=drop_off_locationV,
-            rental_period=rental_period,
-            mileage_limit=mileage_limitV,
-            additional_services=additional_servicesV,
-            is_signed=is_signedV,
-        )
     return render(request, 'ChevroletVolt.html')
 
-@login_required_redirect
 def toyota_prius(request):
-    if request.method == 'POST':
-        start_dateP=request.POST.get("start_date")
-        end_dateP=request.POST.get("end_date")
-
-        start_date = datetime.strptime(start_dateP, "%Y/%m/%d")
-        end_date = datetime.strptime(end_dateP, "%Y/%m/%d")
-
-        vehicleP=Vehicle.objects.create(
-            vehicle_vin=675849,
-            vehicle_make="Toyota",
-            vehicle_model="Prius",
-            vehicle_year="2015",
-            vehicle_license_plate="G04T3D",
-            vehicle_color="Black",
-            is_rented=False
-        )
-
-        pick_up_locationP=Location.objects.create(
-            title="Montreal"
-        )
-        
-        drop_off_locationP = Location.objects.create(
-            title="Sherbrooke"
-        )
-        
-        rental_period = (end_date - start_date)
-        mileage_limitP=300
-        additional_servicesP="extra luggage space"
-        is_signedP=True
-
-        reservation=Reservation.objects.create(
-            vehicle=vehicleP,  
-            account=request.user,
-            reservation_start=start_date,
-            reservation_end=end_date,
-            pick_up_location=pick_up_locationP,
-            drop_off_location=drop_off_locationP,
-            rental_period=rental_period,
-            mileage_limit=mileage_limitP,
-            additional_services=additional_servicesP,
-            is_signed=is_signedP,
-        )
     return render(request, 'ToyotaPrius.html')
 
-@login_required_redirect
 def kia_niro(request):
-    if request.method == 'POST':
-        start_dateN=request.POST.get("start_date")
-        end_dateN=request.POST.get("end_date")
-
-        start_date = datetime.strptime(start_dateN, "%Y/%m/%d")
-        end_date = datetime.strptime(end_dateN, "%Y/%m/%d")
-
-        vehicleN=Vehicle.objects.create(
-            vehicle_vin=284756,
-            vehicle_make="KIA",
-            vehicle_model="Niro",
-            vehicle_year="2019",
-            vehicle_license_plate="D3N1R0",
-            vehicle_color="White",
-            is_rented=False
-        )
-
-        pick_up_locationN=Location.objects.create(
-            title="Montreal"
-        )
-        
-        drop_off_locationN = Location.objects.create(
-            title="Dorval"
-        )
-        
-        rental_period = (end_date - start_date)
-        mileage_limitN=300
-        additional_servicesN="N/A"
-        is_signedN=True
-
-        reservation=Reservation.objects.create(
-            vehicle=vehicleN,  
-            account=request.user,
-            reservation_start=start_date,
-            reservation_end=end_date,
-            pick_up_location=pick_up_locationN,
-            drop_off_location=drop_off_locationN,
-            rental_period=rental_period,
-            mileage_limit=mileage_limitN,
-            additional_services=additional_servicesN,
-            is_signed=is_signedN,
-        )
     return render(request, 'KiaNiro.html')
 
 def ford_mustang(request):
@@ -537,50 +322,7 @@ def audi_a4(request):
 def ferrari_roma(request):
     return render(request, 'FerrariRoma.html')
 
-@login_required_redirect
 def bentley_bentayga(request):
-    if request.method == 'POST':
-        start_dateBTA=request.POST.get("start_date")
-        end_dateBTA=request.POST.get("end_date")
-
-        start_date = datetime.strptime(start_dateBTA, "%Y/%m/%d")
-        end_date = datetime.strptime(end_dateBTA, "%Y/%m/%d")
-
-        vehicleBTA=Vehicle.objects.create(
-            vehicle_vin=947322,
-            vehicle_make="Bentley",
-            vehicle_model="Bentayga",
-            vehicle_year="2023",
-            vehicle_license_plate="H1N1N1",
-            vehicle_color="Red",
-            is_rented=False
-        )
-
-        pick_up_locationBTA=Location.objects.create(
-            title="Montreal"
-        )
-
-        drop_off_locationBTA = Location.objects.create(
-            title="Laval"
-        )
-        
-        rental_period = (end_date - start_date)
-        mileage_limitBTA=300
-        additional_servicesBTA="N/A"
-        is_signedBTA=True
-
-        reservation=Reservation.objects.create(
-            vehicle=vehicleBTA,  
-            account=request.user,
-            reservation_start=start_date,
-            reservation_end=end_date,
-            pick_up_location=pick_up_locationBTA,
-            drop_off_location=drop_off_locationBTA,
-            rental_period=rental_period,
-            mileage_limit=mileage_limitBTA,
-            additional_services=additional_servicesBTA,
-            is_signed=is_signedBTA,
-        )
     return render(request, 'BentleyBentayga.html')
 
 @login_required_redirect
@@ -680,63 +422,331 @@ def ferrariRomaReserve_view(request):
     return render(request, 'ferrariRomaReserve.html')
 
 @login_required_redirect
+def toyotaCorolla_view(request):
+    return render(request, 'toyotaCorollaReserve.html')
+
+""" ^^^ toyotaCorollaReserve.html does not exist yet"""
+
+@login_required_redirect
 def bentleyBentaygaReserve_view(request):
+    if request.method == 'POST':
+        start_dateBTA=request.POST.get("start_date")
+        end_dateBTA=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateBTA, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateBTA, "%Y/%m/%d")
+
+        vehicleBTA=Vehicle.objects.create(
+            vehicle_vin=947322,
+            vehicle_make="Bentley",
+            vehicle_model="Bentayga",
+            vehicle_year="2023",
+            vehicle_license_plate="H1N1N1",
+            vehicle_color="Red",
+            is_rented=False
+        )
+
+        pick_up_locationBTA=Location.objects.create(
+            title="Montreal"
+        )
+
+        drop_off_locationBTA = Location.objects.create(
+            title="Laval"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitBTA=300
+        additional_servicesBTA="N/A"
+        is_signedBTA=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleBTA,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationBTA,
+            drop_off_location=drop_off_locationBTA,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitBTA,
+            additional_services=additional_servicesBTA,
+            is_signed=is_signedBTA,
+        )
     return render(request, 'bentleyBentaygaReserve.html')
 
 @login_required_redirect
 def chevroletVoltReserve_view(request):
+        if request.method == 'POST':
+        start_dateV=request.POST.get("start_date")
+        end_dateV=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateV, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateV, "%Y/%m/%d")
+
+        vehicleV=Vehicle.objects.create(
+            vehicle_vin=192837,
+            vehicle_make="Chevrolet",
+            vehicle_model="Volt",
+            vehicle_year="2018",
+            vehicle_license_plate="GR33NY",
+            vehicle_color="Blue",
+            is_rented=False
+        )
+
+        pick_up_locationV=Location.objects.create(
+            title="Montreal"
+        )
+        
+        drop_off_locationV = Location.objects.create(
+            title="Mont Tremblant"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitV=300
+        additional_servicesV="N/A"
+        is_signedV=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleV,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationV,
+            drop_off_location=drop_off_locationV,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitV,
+            additional_services=additional_servicesV,
+            is_signed=is_signedV,
+        )
     return render(request, 'chevroletVoltReserve.html')
 
 @login_required_redirect
 def toyotaPriusReserve_view(request):
+        if request.method == 'POST':
+        start_dateP=request.POST.get("start_date")
+        end_dateP=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateP, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateP, "%Y/%m/%d")
+
+        vehicleP=Vehicle.objects.create(
+            vehicle_vin=675849,
+            vehicle_make="Toyota",
+            vehicle_model="Prius",
+            vehicle_year="2015",
+            vehicle_license_plate="G04T3D",
+            vehicle_color="Black",
+            is_rented=False
+        )
+
+        pick_up_locationP=Location.objects.create(
+            title="Montreal"
+        )
+        
+        drop_off_locationP = Location.objects.create(
+            title="Sherbrooke"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitP=300
+        additional_servicesP="extra luggage space"
+        is_signedP=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleP,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationP,
+            drop_off_location=drop_off_locationP,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitP,
+            additional_services=additional_servicesP,
+            is_signed=is_signedP,
+        )
     return render(request, 'toyotaPriusReserve.html')
 
 @login_required_redirect
 def kiaNiroReserve_view(request):
+    if request.method == 'POST':
+        start_dateN=request.POST.get("start_date")
+        end_dateN=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateN, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateN, "%Y/%m/%d")
+
+        vehicleN=Vehicle.objects.create(
+            vehicle_vin=284756,
+            vehicle_make="KIA",
+            vehicle_model="Niro",
+            vehicle_year="2019",
+            vehicle_license_plate="D3N1R0",
+            vehicle_color="White",
+            is_rented=False
+        )
+
+        pick_up_locationN=Location.objects.create(
+            title="Montreal"
+        )
+        
+        drop_off_locationN = Location.objects.create(
+            title="Dorval"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitN=300
+        additional_servicesN="N/A"
+        is_signedN=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleN,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationN,
+            drop_off_location=drop_off_locationN,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitN,
+            additional_services=additional_servicesN,
+            is_signed=is_signedN,
+        )
     return render(request, 'kiaNiroReserve.html')
 
 @login_required_redirect
 def hondaCivicReserve_view(request):
     if request.method == 'POST':
-        start_date = request.POST.get("start_date")
-        end_date = request.POST.get("end_date")
-        getVehicle = Vehicle.objects.create(
-            vehicle_vin=19284756,
+        start_dateCIV=request.POST.get("start_date")
+        end_dateCIV=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateCIV, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateCIV, "%Y/%m/%d")
+
+        vehicleCIV=Vehicle.objects.create(
+            vehicle_vin=420420,
             vehicle_make="Honda",
             vehicle_model="Civic",
             vehicle_year="2005",
-            vehicle_license_plate="a2b3c4",
-            vehicle_color="blue",
+            vehicle_license_plate="G3TR3KT",
+            vehicle_color="MATTE BLACK",
             is_rented=False
         )
-        random_location1 = Location.objects.order_by('?').first()  # Get a random location
-        getPick_up_location = random_location1.title
-        random_location2 = Location.objects.order_by('?').first()  # Get a random location
-        getDrop_off_location = random_location2.title
-        getRental_period = request.POST.get("duration")
-        getMileage_limit = 300
-        getAdditional_services = "extra luggage space"
-        getIs_signed = True
-        reservation = Reservation.objects.create(
-            vehicle = getVehicle,  # Assuming you have a hidden input for vehicle_id
-            account = request.user,
-            reservation_start = start_date,
-            reservation_end = end_date,
-            pick_up_location = getPick_up_location,
-            drop_off_location = getDrop_off_location,
-            rental_period = getRental_period,
-            mileage_limit = getMileage_limit,
-            additional_services = getAdditional_services,
-            is_signed = getIs_signed,
+
+        pick_up_locationCIV=Location.objects.create(
+            title="Ottawa"
+        )
+        
+        drop_off_locationCIV = Location.objects.create(
+            title="Cote Sud"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitCIV=300
+        additional_servicesCIV="1100 HP Supercharger"
+        is_signedCIV=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleCIV,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationCIV,
+            drop_off_location=drop_off_locationCIV,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitCIV,
+            additional_services=additional_servicesCIV,
+            is_signed=is_signedCIV,
         )
     return render(request, 'hondaCivicReserve.html')
 
 @login_required_redirect
 def fordMustangReserve_view(request):
+            if request.method == 'POST':
+        start_dateMust=request.POST.get("start_date")
+        end_dateMust=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateMust, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateMust, "%Y/%m/%d")
+
+        vehicleMust=Vehicle.objects.create(
+            vehicle_vin=010101,
+            vehicle_make="Ford",
+            vehicle_model="Mustang",
+            vehicle_year="2018",
+            vehicle_license_plate="ST4NKY",
+            vehicle_color="Navy with white stripes",
+            is_rented=False
+        )
+
+        pick_up_locationMust=Location.objects.create(
+            title="Villeray"
+        )
+        
+        drop_off_locationMust = Location.objects.create(
+            title="Montreal Nord"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitMust=300
+        additional_servicesMust="Supercharger"
+        is_signedMust=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleMust,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationMust,
+            drop_off_location=drop_off_locationMust,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitMust,
+            additional_services=additional_servicesMust,
+            is_signed=is_signedMust,
+        )
     return render(request, 'fordMustangReserve.html')
 
 @login_required_redirect
 def audiA5Reserve_view(request):
+            if request.method == 'POST':
+        start_dateA5=request.POST.get("start_date")
+        end_dateA5=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateA5, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateA5, "%Y/%m/%d")
+
+        vehicleA5=Vehicle.objects.create(
+            vehicle_vin=225019,
+            vehicle_make="Audi",
+            vehicle_model="A5",
+            vehicle_year="2021",
+            vehicle_license_plate="Z00M1E",
+            vehicle_color="Matte White",
+            is_rented=False
+        )
+
+        pick_up_locationA5=Location.objects.create(
+            title="Dorval"
+        )
+        
+        drop_off_locationA5 = Location.objects.create(
+            title="Laval"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitA5=300
+        additional_servicesA5="Twin Turbo for fuel efficiency"
+        is_signedA5=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleA5,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationA5,
+            drop_off_location=drop_off_locationA5,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitA5,
+            additional_services=additional_servicesA5,
+            is_signed=is_signedA5,
+        )
     return render(request, 'audiA5Reserve.html')
 
 @login_required_redirect
