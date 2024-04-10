@@ -5,6 +5,9 @@
 <div class="post_form">
     <form method="post">
         {% csrf_token %}
+        <label for="topic">Topic: </label>
+        <input type="text" id="topic" name="topic">
+        <br>
         {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
