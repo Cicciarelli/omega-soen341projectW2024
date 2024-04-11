@@ -6,7 +6,7 @@ on:
       - master
   pull_request:
       types: [opened, synchronize, reopened]
-name: Main Workflow
+name: Sonarcloud Scan
 jobs:
   sonarcloud:
     runs-on: ubuntu-latest
@@ -18,5 +18,5 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: c68adad72ea63a9f03684fb72cce04e9c7b9b639
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
