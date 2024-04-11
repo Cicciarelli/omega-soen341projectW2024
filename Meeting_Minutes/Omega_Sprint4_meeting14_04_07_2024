@@ -1,0 +1,23 @@
+Meeting Minutes - April 7th, 2024 - 2 hours
+
+Liam, Daniel, Maxime, Matthew and Maria met on April 7th on both Zoom and Discord for a combined 2 hours.
+
+Firstly, we had our Zoom meeting with the TA to demo Sprint 4 before submission on the 10th of April. Upon discussion with the TA, we discovered 
+we were not able to do a review system as our Sprint 4 additional feature because another team had already chosen that as their feature. Therefore, we
+had to come up with something new. After some brainstorming and deliberation, we decided to do a forum where users can post messages, reply to one 
+another, and discuss anything related to the cars and the website. 
+
+The specifics of the forum are as follows: 
+
+                    -Anyone on the website can view posts or even replies
+                    -Users must be logged in to post a message or to reply to another user's message
+                    -Messages must show who said it, and the date and time that it was said
+                    -Messages must remain even after closing and reopening the website
+
+After the Zoom call, we moved to Discord to continue discussing how we would carry forward with the project. Firstly, we decided to use SonarCloud 
+for our code review. We also decided that Matthew, Liam, Maxime and Daniel would get the forum page running. Maria was going to organize the
+repository. Since Maxime is the owner of the repository, he needed to be the one to add SonarCloud to the repository, but once it was added, we would
+all work together to get it working since none of us had experience using it. 
+
+For the next meeting, we want to try to get as much done as possible. We will meet again on the 10th, to go over the project and make sure everything
+was as it should be. If anything was missing or not working, we will all be together to work on it.
