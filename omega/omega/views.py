@@ -285,7 +285,7 @@ def findabranch_view(request):
     return render(request, 'findABranch.html')
 
 def OMEGACarList(request):
-    return render(request, 'OMEGACarList.html')
+    return render(request, 'Vehicles/OMEGACarList.html')
 
 def toyota_corolla(request):
     return render(request, 'ToyotaCorolla.html')
@@ -297,13 +297,13 @@ def chevrolet_volt(request):
     return render(request, 'ChevroletVolt.html')
 
 def toyota_prius(request):
-    return render(request, 'ToyotaPrius.html')
+    return render(request, 'Vehicles/ToyotaPrius.html')
 
 def kia_niro(request):
-    return render(request, 'KiaNiro.html')
+    return render(request, 'Vehicles/KiaNiro.html')
 
 def ford_mustang(request):
-    return render(request, 'FordMustang.html')
+    return render(request, 'Vehicles/FordMustang.html')
 
 def audi_a5(request):
     return render(request, 'AudiA5.html')
@@ -315,7 +315,7 @@ def chevrolet_corvette(request):
     return render(request, 'ChevroletCorvette.html')
 
 def porsche_911(request):
-    return render(request, 'Porsche911.html')
+    return render(request, 'Vehicles/Porsche911.html')
 
 def audi_a4(request):
     return render(request, 'AudiA4.html')
