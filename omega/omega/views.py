@@ -324,7 +324,7 @@ def ferrari_roma(request):
     return render(request, 'Vehicles/FerrariRoma.html')
 
 def bentley_bentayga(request):
-    return render(request, 'BentleyBentayga.html')
+    return render(request, 'Vehicles/BentleyBentayga.html')
 
 @login_required_redirect
 def audiA4Reserve_view(request):
