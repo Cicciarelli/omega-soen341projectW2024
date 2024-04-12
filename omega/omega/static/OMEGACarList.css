@@ -181,3 +181,7 @@ a:active {
 	position: fixed;
 	z-index: 2;
   }
+
+  #checkoutForm{
+	height: 70vh;
+  }
