@@ -23,7 +23,7 @@
 
 <div class = "container"> 
 <br><br>
-<form action="{% url 'receipt' %}" method="post">
+<form action="{% url 'receipt' %}" method="post" id="checkoutForm>
   {% csrf_token %}
     <fieldset>
      <p> 
@@ -40,6 +40,8 @@
       <input type="radio" id="no" name="damages" value="No" required>
       <label for="no">No</label></p>
 
+	<div id="damagesMessageContainer"></div>
+
       <input type="submit" class="addButton" value="Proceed to your Receipt"> 
 </form>
 </div>
@@ -50,6 +52,17 @@
          	</table>
 	</div>
 </footer>
+
+<script>
+  document.getElementById('checkoutForm').addEventListener('change', function(event) {
+    if (event.target.id === 'yes' || event.target.id === 'no') {
+      var damagesYes = document.getElementById('yes').checked;
+      var damagesMessageContainer = document.getElementById('damagesMessageContainer');
+      damagesMessageContainer.innerHTML = damagesYes ? 'We will unfortunately keep your deposit to repare the damages done to the car.' : 'Your deposit of 500$ will be returned to you.';
+    }
+  });
+</script>
+	
 </body>
 
 </html>
