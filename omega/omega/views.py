@@ -294,7 +294,7 @@ def honda_civic(request):
     return render(request, 'HondaCivic.html')
 
 def chevrolet_volt(request):
-    return render(request, 'ChevroletVolt.html')
+    return render(request, 'Vehicles/ChevroletVolt.html')
 
 def toyota_prius(request):
     return render(request, 'ToyotaPrius.html')
