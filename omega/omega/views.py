@@ -288,13 +288,13 @@ def OMEGACarList(request):
     return render(request, 'Vehicles/OMEGACarList.html')
 
 def toyota_corolla(request):
-    return render(request, 'ToyotaCorolla.html')
+    return render(request, 'Vehicles/ToyotaCorolla.html')
 
 def honda_civic(request):
-    return render(request, 'HondaCivic.html')
+    return render(request, 'Vehicles/HondaCivic.html')
 
 def chevrolet_volt(request):
-    return render(request, 'ChevroletVolt.html')
+    return render(request, 'Vehicles/ChevroletVolt.html')
 
 def toyota_prius(request):
     return render(request, 'Vehicles/ToyotaPrius.html')
@@ -306,13 +306,13 @@ def ford_mustang(request):
     return render(request, 'Vehicles/FordMustang.html')
 
 def audi_a5(request):
-    return render(request, 'AudiA5.html')
+    return render(request, 'Vehicles/AudiA5.html')
 
 def bmw_m4(request):
-    return render(request, 'BMWM4.html')
+    return render(request, 'Vehicles/BMWM4.html')
 
 def chevrolet_corvette(request):
-    return render(request, 'ChevroletCorvette.html')
+    return render(request, 'Vehicles/ChevroletCorvette.html')
 
 def porsche_911(request):
     return render(request, 'Vehicles/Porsche911.html')
@@ -321,7 +321,7 @@ def audi_a4(request):
     return render(request, 'Vehicles/AudiA4.html')
 
 def ferrari_roma(request):
-    return render(request, 'FerrariRoma.html')
+    return render(request, 'Vehicles/FerrariRoma.html')
 
 def bentley_bentayga(request):
     return render(request, 'BentleyBentayga.html')
