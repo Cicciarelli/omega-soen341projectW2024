@@ -2,14 +2,14 @@
 {% block page_title %}Reply{% endblock %}
 {% block header_title %}Reply{% endblock %}
 {% block content %}
-<div class="post_form">
+<div class="post_form" style="height: 100%; border: 2px solid black;">
     <form method="post">
         {% csrf_token %}
-        <label for="topic">Topic: </label>
-        <input type="text" id="topic" name="topic">
+        <label for="topic" style="margin: 3%;margin-right: 0%;">Topic: </label>
+        <input type="text" id="topic" name="topic" style="width: 40%; margin: 2%; margin-left: 0%;">
         <br>
         {{ form.as_p }}
-        <button type="submit">Submit</button>
+        <button type="submit" style="margin: 2%; width: 5%; height: 5%;">Submit</button>
     </form>
 </div>
 {% endblock content %}
