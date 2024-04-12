@@ -752,10 +752,94 @@ def audiA5Reserve_view(request):
 
 @login_required_redirect
 def bmwM4Reserve_view(request):
+    if request.method == 'POST':
+        start_dateM4=request.POST.get("start_date")
+        end_dateM4=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateM4, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateM4, "%Y/%m/%d")
+
+        vehicleM4=Vehicle.objects.create(
+            vehicle_vin=696969,
+            vehicle_make="BMW",
+            vehicle_model="M4",
+            vehicle_year="2022",
+            vehicle_license_plate="BRR44T",
+            vehicle_color="Matte Black",
+            is_rented=False
+        )
+
+        pick_up_locationM4=Location.objects.create(
+            title="Dorval"
+        )
+        
+        drop_off_locationM4 = Location.objects.create(
+            title="Laval"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitM4=300
+        additional_servicesM4="Baby Seat"
+        is_signedM4=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleM4,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationM4,
+            drop_off_location=drop_off_locationM4,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitM4,
+            additional_services=additional_servicesM4,
+            is_signed=is_signedM4,
+        )
     return render(request, 'bmwM4Reserve.html')
 
 @login_required_redirect
 def chevroletCorvetteReserve_view(request):
+    if request.method == 'POST':
+        start_dateCorv=request.POST.get("start_date")
+        end_dateCorv=request.POST.get("end_date")
+
+        start_date = datetime.strptime(start_dateCorv, "%Y/%m/%d")
+        end_date = datetime.strptime(end_dateCorv, "%Y/%m/%d")
+
+        vehicleCorv=Vehicle.objects.create(
+            vehicle_vin=228474,
+            vehicle_make="Chevrolet",
+            vehicle_model="Corvette",
+            vehicle_year="2019",
+            vehicle_license_plate="TURNUP",
+            vehicle_color="Black with Red Stripes",
+            is_rented=False
+        )
+
+        pick_up_locationCorv=Location.objects.create(
+            title="Montreal"
+        )
+        
+        drop_off_locationCorv = Location.objects.create(
+            title="Brossard"
+        )
+        
+        rental_period = (end_date - start_date)
+        mileage_limitCorv=300
+        additional_servicesCorv="N/A"
+        is_signedCorv=True
+
+        reservation=Reservation.objects.create(
+            vehicle=vehicleCorv,  
+            account=request.user,
+            reservation_start=start_date,
+            reservation_end=end_date,
+            pick_up_location=pick_up_locationCorv,
+            drop_off_location=drop_off_locationCorv,
+            rental_period=rental_period,
+            mileage_limit=mileage_limitCorv,
+            additional_services=additional_servicesCorv,
+            is_signed=is_signedCorv,
+        )
     return render(request, 'chevroletCorvetteReserve.html')
 
 def checkOutPayment(request):
