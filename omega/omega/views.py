@@ -236,7 +236,7 @@ def checked_in_view(request, reservation_id):
 
 def check_out_view(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
-    # Write your view code here
+    reservation.delete()
     return render(request, 'CheckOut.html')
 
 def vehicle_view(request):
