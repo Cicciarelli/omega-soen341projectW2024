@@ -24,38 +24,47 @@
 <br><br>
 
 <div class = "container"> 
-  <br><br>
-  <form method="post" id="checkoutForm" style="height: 70vh;">
-      
-        <p> 
-        <label>Was the car dropped off at the correct location?</label><br>
-          <input type="radio" id="right" name="location" value="Right" required>
-          <label for="right">Yes</label>
-          <input type="radio" id="wrong" name="location" value="Wrong" required>
-          <label for="wrong">No</label> 
-        </p>
-    
-        <p>
-        <label>Is there any damages to the car?</label><br>
-        <input type="radio" id="yes" name="damages" value="Yes" required>
-        <label for="yes">Yes</label>
-        <input type="radio" id="no" name="damages" value="No" required>
-        <label for="no">No</label></p>
-        
-        
-  </form>
+<br><br>
+<form action="{% url 'receipt' %}" method="post" id="checkoutForm>
+  {% csrf_token %}
+    <fieldset>
+     <p> 
+    <label>Was the car dropped off at the correct location?</label><br>
+      <input type="radio" id="right" name="location" value="Right" required>
+      <label for="right">Yes</label>
+      <input type="radio" id="wrong" name="location" value="Wrong" required>
+      <label for="wrong">No</label> 
+    </p>
+  
+      <p><label>Is there any damages to the car?</label><br>
+      <input type="radio" id="yes" name="damages" value="Yes" required>
+      <label for="yes">Yes</label>
+      <input type="radio" id="no" name="damages" value="No" required>
+      <label for="no">No</label></p>
 
-    <a href="{% url 'receipt' %}">
-        <button type="button" class = "addButton" style="height: 9%;">Proceed to your Receipt</button>
-    </a>
-  </div>
+	<div id="damagesMessageContainer"></div>
 
+      <input type="submit" class="checkoutButton" value="Proceed to your Receipt"> 
+</form>
+</div>
+                                                                                 
 <footer>
 	<div class="footerContainer">
         	<table id="footerTable"> 
          	</table>
 	</div>
 </footer>
+
+<script>
+  document.getElementById('checkoutForm').addEventListener('change', function(event) {
+    if (event.target.id === 'yes' || event.target.id === 'no') {
+      var damagesYes = document.getElementById('yes').checked;
+      var damagesMessageContainer = document.getElementById('damagesMessageContainer');
+      damagesMessageContainer.innerHTML = damagesYes ? 'We will unfortunately keep your deposit to repair the damages done to the car.' : 'Your deposit of 500$ will be returned to you.';
+    }
+  });
+</script>
+	
 </body>
 
 </html>
