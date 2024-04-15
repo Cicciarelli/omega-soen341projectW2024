@@ -2,42 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title> Final Receipt</title>
+    <title>Final Receipt</title>
     {% load static %}
-    <link rel="stylesheet" href="{%static 'OMEGACarList.css' %}">
+    <link rel="stylesheet" href="{% static 'OMEGACarList.css' %}">
+    <style>
+        .receipt-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+      
+    </style>
 </head>
 
 <body>
   <div class="headerContainer">
     <h1>Final Receipt</h1>
   </div>
+
   <div class="sideMenu">
     <ul>
         <li><a href="{% url 'startres' %}">Start a Reservation</a></li>
         <li><a href="{% url 'reservations' %}">Existing Reservation</a></li>
         <li><a href="{% url 'carList' %}">Browse Vehicles</a></li>
         <li><a href="{% url 'findabranch' %}">Find a Branch</a></li>
-</ul>
-</div>
-<br><br>
+    </ul>
+  </div>
 
-<div class = "container" style="height: 85vh;"> 
-      <br><br>
-        <p style="text-align:center;"><h1>Here is your Receipt</h1></p>
-        <h4>You Will Receive your deposit back if there was no damages to the car. If there was any damages, we are unfortunately unable to return it.</h4>
+  <div class="receipt-container">
+    <div class="receipt-header">
+        <h1>Final Receipt</h1>
+    </div>
     
+    <div class="receipt-details">
+        <table>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td>Rental Price</td>
+                <td>${{ rental_price }}</td>
+            </tr>
+            <tr>
+              <td>Deposited Amount</td>
+              <td>${% if damages %}500{% else %}0{% endif %}</td>
+          </tr>
+          
+            {% if damages %}
+            <tr>
+              <td>Total Amount</td>
+              <td>${{ rental_price | add:deposited_amount }}</td>
+          </tr>
+            {% endif %}
+        </table>
+    </div>
+
+    <div class="receipt-actions">
         <a href="{% url 'checkOutPayment' %}">
-            <button type="button" class = "addButton" style="height: 10%;">Proceed to make a Payment</button>
+            <button type="button" class="paymentButton">Proceed to make a Payment</button>
         </a>
+    </div>
+  </div>
 
-</div>
-
-<footer>
-	<div class="footerContainer">
-        	<table id="footerTable"> 
-         	</table>
-	</div>
-</footer>
+  <footer>
+    <div class="footerContainer">
+      <table id="footerTable"> 
+      </table>
+    </div>
+  </footer>
 </body>
-
 </html>
