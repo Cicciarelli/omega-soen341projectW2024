@@ -42,4 +42,4 @@ class ReviewForm(forms.Form):
     review = forms.CharField(label='review', max_length=2048, widget=forms.Textarea)
 
 class PostForm(forms.Form):
-    text = forms.CharField(label='text', max_length=2048, widget=forms.Textarea)
+    text = forms.CharField(label='text', max_length=2048, widget=forms.Textarea(attrs={'style': "width:90%; height:60vh;"}))
