@@ -236,7 +236,7 @@ def checked_in_view(request, reservation_id):
 
 def check_out_view(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
-    # Write your view code here
+    reservation.delete()
     return render(request, 'CheckOut.html')
 
 def vehicle_view(request):
@@ -847,4 +847,15 @@ def checkOutPayment(request):
 
 def checkOutConfirm(request):
     return render(request, 'checkOutConfirm.html')
+
+def final_receipt_view(request):
+    damages = True if request.POST.get('damages') == 'Yes' else False
+    rental_price = 750  
+    deposited_amount = 500 if damages else 0
+    context = {
+        'damages': damages,
+        'rental_price': rental_price,
+        'deposited_amount': deposited_amount,
+    }
+    return render(request, 'FinalReceipt.html', context)
 
