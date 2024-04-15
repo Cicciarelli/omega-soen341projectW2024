@@ -182,6 +182,12 @@ a:active {
 	z-index: 2;
   }
 
-  #checkoutForm{
-	height: 70vh;
-  }
+ .checkoutButtton{
+	width: 150px;
+	height: 50px;
+}	
+
+  .paymentButtton{
+	width: 100px;
+	height: 50px;
+}
