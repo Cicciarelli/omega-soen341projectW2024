@@ -356,7 +356,7 @@ def audiA4Reserve_view(request):
         rental_period = (end_date - start_date)
         mileage_limitA4=300
         additional_servicesA4="extra luggage space"
-        is_signedA4=True
+        is_signedA4=False
 
         reservation=Reservation.objects.create(
             vehicle=vehicleA4,  
@@ -402,7 +402,7 @@ def porsche911Reserve_view(request):
         rental_period = (end_date - start_date)
         mileage_limit911=300
         additional_services911="extra luggage space"
-        is_signed911=True
+        is_signed911=False
 
         reservation=Reservation.objects.create(
             vehicle=vehicle911,  
@@ -458,7 +458,7 @@ def bentleyBentaygaReserve_view(request):
         rental_period = (end_date - start_date)
         mileage_limitBTA=300
         additional_servicesBTA="N/A"
-        is_signedBTA=True
+        is_signedBTA=False
 
         reservation=Reservation.objects.create(
             vehicle=vehicleBTA,  
@@ -504,7 +504,7 @@ def chevroletVoltReserve_view(request):
         rental_period = (end_date - start_date)
         mileage_limitV=300
         additional_servicesV="N/A"
-        is_signedV=True
+        is_signedV=False
 
         reservation=Reservation.objects.create(
             vehicle=vehicleV,  
@@ -550,7 +550,7 @@ def toyotaPriusReserve_view(request):
         rental_period = (end_date - start_date)
         mileage_limitP=300
         additional_servicesP="extra luggage space"
-        is_signedP=True
+        is_signedP=False
 
         reservation=Reservation.objects.create(
             vehicle=vehicleP,  
@@ -596,7 +596,7 @@ def kiaNiroReserve_view(request):
         rental_period = (end_date - start_date)
         mileage_limitN=300
         additional_servicesN="N/A"
-        is_signedN=True
+        is_signedN=False
 
         reservation=Reservation.objects.create(
             vehicle=vehicleN,  
@@ -642,7 +642,7 @@ def hondaCivicReserve_view(request):
         rental_period = (end_date - start_date)
         mileage_limitCIV=300
         additional_servicesCIV="1100 HP Supercharger"
-        is_signedCIV=True
+        is_signedCIV=False
 
         reservation=Reservation.objects.create(
             vehicle=vehicleCIV,  
@@ -688,7 +688,7 @@ def fordMustangReserve_view(request):
         rental_period = (end_date - start_date)
         mileage_limitMust=300
         additional_servicesMust="Supercharger"
-        is_signedMust=True
+        is_signedMust=False
 
         reservation=Reservation.objects.create(
             vehicle=vehicleMust,  
@@ -734,7 +734,7 @@ def audiA5Reserve_view(request):
         rental_period = (end_date - start_date)
         mileage_limitA5=300
         additional_servicesA5="Twin Turbo for fuel efficiency"
-        is_signedA5=True
+        is_signedA5=False
 
         reservation=Reservation.objects.create(
             vehicle=vehicleA5,  
@@ -780,7 +780,7 @@ def bmwM4Reserve_view(request):
         rental_period = (end_date - start_date)
         mileage_limitM4=300
         additional_servicesM4="Baby Seat"
-        is_signedM4=True
+        is_signedM4=False
 
         reservation=Reservation.objects.create(
             vehicle=vehicleM4,  
@@ -826,7 +826,7 @@ def chevroletCorvetteReserve_view(request):
         rental_period = (end_date - start_date)
         mileage_limitCorv=300
         additional_servicesCorv="N/A"
-        is_signedCorv=True
+        is_signedCorv=False
 
         reservation=Reservation.objects.create(
             vehicle=vehicleCorv,  
