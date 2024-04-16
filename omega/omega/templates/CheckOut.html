@@ -25,7 +25,7 @@
 
 <div class = "container"> 
 <br><br>
-<form action="{% url 'receipt' %}" method="post" id="checkoutForm>
+<form action="{% url 'receipt' %}" method="post" id="checkoutForm">
   {% csrf_token %}
     <fieldset>
      <p> 
@@ -56,6 +56,14 @@
 </footer>
 
 <script>
+document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+      var locationNo = document.getElementById('wrong').checked;
+      if (locationNo) {
+        alert('Please drop off the car at the correct location before submitting.');
+        event.preventDefault(); 
+      }
+    });
+  
   document.getElementById('checkoutForm').addEventListener('change', function(event) {
     if (event.target.id === 'yes' || event.target.id === 'no') {
       var damagesYes = document.getElementById('yes').checked;

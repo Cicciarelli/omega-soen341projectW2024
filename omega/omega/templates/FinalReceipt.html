@@ -56,6 +56,11 @@
               <td>Total Amount</td>
               <td>${{ rental_price | add:deposited_amount }}</td>
           </tr>
+            {% else %}
+            <tr>
+                <td>Total Amount</td>
+                <td>${{ rental_price }}</td>
+            </tr>
             {% endif %}
         </table>
     </div>
