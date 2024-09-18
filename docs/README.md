@@ -1,5 +1,8 @@
 README file for the SOEN341 group project - Team Omega
 
+***IMPORTANT:***
+***THIS IS THE FINAL PROJECT FOR THE COURSE SOEN341, WINTER 2024.***
+
 **In this file, you will see the following:**
 
 1. Description of the Project
